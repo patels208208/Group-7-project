@@ -1,0 +1,19 @@
+.hydration-app {
+    color: black;
+	border-style: solid;
+	border-color: black;
+	text-align: center;
+}
+
+.water-drop {
+	border-top-left-radius: 70%; 
+	border-bottom-left-radius: 55%; 
+	border-bottom-right-radius: 70%; 
+	transform: rotate(-45deg); 
+	border: 1px solid rgb(11, 151, 245); 
+	background-color: white; 
+	box-shadow: rgb(55, 78, 102) 0px 15px 25px -10px; 
+	width: 100px; 
+	height: 100px; 
+	margin: 50px; 
+  }
