@@ -2,51 +2,50 @@ import React, {useState } from 'react';
 import HabitSquare from './HabitSquare'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../assets/styles/grid.css';
+import '../assets/styles/habitSquare.css';
+
+
 
 const Grid = () => {
-  const [selectedHabitSquare, setSelectedHabitSquare] = useState(null);
+  const [selectedHabitSquare, setSelectedHabitSquare] = useState([]);
 
-  const handleSquareClick = (icon, index) => {
-    setSelectedHabitSquare({ icon, index });
-    console.log(`Selected icon: ${icon} at index: ${index}`);
-};
-  
-  const renderHabitSquare = (i) => {
-    const icons = [
-      <FontAwesomeIcon icon="fa-solid fa-glass-water" />,
-      <FontAwesomeIcon icon="fa-solid fa-utensils" />,
-      <FontAwesomeIcon icon="fa-solid fa-person-walking" />,
-      <FontAwesomeIcon icon="fa-solid fa-book-open" />,
-      <FontAwesomeIcon icon="fa-solid fa-bed" />,
-      <FontAwesomeIcon icon="fa-solid fa-pills" />,
-      <FontAwesomeIcon icon="fa-solid fa-icons" />,
-      <FontAwesomeIcon icon="fa-solid fa-bath" />,
-      <FontAwesomeIcon icon="fa-solid fa-paw" />,
-      <FontAwesomeIcon icon="fa-solid fa-seedling" />,
-      <FontAwesomeIcon icon="fa-solid fa-people-group" />,
-      <FontAwesomeIcon icon="fa-solid fa-comments" />
-    ];
-
-    if (i < 0 || i >= icons.length) {
-      console.error(`Index ${i} is out of bounds for icons array`);
-      return null;
-    }
-    return (
-    <HabitSquare 
-    key={i} 
-    value={`Square ${i}`}
-    icon={icons[i]}
-    onClick={() => handleSquareClick(icons[i], i)}
-    />
-    )
+  const handleSquareClick = (index) => {
+    setSelectedHabitSquare((prevSelected) => 
+      prevSelected.includes(index)
+      ? prevSelected.filter((i) => i !== index)
+      : [...prevSelected, index]
+    );
   };
 
-  console.log(selectedHabitSquare);
-
-  return (
-  <div className="grid">
-  {[Array.from({ length: 12 }, (_, i) => renderHabitSquare(i))]}
+    const icons = [
+      <FontAwesomeIcon icon="fa-solid fa-glass-water" size="3x" />,
+      <FontAwesomeIcon icon="fa-solid fa-utensils" size="3x"/>,
+      <FontAwesomeIcon icon="fa-solid fa-person-walking" size="3x" />,
+      <FontAwesomeIcon icon="fa-solid fa-book-open" size="3x"/>,
+      <FontAwesomeIcon icon="fa-solid fa-bed" size="3x"/>,
+      <FontAwesomeIcon icon="fa-solid fa-pills" size="3x"/>,
+      <FontAwesomeIcon icon="fa-solid fa-icons" size="3x"/>,
+      <FontAwesomeIcon icon="fa-solid fa-bath" size="3x"/>,
+      <FontAwesomeIcon icon="fa-solid fa-paw" size="3x"/>,
+      <FontAwesomeIcon icon="fa-solid fa-seedling" size="3x"/>,
+      <FontAwesomeIcon icon="fa-solid fa-people-group" size="3x"/>,
+      <FontAwesomeIcon icon="fa-solid fa-comments" size="3x"/>
+    ];
+    console.log(setSelectedHabitSquare);
+    return (
+      <div className="grid">
+        {icons.map((icon, i) => (
+    <HabitSquare 
+    className={`habit-square ${selectedHabitSquare.includes(i) ? 'selected' : ''}`}
+    key={i} 
+    icon={icon}
+    onClick={() => handleSquareClick(i)}
+    />
+    ))}
     </div>
-  );
-};
+    );
+   
+  };
+
+
 export default Grid;

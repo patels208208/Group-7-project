@@ -1,13 +1,14 @@
-const HabitSquare = ({value, icon, onClick}) => {
+import '../assets/styles/habitSquare.css';
+
+const HabitSquare = ({className, icon, onClick}) => {
   const handleClick = () => {
     onClick(icon);
   };
-
   return (
-  <button type="button" className="habit-square" onClick={handleClick}>
-    {value} {icon}
-  </button>
-  );
+  <div className={className} onClick={handleClick}>
+    {icon}
+    </div>
+    );
 };
 
   export default HabitSquare
