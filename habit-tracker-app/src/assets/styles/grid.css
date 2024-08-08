@@ -2,3 +2,11 @@
   display:flex;
   flex-direction:row;
 }
+
+.FontAwesomeIcon {
+  color: #037F8C;
+}
+
+.grid{
+  background-color: #f7f9ff;
+}

@@ -1,6 +1,7 @@
-button {
+.habit-square {
   background: none;
-  border: none;
+  border: 1px solid #D7D5D6;
+  border-radius: 5px;
   outline: none;
   cursor: pointer;
 }

@@ -1,5 +1,7 @@
 import React, {useState } from 'react';
 import HabitSquare from './HabitSquare'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import '../assets/styles/grid.css';
 
 const Grid = () => {
   const [selectedHabitSquare, setSelectedHabitSquare] = useState(null);
@@ -10,9 +12,25 @@ const Grid = () => {
 };
   
   const renderHabitSquare = (i) => {
-    const icons = [//fontawesome icons
-    
+    const icons = [
+      <FontAwesomeIcon icon="fa-solid fa-glass-water" />,
+      <FontAwesomeIcon icon="fa-solid fa-utensils" />,
+      <FontAwesomeIcon icon="fa-solid fa-person-walking" />,
+      <FontAwesomeIcon icon="fa-solid fa-book-open" />,
+      <FontAwesomeIcon icon="fa-solid fa-bed" />,
+      <FontAwesomeIcon icon="fa-solid fa-pills" />,
+      <FontAwesomeIcon icon="fa-solid fa-icons" />,
+      <FontAwesomeIcon icon="fa-solid fa-bath" />,
+      <FontAwesomeIcon icon="fa-solid fa-paw" />,
+      <FontAwesomeIcon icon="fa-solid fa-seedling" />,
+      <FontAwesomeIcon icon="fa-solid fa-people-group" />,
+      <FontAwesomeIcon icon="fa-solid fa-comments" />
     ];
+
+    if (i < 0 || i >= icons.length) {
+      console.error(`Index ${i} is out of bounds for icons array`);
+      return null;
+    }
     return (
     <HabitSquare 
     key={i} 
@@ -23,33 +41,12 @@ const Grid = () => {
     )
   };
 
+  console.log(selectedHabitSquare);
+
   return (
   <div className="grid">
   {[...Array(11).map((_, i) => renderHabitSquare(i))]}
     </div>
   );
 };
-//   }
-//     <div className="grid-row">
-//       {renderHabitSquare(0)}
-//       {renderHabitSquare(1)}
-//       {renderHabitSquare(2)}
-//       {renderHabitSquare(3)}
-//     </div>
-//     <div className="grid-row">
-//       {renderHabitSquare(4)}
-//       {renderHabitSquare(5)}
-//       {renderHabitSquare(6)}
-//       {renderHabitSquare(7)}
-//     </div>
-//     <div className="grid-row">
-//      {renderHabitSquare(8)}
-//      {renderHabitSquare(9)}
-//      {renderHabitSquare(10)}
-//      {renderHabitSquare(11)}
-//     </div>
-//   </div>
-//   );
-// }
-
 export default Grid;
