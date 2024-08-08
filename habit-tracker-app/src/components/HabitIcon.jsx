@@ -1,8 +1,11 @@
+import './habitIcon.css';
+import fontawesome from '@fortawesome/fontawesome';
 
-function HabitIcon({ habit }) {
+function HabitIcon({ habitIcon, habitName }) {
   return (
     <div className="habit-icon">
-      <img src={habit.icon} alt={habit.name} />
-    </div>
-  );
-}
+      <img src={habitIcon} alt={habitName} />
+    </div>)
+};
+
+export default HabitIcon;
