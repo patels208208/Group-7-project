@@ -1,5 +1,6 @@
 import './App.css';
 import HydrationApp from './hydration/hydrationApp';
+import Grid from './components/Grid';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <HydrationApp/>
     </div>
     <div className="App">
+      <Grid />
       
     </div>
     </div>
