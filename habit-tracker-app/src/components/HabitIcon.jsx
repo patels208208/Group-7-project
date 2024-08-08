@@ -1,5 +1,5 @@
 import './habitIcon.css';
-import fontawesome from '@fortawesome/fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function HabitIcon({ habitIcon, habitName }) {
   return (
