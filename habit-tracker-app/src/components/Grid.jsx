@@ -36,7 +36,7 @@ const Grid = () => {
     key={i} 
     value={`Square ${i}`}
     icon={icons[i]}
-    onClick={handleSquareClick(icons[i], i)}
+    onClick={() => handleSquareClick(icons[i], i)}
     />
     )
   };
@@ -45,7 +45,7 @@ const Grid = () => {
 
   return (
   <div className="grid">
-  {[...Array(11).map((_, i) => renderHabitSquare(i))]}
+  {[Array.from({ length: 12 }, (_, i) => renderHabitSquare(i))]}
     </div>
   );
 };
