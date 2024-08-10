@@ -5,8 +5,8 @@ import Grid from './components/Grid.jsx';
 function App() {
   return (
     <div>
-    <div className="hydration-app">
-      <h1>Hydration tracker</h1>
+    <div className="habit-tracker">
+      <h1>Habit tracker</h1>
       <HydrationApp/>
     </div>
     <div className="App">
