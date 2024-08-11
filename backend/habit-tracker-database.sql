@@ -17,6 +17,12 @@ CREATE TABLE movement (
     completed DATETIME
 );
 
+CREATE TABLE reading (
+	habit_ID INT,
+    completed DATETIME
+);
+
 SELECT * FROM hydration;
 SELECT * FROM nutrition;
 SELECT * FROM movement;
+SELECT * FROM reading;
