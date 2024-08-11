@@ -16,11 +16,20 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:3001/hydration",
+			"name": "Hydration app data",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"url": "http://localhost:3001/hydration"
+			},
+			"response": []
+		},
+		{
+			"name": "Nutrition app data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3001/nutrition"
 			},
 			"response": []
 		}

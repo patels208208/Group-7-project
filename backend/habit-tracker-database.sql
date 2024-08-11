@@ -7,4 +7,10 @@ CREATE TABLE hydration (
     completed DATETIME
 );
 
+CREATE TABLE nutrition (
+	habit_ID INT,
+    completed DATETIME
+);
+
 SELECT * FROM hydration;
+SELECT * FROM nutrition;
