@@ -3,6 +3,7 @@ import Grid from './components/Grid.jsx';
 import HydrationApp from './hydration/hydrationApp';
 import NutritionApp from './nutrition/nutritionApp';
 import MovementApp from './movement/movementApp';
+import ReadingApp from './reading/readingApp';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <HydrationApp />
       <NutritionApp />
       <MovementApp />
+      <ReadingApp />
     </div>
     </div>
   );
