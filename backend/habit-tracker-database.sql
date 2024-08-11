@@ -32,9 +32,15 @@ CREATE TABLE medication (
     completed DATETIME
 );
 
+CREATE TABLE hobbies (
+	habit_ID INT,
+    completed DATETIME
+);
+
 SELECT * FROM hydration;
 SELECT * FROM nutrition;
 SELECT * FROM movement;
 SELECT * FROM reading;
 SELECT * FROM sleep;
 SELECT * FROM medication;
+SELECT * FROM hobbies;

@@ -59,6 +59,24 @@
 				"url": "http://localhost:3001/sleep"
 			},
 			"response": []
+		},
+		{
+			"name": "Medication app data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3001/medication"
+			},
+			"response": []
+		},
+		{
+			"name": "Hobbies app data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3001/hobbies"
+			},
+			"response": []
 		}
 	]
 }

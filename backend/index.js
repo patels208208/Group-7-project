@@ -113,3 +113,17 @@ pool.query(sql, [habit_id, completed], (err, result) => {
     res.status(201).json({ message: 'Medication data saved successfully'});
 });
 });
+
+app.post('/hobbies', (req, res) => {
+    const { habit_id, completed } = req.body;
+
+const sql = 'INSERT INTO hobbies (habit_id, completed) VALUES (?, ?)';
+pool.query(sql, [habit_id, completed], (err, result) => {
+    if (err) {
+        console.error('Error entering hobbies data', err.message);
+        return res.status(500).json({ error: 'Database error' });
+    }
+
+    res.status(201).json({ message: 'Hobbies data saved successfully'});
+});
+});
