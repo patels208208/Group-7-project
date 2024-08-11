@@ -27,8 +27,14 @@ CREATE TABLE sleep (
     completed DATETIME
 );
 
+CREATE TABLE medication (
+	habit_ID INT,
+    completed DATETIME
+);
+
 SELECT * FROM hydration;
 SELECT * FROM nutrition;
 SELECT * FROM movement;
 SELECT * FROM reading;
 SELECT * FROM sleep;
+SELECT * FROM medication;

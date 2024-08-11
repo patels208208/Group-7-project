@@ -99,3 +99,17 @@ pool.query(sql, [habit_id, completed], (err, result) => {
     res.status(201).json({ message: 'Sleep data saved successfully'});
 });
 });
+
+app.post('/medication', (req, res) => {
+    const { habit_id, completed } = req.body;
+
+const sql = 'INSERT INTO medication (habit_id, completed) VALUES (?, ?)';
+pool.query(sql, [habit_id, completed], (err, result) => {
+    if (err) {
+        console.error('Error entering medication data', err.message);
+        return res.status(500).json({ error: 'Database error' });
+    }
+
+    res.status(201).json({ message: 'Medication data saved successfully'});
+});
+});
