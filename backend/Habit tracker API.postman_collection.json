@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "Home page",
+			"name": "Habit tracker API homepage",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -16,11 +16,65 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:3001/hydration",
+			"name": "Movement app data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3001/movement"
+			},
+			"response": []
+		},
+		{
+			"name": "Hydration app data",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"url": "http://localhost:3001/hydration"
+			},
+			"response": []
+		},
+		{
+			"name": "Nutrition app data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3001/nutrition"
+			},
+			"response": []
+		},
+		{
+			"name": "Reading app data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3001/reading"
+			},
+			"response": []
+		},
+		{
+			"name": "Sleep app data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3001/sleep"
+			},
+			"response": []
+		},
+		{
+			"name": "Medication app data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3001/medication"
+			},
+			"response": []
+		},
+		{
+			"name": "Hobbies app data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3001/hobbies"
 			},
 			"response": []
 		}
