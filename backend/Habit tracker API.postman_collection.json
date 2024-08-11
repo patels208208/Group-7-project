@@ -7,11 +7,20 @@
 	},
 	"item": [
 		{
-			"name": "Home page",
+			"name": "Habit tracker API homepage",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": "http://localhost:3001/"
+			},
+			"response": []
+		},
+		{
+			"name": "Movement app data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3001/movement"
 			},
 			"response": []
 		},

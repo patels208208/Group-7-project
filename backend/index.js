@@ -57,3 +57,17 @@ pool.query(sql, [habit_id, completed], (err, result) => {
     res.status(201).json({ message: 'Nutrition data saved successfully'});
 });
 });
+
+app.post('/movement', (req, res) => {
+    const { habit_id, completed } = req.body;
+
+const sql = 'INSERT INTO movement (habit_id, completed) VALUES (?, ?)';
+pool.query(sql, [habit_id, completed], (err, result) => {
+    if (err) {
+        console.error('Error entering movement data', err.message);
+        return res.status(500).json({ error: 'Database error' });
+    }
+
+    res.status(201).json({ message: 'Movement data saved successfully'});
+});
+});
