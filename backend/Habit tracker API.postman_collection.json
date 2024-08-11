@@ -50,6 +50,15 @@
 				"url": "http://localhost:3001/reading"
 			},
 			"response": []
+		},
+		{
+			"name": "Sleep app data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3001/sleep"
+			},
+			"response": []
 		}
 	]
 }

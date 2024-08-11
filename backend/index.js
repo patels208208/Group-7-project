@@ -85,3 +85,17 @@ pool.query(sql, [habit_id, completed], (err, result) => {
     res.status(201).json({ message: 'Reading data saved successfully'});
 });
 });
+
+app.post('/sleep', (req, res) => {
+    const { habit_id, completed } = req.body;
+
+const sql = 'INSERT INTO sleep (habit_id, completed) VALUES (?, ?)';
+pool.query(sql, [habit_id, completed], (err, result) => {
+    if (err) {
+        console.error('Error entering sleep data', err.message);
+        return res.status(500).json({ error: 'Database error' });
+    }
+
+    res.status(201).json({ message: 'Sleep data saved successfully'});
+});
+});
