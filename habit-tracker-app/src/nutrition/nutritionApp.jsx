@@ -18,7 +18,6 @@ const handleClick = async (event) => {
   const data = await response.json();
   console.log("Functioning as expected");
   event.target.classList.add("nutrition-button-2");
-  event.target.classList.add("nutrition-button");
   return data;
 };
 
