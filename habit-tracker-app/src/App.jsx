@@ -4,6 +4,7 @@ import HydrationApp from './hydration/hydrationApp';
 import NutritionApp from './nutrition/nutritionApp';
 import MovementApp from './movement/movementApp';
 import ReadingApp from './reading/readingApp';
+import SleepApp from './sleep/sleepApp';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <NutritionApp />
       <MovementApp />
       <ReadingApp />
+      <SleepApp />
     </div>
     </div>
   );
