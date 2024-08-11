@@ -38,6 +38,7 @@ We have designed this app with neurodivergent users in mind. For example, we hav
 
 ## Specifications and design
 - React.js: used to build the app for deployment on a web browser. React.js allows for better functionality and smoother running on web and mobile browsers.
+- Tailwind/CSS: for app design and branding.
 - Node.js with Express and Middleware: this allows the app to interact with APIs to capture/display data and a MySQL database to store the data. Within this app, we have built two APIs - one for managing user login details and one for habit tracking.
 - MySQL: for database infrastructure and management.
 - Git and Github: for version control and collaboration.
