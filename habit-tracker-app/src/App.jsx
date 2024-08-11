@@ -6,6 +6,7 @@ import MovementApp from './movement/movementApp';
 import ReadingApp from './reading/readingApp';
 import SleepApp from './sleep/sleepApp';
 import MedicationApp from './medication/medicationApp';
+import HobbiesApp from './hobbies/hobbiesApp';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <ReadingApp />
       <SleepApp />
       <MedicationApp />
+      <HobbiesApp />
     </div>
     </div>
   );
