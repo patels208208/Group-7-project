@@ -8,6 +8,7 @@ import ReadingApp from './reading/readingApp';
 import SleepApp from './sleep/sleepApp';
 import MedicationApp from './medication/medicationApp';
 import HobbiesApp from './hobbies/hobbiesApp';
+import BottomNavigation from './components/BottomNavigation.jsx';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <MedicationApp />
       <HobbiesApp />
     </div>
+    <BottomNavigation />
     </div>
   );
 };
