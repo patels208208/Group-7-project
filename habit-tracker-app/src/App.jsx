@@ -31,6 +31,7 @@ function App() {
       <Grid /> 
     </div>
     <div className="habit-tracker">
+	);
       <HydrationApp />
       <NutritionApp />
       <MovementApp />
@@ -41,6 +42,7 @@ function App() {
     </div>
     <BottomNavigation />
     </div>
+    
   );
 };
 
