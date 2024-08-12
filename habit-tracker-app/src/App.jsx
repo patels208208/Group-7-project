@@ -1,4 +1,5 @@
 import './App.css';
+import Navigation from './components/Navigation.jsx';
 import Grid from './components/Grid.jsx';
 import HydrationApp from './hydration/hydrationApp';
 import NutritionApp from './nutrition/nutritionApp';
@@ -11,7 +12,8 @@ import HobbiesApp from './hobbies/hobbiesApp';
 function App() {
   return (
     <div>
-    <h1>Habit tracker</h1>
+      <Navigation />
+    <h1 className="text-3xl font-bold underline">Habit tracker</h1>
     <div className="App">
       <Grid /> 
     </div>
