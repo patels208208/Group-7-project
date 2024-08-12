@@ -49,7 +49,8 @@
     ]
   },
   "devDependencies": {
-    "eslint-plugin-react": "^7.35.0"
+    "eslint-plugin-react": "^7.35.0",
+    "tailwindcss": "^3.4.9"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
