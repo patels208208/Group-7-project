@@ -8,6 +8,7 @@ import ReadingApp from './reading/readingApp';
 import SleepApp from './sleep/sleepApp';
 import MedicationApp from './medication/medicationApp';
 import HobbiesApp from './hobbies/hobbiesApp';
+import BottomNavigation from './components/BottomNavigation.jsx';
 import {Login} from './login/login.jsx';
 import {Register} from './login/register.jsx';
 import { useState } from "react";
@@ -39,6 +40,7 @@ function App() {
       <MedicationApp />
       <HobbiesApp />
     </div>
+    <BottomNavigation />
     </div>
     
   );
