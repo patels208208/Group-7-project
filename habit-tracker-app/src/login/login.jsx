@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./login.css";
+import fullLogo from '../assets/images/logos/fullLogo.png'
+import yellowLogo from '../assets/images/logos/logoYellow.png'
 
 export const Login = (props) => {
 	const [email, setEmail] = useState("");
@@ -12,6 +14,10 @@ export const Login = (props) => {
 
 	return (
 		<div className="form-container">
+              <img className="fullLogo"
+                src={fullLogo}
+                alt="Habit Tracker Logo"
+              />
 			<h2>Login</h2>
 			<form className="loginForm" onSubmit={clickSubmit}>
 				<label htmlFor="email">Email</label>

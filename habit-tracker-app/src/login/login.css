@@ -1,10 +1,9 @@
 h2 {
 	text-align: center;
 	padding-bottom: 30px;
-    color: #037f8c;
+	color: #037f8c;
 }
 
-.form-container,
 .loginForm,
 .registerForm {
 	display: flex;
@@ -12,16 +11,44 @@ h2 {
 	flex-direction: column;
 	text-align: left;
 	padding-bottom: 5px;
+	/* background-image: url('../assets/images/logos/logoYellow.png');
+    background-repeat: no-repeat;
+    background-position:bottom; */
 }
 
-.form-container {
-    border: 2px solid #037f8c;;
-    border-radius: 10px;
-    padding-left: 80px;
-    padding-right: 80px;
-    padding-bottom: 80px;
-    padding-top: 40px;
 
+.form-container {
+	border: 2px solid #037f8c;
+	border-radius: 10px;
+	padding-left: 60px;
+	padding-right: 60px;
+	padding-bottom: 60px;
+	padding-top: 40px;
+	margin: 20px;
+}
+
+@media screen and (min-width: 600px) {
+	.form-container {
+		border: 2px solid #037f8c;
+		border-radius: 10px;
+		padding-left: 60px;
+		padding-right: 60px;
+		padding-bottom: 60px;
+		padding-top: 40px;
+		margin: 20px;
+	}
+}
+
+@media screen and (max-width: 389px) {
+	.form-container {
+		border: 2px solid #037f8c;
+		border-radius: 10px;
+		padding-left: 60px;
+		padding-right: 60px;
+		padding-bottom: 60px;
+		padding-top: 40px;
+		margin: 20px;
+	}
 }
 
 .switchButton {
@@ -29,20 +56,19 @@ h2 {
 	text-decoration: underline;
 }
 
-
 button {
 	border: none;
 	background-color: #037f8c;
-    color: white;
+	color: white;
 	margin: 10px;
 	padding: 5px;
 	border-radius: 20px;
-	cursor: pointer; 
-} 
+	cursor: pointer;
+}
 
 .switchButton {
 	border: none;
-    color:#037f8c;
+	color: #037f8c;
 	margin: 10px;
 	padding: 5px;
 	border-radius: 20px;
@@ -55,4 +81,9 @@ input {
 	padding-bottom: 15px;
 	border-radius: 5px;
 	border: none;
+}
+
+.fullLogo {
+	padding-left: 15px;
+	padding-bottom: 10px;
 }
