@@ -1,24 +1,25 @@
-import '../assets/styles/habitIcon.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import "../assets/styles/habitIcon.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGlassWater, faUtensils, faPersonWalking, faBookOpen, faBed, faPills, faIcons, faBath, faPaw, faSeedling, faPeopleGroup, faComments } from "@fortawesome/free-solid-svg-icons";
 
-const hydrationIcon =<FontAwesomeIcon icon="fa-solid fa-glass-water" size="3x" />
-const foodIcon = <FontAwesomeIcon icon="fa-solid fa-utensils" size="3x"/>
-const movementIcon = <FontAwesomeIcon icon="fa-solid fa-person-walking" size="3x" />
-const readingIcon =<FontAwesomeIcon icon="fa-solid fa-book-open" size="3x"/>
-const sleepIcon =  <FontAwesomeIcon icon="fa-solid fa-bed" size="3x"/>
-const medicationIcon = <FontAwesomeIcon icon="fa-solid fa-pills" size="3x"/>
-const hobbiesIcon = <FontAwesomeIcon icon="fa-solid fa-icons" size="3x"/>
-const hygieneIcon = <FontAwesomeIcon icon="fa-solid fa-bath" size="3x"/>
-const petCareIcon = <FontAwesomeIcon icon="fa-solid fa-paw" size="3x"/>
-const plantCareIcon = <FontAwesomeIcon icon="fa-solid fa-seedling" size="3x"/>
-const socialIcon = <FontAwesomeIcon icon="fa-solid fa-people-group" size="3x"/>
-const communicationIcon = <FontAwesomeIcon icon="fa-solid fa-comments" size="3x"/>
+const hydrationIcon = (<FontAwesomeIcon icon={faGlassWater} size="3x" alt="Hydration" />);
+const foodIcon = (<FontAwesomeIcon icon={faUtensils} size="3x" alt="Food" />);
+const movementIcon = (<FontAwesomeIcon icon={faPersonWalking} size="3x" alt="Movement" />);
+const readingIcon = (<FontAwesomeIcon icon={faBookOpen} size="3x" alt= "Reading" />);
+const sleepIcon = (<FontAwesomeIcon icon={faBed} size="3x" alt="Sleep" />);
+const medicationIcon = (<FontAwesomeIcon icon={faPills} size="3x" alt="Medication" />);
+const hobbiesIcon = (<FontAwesomeIcon icon={faIcons} size="3x" alt="Hobbies" />);
+const hygieneIcon = (<FontAwesomeIcon icon={faBath} size="3x" alt="Hygeine" />);
+const petCareIcon = (<FontAwesomeIcon icon={faPaw} size="3x" alt="Pet Care" />);
+const plantCareIcon = (<FontAwesomeIcon icon={faSeedling} size="3x" alt="Plant Care" />);
+const socialIcon = (<FontAwesomeIcon icon={faPeopleGroup} size="3x" alt="Socialising" />);
+const communicationIcon = (<FontAwesomeIcon icon={faComments} size="3x" alt="Communication" />);
 
 const icons = [
   hydrationIcon,
   foodIcon,
   movementIcon,
-  readingIcon, 
+  readingIcon,
   sleepIcon,
   medicationIcon,
   hobbiesIcon,
@@ -26,16 +27,16 @@ const icons = [
   petCareIcon,
   plantCareIcon,
   socialIcon,
-  communicationIcon
+  communicationIcon,
 ];
-
 
 function HabitIcon({ habitIcon, habitName }) {
   return (
-    <div className="habit-icon">
-      {habitIcon}
+  <div className="habit-icon">
+    {habitIcon}
     </div>
-    );
-};
+);
+}
+
 export { icons };
 export default HabitIcon;
