@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "16625ff5-b289-4162-810c-4c8b5f2cc1e3",
+		"name": "Habit tracker API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "36485699"
+	},
+	"item": [
+		{
+			"name": "Habit tracker API homepage",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3001/"
+			},
+			"response": []
+		},
+		{
+			"name": "Movement app data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3001/movement"
+			},
+			"response": []
+		},
+		{
+			"name": "Hydration app data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3001/hydration"
+			},
+			"response": []
+		},
+		{
+			"name": "Nutrition app data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3001/nutrition"
+			},
+			"response": []
+		},
+		{
+			"name": "Reading app data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3001/reading"
+			},
+			"response": []
+		},
+		{
+			"name": "Sleep app data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3001/sleep"
+			},
+			"response": []
+		},
+		{
+			"name": "Medication app data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3001/medication"
+			},
+			"response": []
+		},
+		{
+			"name": "Hobbies app data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3001/hobbies"
+			},
+			"response": []
+		}
+	]
+}
