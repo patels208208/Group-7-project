@@ -1,6 +1,7 @@
 h2 {
 	text-align: center;
 	padding-bottom: 30px;
+    color: #037f8c;
 }
 
 .form-container,
@@ -13,25 +14,35 @@ h2 {
 	padding-bottom: 5px;
 }
 
+.form-container {
+    border: 2px solid #037f8c;;
+    border-radius: 10px;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-bottom: 80px;
+    padding-top: 40px;
+
+}
+
 .switchButton {
 	background: none;
 	text-decoration: underline;
 }
 
-@media screen and (min-width: 600px) {
-	.form-container {
-		border: 1px solid black;
-		padding-left: 80px;
-		padding-right: 80px;
-		padding-bottom: 80px;
-		padding-top: 40px;
-		margin: 8px;
-	}
-}
 
 button {
 	border: none;
-	background-color: white;
+	background-color: #037f8c;
+    color: white;
+	margin: 10px;
+	padding: 5px;
+	border-radius: 20px;
+	cursor: pointer; 
+} 
+
+.switchButton {
+	border: none;
+    color:#037f8c;
 	margin: 10px;
 	padding: 5px;
 	border-radius: 20px;
