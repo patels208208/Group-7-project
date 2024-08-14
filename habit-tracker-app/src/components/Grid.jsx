@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import HabitSquare from "./HabitSquare";
-import { icons } from "./HabitIcon";
+import { icon as habitIcons } from "./HabitIcon";
 import "../assets/styles/grid.css";
 
 const Grid = () => {
@@ -16,7 +16,7 @@ const Grid = () => {
 
   return (
     <div className="grid">
-      {icons.map((icon, i) => (
+      {habitIcons.map((icon, i) => (
         <HabitSquare
           className={`habit-square ${selectedHabitSquare.includes(i) ? "selected" : ""}`}
           key={i}

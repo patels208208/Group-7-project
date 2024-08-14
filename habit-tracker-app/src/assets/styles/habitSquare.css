@@ -1,6 +1,7 @@
-.habit-square {
+.habitSquare {
   color: #037F8C;
   border: 2px solid #037F8C;
+  background-color:#F7F9FF;
   border-radius: 10px;
   width: 60px;
   height: 60px;
