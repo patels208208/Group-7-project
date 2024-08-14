@@ -75,9 +75,10 @@ export const Register = (props) => {
 					name="confirmPassword"
 					required
 				/>
-
-				<label htmlFor="terms">I agree to terms and conditions</label>
+				<div className="flex-container">
+				<label htmlFor="terms">I agree to the terms and conditions</label>
 				<input type="checkbox" id="terms" name="terms" required />
+				</div>
 
 				<button type="submit">Sign Up</button>
 			</form>

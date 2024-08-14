@@ -87,3 +87,15 @@ input {
 	padding-left: 15px;
 	padding-bottom: 10px;
 }
+
+@media screen and (min-width: 379px) {
+.flex-container {
+	font-size: 12px ;
+}
+}
+
+@media screen and (max-width: 378px) {
+	.flex-container {
+		font-size: 10px ;
+	}
+	}
