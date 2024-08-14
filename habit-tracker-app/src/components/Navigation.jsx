@@ -15,14 +15,14 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="bg-teal-800">
+    <nav className="bg-briny-500">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             {/* Mobile menu button */}
             <button
               type="button"
-              className="relative inline-flex items-center justify-center rounded-md p-2 text-teal-400 hover:bg-teal-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              className="relative inline-flex items-center justify-center rounded-md p-2 text-white bg-briny-300 hover:bg-briny-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
               aria-controls="mobile-menu"
               aria-expanded={isMobileMenuOpen}
               onClick={toggleMobileMenu}
@@ -73,20 +73,20 @@ const Navigation = () => {
               <div className="flex space-x-4">
                 <a
                   href="#"
-                  className="rounded-md bg-teal-900 px-3 py-2 text-sm font-medium text-white"
+                  className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-briny-700 hover:text-white"
                   aria-current="page"
                 >
                   Home
                 </a>
                 <a
                   href="#"
-                  className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-teal-700 hover:text-white"
+                  className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-briny-700 hover:text-white"
                 >
                   Team
                 </a>
                 <a
                   href="#"
-                  className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-teal-700 hover:text-white"
+                  className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-briny-700 hover:text-white"
                 >
                   Habits
                 </a>
@@ -102,20 +102,20 @@ const Navigation = () => {
         <div className="space-y-1 px-2 pb-3 pt-2">
           <a
             href="#"
-            className="block rounded-md bg-teal-900 px-3 py-2 text-base font-medium text-white"
+            className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-briny-700 hover:text-white"
             aria-current="page"
           >
             Home
           </a>
           <a
             href="#"
-            className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-teal-700 hover:text-white"
+            className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-briny-700 hover:text-white"
           >
             Team
           </a>
           <a
             href="#"
-            className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-teal-700 hover:text-white"
+            className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-briny-700 hover:text-white"
           >
             Habits
           </a>
