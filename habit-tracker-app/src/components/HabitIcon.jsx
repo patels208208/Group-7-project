@@ -15,7 +15,7 @@ const plantCareIcon = (<FontAwesomeIcon icon={faSeedling} size="3x" alt="Plant C
 const socialIcon = (<FontAwesomeIcon icon={faPeopleGroup} size="3x" alt="Socialising" />);
 const communicationIcon = (<FontAwesomeIcon icon={faComments} size="3x" alt="Communication" />);
 
-const icons = [
+const icon = [
   hydrationIcon,
   foodIcon,
   movementIcon,
@@ -33,10 +33,10 @@ const icons = [
 function HabitIcon({ habitIcon, habitName }) {
   return (
   <div className="habit-icon">
-    {habitIcon}
+   {habitIcon}
     </div>
 );
 }
 
-export { icons };
+export { icon };
 export default HabitIcon;

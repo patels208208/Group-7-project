@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import './hobbiesApp.css';
 import { format } from 'date-fns';
+import HabitSquare from '../components/HabitSquare.jsx';
+import { icon } from '../components/HabitIcon.jsx';
 
 const handleClick = async (event) => {
   const response = await fetch('http://localhost:3001/hobbies', {
@@ -11,7 +13,7 @@ const handleClick = async (event) => {
       'Content-type': 'application/json'
     },
     body: JSON.stringify({
-      habit_id:"7",
+      habit_id:"6",
       completed: format(new Date(), 'yyyy/MM/dd kk:mm:ss')
     }),
   });
@@ -25,7 +27,10 @@ function HobbiesApp() {
   return (
     <div className="hobbies-app">
         <h2>Hobbies</h2>
-        <button onClick={handleClick} class="hobbies-button">Tap here when daily goal is complete</button>;
+        <button onClick={handleClick} class="hobbies-button">
+        <HabitSquare icon={icon[6]} habitName="Hobbies" />
+        Tap here when daily goal is complete
+        </button>
     </div>
   )
 };
