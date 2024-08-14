@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import './sleepApp.css';
 import { format } from 'date-fns';
+import HabitSquare from '../components/HabitSquare.jsx';
+import { icon } from '../components/HabitIcon.jsx';
 
 const handleClick = async (event) => {
   const response = await fetch('http://localhost:3001/sleep', {
@@ -25,7 +27,9 @@ function SleepApp() {
   return (
     <div className="sleep-app">
         <h2>Sleep</h2>
-        <button onClick={handleClick} class="sleep-button">Tap here when daily goal is complete</button>;
+        <button onClick={handleClick} class="sleep-button">
+        <HabitSquare icon={icon[4]} habitName="Sleep" />
+        Tap here when daily goal is complete</button>
     </div>
   )
 };

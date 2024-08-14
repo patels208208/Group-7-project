@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import './medicationApp.css';
 import { format } from 'date-fns';
+import HabitSquare from '../components/HabitSquare.jsx';
+import { icon } from '../components/HabitIcon.jsx';
 
 const handleClick = async (event) => {
   const response = await fetch('http://localhost:3001/medication', {
@@ -25,7 +27,9 @@ function MedicationApp() {
   return (
     <div className="medication-app">
         <h2>Medication</h2>
-        <button onClick={handleClick} class="medication-button">Tap here when daily goal is complete</button>;
+        <button onClick={handleClick} class="medication-button">
+        <HabitSquare icon={icon[5]} habitName="Medication" />
+        Tap here when daily goal is complete</button>
     </div>
   )
 };
