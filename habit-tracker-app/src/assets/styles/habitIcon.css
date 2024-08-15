@@ -4,8 +4,10 @@
   height: 50px;
   margin: 0 10px;
   cursor: pointer;
+  padding: 10px;
 }
 
-.icon-teal {
-  color: #037F8C;
+.habit-icon:hover {
+  background-color: #037F8C;
+  color: #F7F9FF;
 }
