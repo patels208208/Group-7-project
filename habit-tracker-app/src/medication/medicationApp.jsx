@@ -28,7 +28,7 @@ function MedicationApp() {
     <div className="medication-app">
         <h2>Medication</h2>
         <button onClick={handleClick} class="medication-button">
-        <HabitSquare icon={icon[5]} habitName="Medication" />
+        <HabitSquare icon={icon[5]} habitName="Medication" class-name="medication-app"/>
         Tap here when daily goal is complete</button>
     </div>
   )

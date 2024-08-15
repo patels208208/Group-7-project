@@ -28,7 +28,7 @@ function SleepApp() {
     <div className="sleep-app">
         <h2>Sleep</h2>
         <button onClick={handleClick} class="sleep-button">
-        <HabitSquare icon={icon[4]} habitName="Sleep" />
+        <HabitSquare icon={icon[4]} habitName="Sleep" className="sleep-app" />
         Tap here when daily goal is complete</button>
     </div>
   )
