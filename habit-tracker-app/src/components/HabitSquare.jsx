@@ -1,12 +1,12 @@
 import "../assets/styles/habitSquare.css";
 
-const HabitSquare = ({ className, icon, habitName}) => {
+const HabitSquare = ({ className, icon, habitName, handleClick}) => {
   const handleClick = () => {
-    onclick(icon);
+    onClick(icon);
   };
   
   return (
-    <div className={className} onClick={handleClick}>
+    <div className={className} onClick={() => handleClick(icon)}>
       {icon}
       <p>{habitName}</p>
     </div>

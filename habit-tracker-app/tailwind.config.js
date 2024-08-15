@@ -5,6 +5,10 @@ module.exports = {
   ],
   theme: {
 		extend: {
+			fontFamily: {
+				"body": ["Raleway", "sans-serif"],
+				"heading": ["Poppins", "sans-serif"],
+			},
 			colors: {
 				theme: {
 					light: "#f7f9ff",

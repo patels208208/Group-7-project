@@ -27,8 +27,8 @@ function HydrationApp() {
   return (
     <div className="hydration-app">
         <h2>Hydration</h2>
-        <button onClick={handleClick} class="water-drop">
-          <HabitSquare icon={icon[0]} habitName="Hydration" />
+        <button onClick={handleClick} className="water-drop">
+          <HabitSquare icon={icon[0]} habitName="Hydration" className="hydration-app" />
           Tap here when daily goal is complete</button>
     </div>
   )
