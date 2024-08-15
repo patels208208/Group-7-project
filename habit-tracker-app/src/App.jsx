@@ -6,6 +6,9 @@ import HabitTracker from "./pages/habit-tracker.jsx";
 import HydrationApp from "./hydration/hydrationApp.jsx";
 import { Register } from "./login/register.jsx";
 import { Login } from "./login/login.jsx";
+import Home from "./pages/home.jsx";
+import AboutUs from "./pages/about-us.jsx";
+import Profile from "./pages/profile.jsx";
 
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
@@ -19,7 +22,6 @@ function App() {
       <div className="top-navigation">
         <Navigation />
       </div>
-      <h1 className="text-3xl font-bold underline">Habit tracker</h1>
       <div className="App">
         <Routes>
           <Route path="/" element={<Login />} />
@@ -28,6 +30,9 @@ function App() {
           <Route path="/habit-tracker" element={<HabitTracker />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="about-us" element={<AboutUs />} />
+          <Route path="profile" element={<Profile />} />
         </Routes>
         
       </div>

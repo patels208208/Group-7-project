@@ -64,29 +64,31 @@ const Navigation = () => {
           </div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex flex-shrink-0 items-center">
+              <Link to="/">
               <img
                 className="h-8 w-auto"
                 src={logo}
                 alt="Habit Tracker"
               />
+              </Link>
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
                 <Link
-                  to="#"
+                  to="/home"
                   className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-briny-700 hover:text-white"
                   aria-current="page"
                 >
                   Home
                 </Link>
                 <Link
-                  to="##"
+                  to="/about-us"
                   className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-briny-700 hover:text-white"
                 >
                   Team
                 </Link>
                 <Link
-                  to="###"
+                  to="/habit-tracker"
                   className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-briny-700 hover:text-white"
                 >
                   Habits
@@ -102,20 +104,20 @@ const Navigation = () => {
       <div className={`sm:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`} id="mobile-menu">
         <div className="space-y-1 px-2 pb-3 pt-2">
           <Link
-            to="#"
+            to="/home"
             className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-briny-700 hover:text-white"
             aria-current="page"
           >
             Home
           </Link>
           <Link
-            to="#"
+            to="/about-us"
             className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-briny-700 hover:text-white"
           >
             Team
           </Link>
           <Link
-            to="#"
+            to="/habit-tracker"
             className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-briny-700 hover:text-white"
           >
             Habits
