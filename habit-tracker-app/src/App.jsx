@@ -1,48 +1,41 @@
-import './App.css';
-import Navigation from './components/Navigation.jsx';
-import Grid from './components/Grid.jsx';
-import HydrationApp from './hydration/hydrationApp';
-import NutritionApp from './nutrition/nutritionApp';
-import MovementApp from './movement/movementApp';
-import ReadingApp from './reading/readingApp';
-import SleepApp from './sleep/sleepApp';
-import MedicationApp from './medication/medicationApp';
-import HobbiesApp from './hobbies/hobbiesApp';
-import BottomNavigation from './components/BottomNavigation.jsx';
-import {Login} from './login/login.jsx';
-import {Register} from './login/register.jsx';
+import "./App.css";
+import Navigation from "./components/Navigation.jsx";
+import Grid from "./components/Grid.jsx";
+import BottomNavigation from "./components/BottomNavigation.jsx";
+import HabitTracker from "./pages/habit-tracker.jsx";
+import HydrationApp from "./hydration/hydrationApp.jsx";
+import { Register } from "./login/register.jsx";
+import { Login } from "./login/login.jsx";
+
 import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
-  const [currentForm, setCurrentForm] = useState('Login');
-  const changeForm = (formName) =>
-    setCurrentForm(formName);
+  const [currentForm, setCurrentForm] = useState("Login");
+  const changeForm = (formName) => setCurrentForm(formName);
 
   return (
-    <div>
-      <Navigation />
-    <h1 className="text-3xl font-bold underline">Habit tracker</h1>
-    <div className="App">
-    <div>
-      {
-      currentForm === 'Login' ? <Login onFormSwitch={changeForm}/> : <Register onFormSwitch={changeForm} />
-      }
+    <Router>
+      <div className="top-navigation">
+        <Navigation />
       </div>
-      <Grid /> 
-    </div>
-    <div className="habit-tracker">
-      <HydrationApp />
-      <NutritionApp />
-      <MovementApp />
-      <ReadingApp />
-      <SleepApp />
-      <MedicationApp />
-      <HobbiesApp />
-    </div>
-    <BottomNavigation />
-    </div>
-    
+      <h1 className="text-3xl font-bold underline">Habit tracker</h1>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/hydration" element={<HydrationApp />} />
+          <Route path="/grid" element={<Grid />} />
+          <Route path="/habit-tracker" element={<HabitTracker />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+        
+      </div>
+      <div className="bottom-navigation">
+        <BottomNavigation />
+      </div>
+    </Router>
   );
-};
+}
 
 export default App;
