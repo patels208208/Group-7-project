@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import "./login.css";
 import fullLogo from '../assets/images/logos/fullLogo.png'
 import yellowLogo from '../assets/images/logos/logoYellow.png'
+import { useNavigate } from "react-router-dom";
 
 export const Register = (props) => {
+	const navigate = useNavigate();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [cPassword, confirmPassword] = useState("");
@@ -14,6 +16,11 @@ export const Register = (props) => {
 		e.preventDefault();
 		console.log(`${firstName} ${surname}`);
 	};
+
+	function login() {
+		navigate("/login");
+	  }
+	
 
 	return (
 		<div className="form-container">
@@ -84,7 +91,7 @@ export const Register = (props) => {
 			</form>
 			<button
 				className="switchButton"
-				onClick={() => props.onFormSwitch("Login")}
+				onClick={login}
 			>
 				{" "}
 				Already have an account? Login Here

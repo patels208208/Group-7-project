@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../assets/styles/navigation.css';
 import logo from '../assets/images/logos/logoOrange.png'
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 const Navigation = () => {
 
@@ -66,30 +67,30 @@ const Navigation = () => {
               <img
                 className="h-8 w-auto"
                 src={logo}
-                alt="Your Company"
+                alt="Habit Tracker"
               />
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
-                <a
-                  href="#"
+                <Link
+                  to="#"
                   className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-briny-700 hover:text-white"
                   aria-current="page"
                 >
                   Home
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="##"
                   className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-briny-700 hover:text-white"
                 >
                   Team
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="###"
                   className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-briny-700 hover:text-white"
                 >
                   Habits
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -100,25 +101,25 @@ const Navigation = () => {
       {/* Mobile menu */}
       <div className={`sm:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`} id="mobile-menu">
         <div className="space-y-1 px-2 pb-3 pt-2">
-          <a
-            href="#"
+          <Link
+            to="#"
             className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-briny-700 hover:text-white"
             aria-current="page"
           >
             Home
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="#"
             className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-briny-700 hover:text-white"
           >
             Team
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="#"
             className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-briny-700 hover:text-white"
           >
             Habits
-          </a>
+          </Link>
         </div>
       </div>
     </nav>
