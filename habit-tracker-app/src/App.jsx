@@ -9,6 +9,7 @@ import { Login } from "./login/login.jsx";
 import Home from "./pages/home.jsx";
 import AboutUs from "./pages/about-us.jsx";
 import Profile from "./pages/profile.jsx";
+import MainLayout from "./components/MainLayout.jsx";
 
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
