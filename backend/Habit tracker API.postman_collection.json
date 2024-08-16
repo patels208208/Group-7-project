@@ -16,20 +16,20 @@
 			"response": []
 		},
 		{
-			"name": "Movement app data",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": "http://localhost:3001/movement"
-			},
-			"response": []
-		},
-		{
 			"name": "Hydration app data",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"url": "http://localhost:3001/hydration"
+			},
+			"response": []
+		},
+		{
+			"name": "Movement app data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3001/movement"
 			},
 			"response": []
 		},
@@ -75,6 +75,51 @@
 				"method": "POST",
 				"header": [],
 				"url": "http://localhost:3001/hobbies"
+			},
+			"response": []
+		},
+		{
+			"name": "Self care app data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3001/selfcare"
+			},
+			"response": []
+		},
+		{
+			"name": "Pets app data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3001/pets"
+			},
+			"response": []
+		},
+		{
+			"name": "Plants app data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3001/plants"
+			},
+			"response": []
+		},
+		{
+			"name": "Socialising app data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3001/socialising"
+			},
+			"response": []
+		},
+		{
+			"name": "Social media app data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3001/socialmedia"
 			},
 			"response": []
 		}

@@ -31,10 +31,10 @@ app.get('/', (req, res) => {
 });
 
 app.post('/hydration', (req, res) => {
-    const { habit_id, completed } = req.body;
+    const { habit_id } = req.body;
 
-const sql = 'INSERT INTO hydration (habit_id, completed) VALUES (?, ?)';
-pool.query(sql, [habit_id, completed], (err, result) => {
+const sql = 'INSERT INTO user_habit (habit_id) VALUES (?)';
+pool.query(sql, [habit_id], (err, result) => {
     if (err) {
         console.error('Error entering hydration data', err.message);
         return res.status(500).json({ error: 'Database error' });
@@ -45,10 +45,10 @@ pool.query(sql, [habit_id, completed], (err, result) => {
 });
 
 app.post('/nutrition', (req, res) => {
-    const { habit_id, completed } = req.body;
+    const { habit_id } = req.body;
 
-const sql = 'INSERT INTO nutrition (habit_id, completed) VALUES (?, ?)';
-pool.query(sql, [habit_id, completed], (err, result) => {
+const sql = 'INSERT INTO user_habit (habit_id) VALUES (?)';
+pool.query(sql, [habit_id], (err, result) => {
     if (err) {
         console.error('Error entering nutrition data', err.message);
         return res.status(500).json({ error: 'Database error' });
@@ -59,10 +59,10 @@ pool.query(sql, [habit_id, completed], (err, result) => {
 });
 
 app.post('/movement', (req, res) => {
-    const { habit_id, completed } = req.body;
+    const { habit_id } = req.body;
 
-const sql = 'INSERT INTO movement (habit_id, completed) VALUES (?, ?)';
-pool.query(sql, [habit_id, completed], (err, result) => {
+const sql = 'INSERT INTO user_habit (habit_id) VALUES (?)';
+pool.query(sql, [habit_id], (err, result) => {
     if (err) {
         console.error('Error entering movement data', err.message);
         return res.status(500).json({ error: 'Database error' });
@@ -73,10 +73,10 @@ pool.query(sql, [habit_id, completed], (err, result) => {
 });
 
 app.post('/reading', (req, res) => {
-    const { habit_id, completed } = req.body;
+    const { habit_id } = req.body;
 
-const sql = 'INSERT INTO reading (habit_id, completed) VALUES (?, ?)';
-pool.query(sql, [habit_id, completed], (err, result) => {
+const sql = 'INSERT INTO user_habit (habit_id) VALUES (?)';
+pool.query(sql, [habit_id], (err, result) => {
     if (err) {
         console.error('Error entering reading data', err.message);
         return res.status(500).json({ error: 'Database error' });
@@ -87,10 +87,10 @@ pool.query(sql, [habit_id, completed], (err, result) => {
 });
 
 app.post('/sleep', (req, res) => {
-    const { habit_id, completed } = req.body;
+    const { habit_id } = req.body;
 
-const sql = 'INSERT INTO sleep (habit_id, completed) VALUES (?, ?)';
-pool.query(sql, [habit_id, completed], (err, result) => {
+const sql = 'INSERT INTO user_habit (habit_id) VALUES (?)';
+pool.query(sql, [habit_id], (err, result) => {
     if (err) {
         console.error('Error entering sleep data', err.message);
         return res.status(500).json({ error: 'Database error' });
@@ -101,10 +101,10 @@ pool.query(sql, [habit_id, completed], (err, result) => {
 });
 
 app.post('/medication', (req, res) => {
-    const { habit_id, completed } = req.body;
+    const { habit_id } = req.body;
 
-const sql = 'INSERT INTO medication (habit_id, completed) VALUES (?, ?)';
-pool.query(sql, [habit_id, completed], (err, result) => {
+const sql = 'INSERT INTO user_habit (habit_id) VALUES (?)';
+pool.query(sql, [habit_id], (err, result) => {
     if (err) {
         console.error('Error entering medication data', err.message);
         return res.status(500).json({ error: 'Database error' });
@@ -115,15 +115,85 @@ pool.query(sql, [habit_id, completed], (err, result) => {
 });
 
 app.post('/hobbies', (req, res) => {
-    const { habit_id, completed } = req.body;
+    const { habit_id } = req.body;
 
-const sql = 'INSERT INTO hobbies (habit_id, completed) VALUES (?, ?)';
-pool.query(sql, [habit_id, completed], (err, result) => {
+const sql = 'INSERT INTO user_habit (habit_id) VALUES (?)';
+pool.query(sql, [habit_id], (err, result) => {
     if (err) {
         console.error('Error entering hobbies data', err.message);
         return res.status(500).json({ error: 'Database error' });
     }
 
     res.status(201).json({ message: 'Hobbies data saved successfully'});
+});
+});
+
+app.post('/selfcare', (req, res) => {
+    const { habit_id } = req.body;
+
+const sql = 'INSERT INTO user_habit (habit_id) VALUES (?)';
+pool.query(sql, [habit_id], (err, result) => {
+    if (err) {
+        console.error('Error entering self care data', err.message);
+        return res.status(500).json({ error: 'Database error' });
+    }
+
+    res.status(201).json({ message: 'Self-care data saved successfully'});
+});
+});
+
+app.post('/pets', (req, res) => {
+    const { habit_id } = req.body;
+
+const sql = 'INSERT INTO user_habit (habit_id) VALUES (?)';
+pool.query(sql, [habit_id], (err, result) => {
+    if (err) {
+        console.error('Error entering pets data', err.message);
+        return res.status(500).json({ error: 'Database error' });
+    }
+
+    res.status(201).json({ message: 'Pets data saved successfully'});
+});
+});
+
+app.post('/plants', (req, res) => {
+    const { habit_id } = req.body;
+
+const sql = 'INSERT INTO user_habit (habit_id) VALUES (?)';
+pool.query(sql, [habit_id], (err, result) => {
+    if (err) {
+        console.error('Error entering plants data', err.message);
+        return res.status(500).json({ error: 'Database error' });
+    }
+
+    res.status(201).json({ message: 'Plants data saved successfully'});
+});
+});
+
+app.post('/socialising', (req, res) => {
+    const { habit_id } = req.body;
+
+const sql = 'INSERT INTO user_habit (habit_id) VALUES (?)';
+pool.query(sql, [habit_id], (err, result) => {
+    if (err) {
+        console.error('Error entering socialising data', err.message);
+        return res.status(500).json({ error: 'Database error' });
+    }
+
+    res.status(201).json({ message: 'Socialising data saved successfully'});
+});
+});
+
+app.post('/socialmedia', (req, res) => {
+    const { habit_id } = req.body;
+
+const sql = 'INSERT INTO user_habit (habit_id) VALUES (?)';
+pool.query(sql, [habit_id], (err, result) => {
+    if (err) {
+        console.error('Error entering social media data', err.message);
+        return res.status(500).json({ error: 'Database error' });
+    }
+
+    res.status(201).json({ message: 'Social media data saved successfully'});
 });
 });

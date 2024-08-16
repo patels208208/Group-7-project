@@ -44,6 +44,7 @@ foreign key (user_habit_id) references user_habit(user_habit_id)
 insert into habit_type (habit_name, created_dt, updated_dt)
 values ("Hydration", current_timestamp(), current_timestamp() ),
 ("Nutrition", current_timestamp(), current_timestamp() ),
+("Movement", current_timestamp(), current_timestamp() ),
 ("Reading", current_timestamp(), current_timestamp() ),
 ("Sleep", current_timestamp(), current_timestamp() ),
 ("Medication", current_timestamp(), current_timestamp() ),
@@ -55,3 +56,4 @@ values ("Hydration", current_timestamp(), current_timestamp() ),
 ("Social Media", current_timestamp(), current_timestamp() );
 
 select * from habit_type;
+select * from user_habit;
