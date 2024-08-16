@@ -13,7 +13,7 @@ const conn = mysql.createConnection({
    // database: process.env.DB_NAME 
 host: process.env.DB_HOST ||'localhost',
 user: process.env.DB_USER || 'root',
-password: process.env.DB_PASSWORD || 'Aayueva0409',
+password: process.env.DB_PASSWORD || '',
 database: process.env.DB_NAME || 'habit_tracker_app'
 })
 
