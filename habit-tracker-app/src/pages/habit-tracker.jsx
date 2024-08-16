@@ -10,7 +10,6 @@ import PetsApp from "../pets/petsApp.jsx";
 import PlantsApp from "../plants/plantsApp.jsx";
 import SocialisingApp from "../socialising/socialisingApp.jsx";
 import SocialmediaApp from "../socialmedia/socialmediaApp.jsx";
-import DailycalenderviewApp from "../dailycalendarview/dailycalendarviewApp.jsx";
 
 function HabitTracker() {
   return (
