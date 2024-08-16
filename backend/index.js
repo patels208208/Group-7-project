@@ -197,3 +197,16 @@ pool.query(sql, [habit_id], (err, result) => {
     res.status(201).json({ message: 'Social media data saved successfully'});
 });
 });
+
+app.get('/completion', (req, res) => {
+    const sql = 'SELECT * from user_habit';
+
+    pool.query(sql, (err, results) => {
+    if(err) {
+        console.error('Error fetching data:', err.message);
+        return res.status(500).json({ error: 'Database error' });
+        }
+
+        res.status(200).json(results);
+    });
+});
