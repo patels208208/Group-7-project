@@ -24,6 +24,7 @@ function App() {
       </div>
       <div className="App">
         <Routes>
+          <Route element={<MainLayout/>} />  
           <Route path="/" element={<Login />} />
           <Route path="/hydration" element={<HydrationApp />} />
           <Route path="/grid" element={<Grid />} />
@@ -33,6 +34,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="about-us" element={<AboutUs />} />
           <Route path="profile" element={<Profile />} />
+          <Route path="*" element={<h1>Not Found</h1>} />
         </Routes>
         
       </div>

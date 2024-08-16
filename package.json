@@ -1,0 +1,11 @@
+{
+  "name": "group-7-project",
+  "version": "1.0.0",
+  "description": "## How to run the habit tracker app 1. Clone this repository to your local machine. 2. Open the 'habit-tracker-app' folder. Run the following commands in the terminal: npm install, npm start. This will initialise the React app. 3. Open the 'backend' folder. Run the following commands in the terminal: npm install, npm start. This will initialise the local server. 4. User can now interact with the app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
