@@ -23,7 +23,7 @@ function App() {
       <div className="top-navigation">
         <Navigation />
       </div>
-      <div className="App">
+      <div className="App pb-14 pt-16">
         <Routes>
           <Route element={<MainLayout/>} />  
           <Route path="/" element={<Login />} />
