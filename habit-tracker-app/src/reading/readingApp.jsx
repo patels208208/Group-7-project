@@ -14,7 +14,6 @@ const handleClick = async (event) => {
     },
     body: JSON.stringify({
       habit_id:"4",
-      completed: format(new Date(), 'yyyy/MM/dd kk:mm:ss')
     }),
   });
   const data = await response.json();
