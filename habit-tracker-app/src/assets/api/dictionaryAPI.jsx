@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-const base_url = 'https://www.dictionaryapi.com/api/v3/references/collegiate/json/voluminous?key=your-api-key'
+const base_url = 'https://www.dictionaryapi.com/api/v3/references/collegiate/json/';
 
 const apiGet = async queryString => {
-  const response = await fetch(`${base_url}${queryString}`)
-  const body = await response
+  const response = await fetch(`${base_url}${queryString}?key=your-api-key`);
+  const body = await response.json();
   return body
 };
 
@@ -41,4 +41,4 @@ return (
 );
 };
 
-export default apiGet;
+export default WordOfTheDay;
