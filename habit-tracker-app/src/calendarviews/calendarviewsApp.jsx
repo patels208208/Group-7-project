@@ -29,8 +29,8 @@ const fetchViews = () => {
         <div>
         {views.map((views) => (
               <div className='calendar' key={views.id}>
-                <p>{views.habit_id}</p>
-                <p>{format(Date(views.updated_dt), 'dd/MM/yyyy kk:mm:ss')}</p>
+                <p>Habit ID: {views.habit_id}</p>
+                <p>Date of completion: {format(Date(views.updated_dt), 'dd/MM/yyyy kk:mm:ss')}</p>
               </div>
             ))}
             </div>
