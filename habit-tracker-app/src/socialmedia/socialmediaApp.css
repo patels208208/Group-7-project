@@ -1,39 +1,32 @@
 .socialmedia-app {
-  color: #fc7a57;
-	border-style: solid;
-	border-color: #fc7a57;
-	text-align: center;
-}
-
-.socialmedia-app:hover {
-  color: #F7F9FF;
+  color: #747273;
+  border-style: solid;
+  text-align: center;
 }
 
 .socialmedia-button {
-	width: 400px;
-	height: 120px;
-	border: 1px solid #fc7a57; 
-	background-color: white;
-	color:#fc7a57;
-	box-shadow: rgb(55, 78, 102) 0px 15px 25px -10px; 
-	margin-bottom: 20px; 
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
+  border: 1px solid #747273; 
+  background-color: white; 
+  color: #747273;
+  box-shadow: rgb(55, 78, 102) 0px 15px 25px -10px; 
+  width: 400px; 
+  height: 120px; 
+  margin-bottom: 20px; 
+  font-family: 'Raleway', sans-serif;
+}
 
-	.socialmedia-button:hover {
-		background-color: #037F8C;
-		color: #F7F9FF;
-	}
+.socialmedia-button-2 {
+  border: 1px solid #747273;
+  background-color: #747273; 
+  color: #F7F9FF; 
+  box-shadow: rgb(55, 78, 102) 0px 15px 25px -10px; 
+  width: 400px; 
+  height: 120px; 
+  margin-bottom: 20px; 
+  font-family: 'Raleway', sans-serif;
+}
 
-  .socialmedia-button-2 {
-	width: 300px;
-	height: 100px;
-	border: 1px solid #fc7a57;
-	color: #fc7a57;
-	background-color: lightskyblue; 
-	box-shadow: rgb(55, 78, 102) 0px 15px 25px -10px; 
-	width: 100px; 
-	height: 100px; 
-	margin: 50px; 
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
+.socialmedia-button:hover {
+  background-color: #747273;
+  color: #F7F9FF;
+}
