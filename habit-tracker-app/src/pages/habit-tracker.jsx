@@ -12,6 +12,7 @@ import SocialisingApp from "../socialising/socialisingApp.jsx";
 import SocialmediaApp from "../socialmedia/socialmediaApp.jsx";
 import CalendarviewsApp from "../calendarviews/calendarviewsApp.jsx";
 import SocialMediaSharing from "../socialmediasharing/socialmediasharing.jsx";
+import HydrationApp2 from "../components/HydrationApp2.jsx";
 
 function HabitTracker() {
   return (
@@ -29,6 +30,7 @@ function HabitTracker() {
       <PlantsApp />
       <SocialisingApp />
       <SocialmediaApp />
+      <HydrationApp2 />
       <CalendarviewsApp />
     </div>
     <div className="socialmedia">

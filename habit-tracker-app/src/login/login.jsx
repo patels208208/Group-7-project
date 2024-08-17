@@ -46,8 +46,8 @@ export const Login = (props) => {
   return (
     <div className="flex justify-center items-center my-44">
       <div className="bg-white rounded-lg border-none w-10/12 md:w-6/12 px-6 py-4 shadow-lg">
-        <img className="pl-4 pb-2 mx-auto" src={fullLogo} alt="Habit Tracker Logo" />
-        <h2 className="text-center pb-7 text-briny-500">Login to your account</h2>
+        <img className="pl-4 pb-2 mx-auto w-44" src={fullLogo} alt="Habit Tracker Logo" />
+        <h2 className="text-center pb-7 mt-4 text-briny-600 font-heading font-medium text-xl">Log in to your account</h2>
         <form className="flex flex-col text-left pb-1" onSubmit={clickSubmit}>
           <label htmlFor="email">Email</label>
           <input
@@ -79,12 +79,14 @@ export const Login = (props) => {
           </button>
         </form>
         {message && <div id="success-message">{message}</div>}  {/* Display the success message */}
-        <button
-          className="bg-none underline text-briny-500 hover:text-briny-300 mt-2 mx-2 p-2 rounded-full cursor-pointer"
-          onClick={register}
+        <div className="flex justify-center align-middle mt-4 text-base">
+        <p className="mr-1 text-dynamicBlack-400">Don't have an account?</p><span 
+					className="font-bold text-briny-500 hover:text-briny-300 cursor-pointer"
+					onClick={register}
         >
-          Don't have an account? Sign Up Here!
-        </button>
+          Sign up here
+        </span>
+        </div>
       </div>
     </div>
   );
