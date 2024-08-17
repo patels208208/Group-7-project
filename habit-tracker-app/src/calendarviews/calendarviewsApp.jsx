@@ -30,7 +30,7 @@ const fetchViews = () => {
         {views.map((views) => (
               <div className='calendar' key={views.id}>
                 <p>{views.habit_id}</p>
-                <p>{format(Date(views.updated_dt), 'yyyy/MM/dd kk:mm:ss')}</p>
+                <p>{format(Date(views.updated_dt), 'dd/MM/yyyy kk:mm:ss')}</p>
               </div>
             ))}
             </div>
