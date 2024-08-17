@@ -2,6 +2,7 @@ import express from 'express'
 import { body, validationResult } from 'express-validator'
 import conn from '../config/db.js'
 import bcrypt from 'bcryptjs'
+import jwt from 'jsonwebtoken'
 
 const app = express();
 //Validation process using express-validator
@@ -31,10 +32,10 @@ const validate = (req, res, next) => {
 
 const loginCheck = async (req, res, next) => {
   const { email, password } = req.body;
-  const jwt_token_key=process.env.JWT_TOKEN_KEY
+  const jwt_token_key=process.env.JWT_TOKEN_KEY || "hfgjfdfgjhjh2323763434fjdhfjdhj"
 
   try {
-      conn.query("SELECT email, password FROM users WHERE email = ?", [email], async (err, result, fields) => {
+      conn.query("SELECT user_id,email, password FROM users WHERE email = ?", [email], async (err, result, fields) => {
           if (err) throw err;
 
           if (result.length === 0) {
@@ -42,9 +43,11 @@ const loginCheck = async (req, res, next) => {
               return res.status(404).json({ message: "User does not exist" })
           } else {
               const hashedPassword = result[0].password
-
+              const id=result[0]  
               if (await bcrypt.compare(password, hashedPassword)) {
                   console.log("Login Successful")
+                  // Generate JWT token
+                    const token = jwt.sign({ id: user.user_id, email: user.email }, jwt_token_key, { expiresIn: '1h' })
                   return res.status(200).json({ message: "Login successful", token:jwt_token_key }) 
               } else {
                   console.log("Password Incorrect")

@@ -3,6 +3,7 @@ import "./login.css";
 import fullLogo from '../assets/images/logos/fullLogo.png'
 import yellowLogo from '../assets/images/logos/logoYellow.png'
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export const Register = (props) => {
 	const navigate = useNavigate();
@@ -11,12 +12,31 @@ export const Register = (props) => {
 	const [cPassword, confirmPassword] = useState("");
 	const [firstName, setFirstName] = useState("");
 	const [surname, setSurname] = useState("");
+	const [message, setMessage] = useState("");  // State to store messages from server
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 		console.log(`${firstName} ${surname}`);
+		//sending request to server by meg
+		try {
+			const response = await axios.post('http://localhost:3000/api/register', {
+				first_name: firstName,  // Adjust these keys as per your backend/name
+				surname,
+				email,
+				password,
+			});
+			const token = response.data
+			localStorage.setItem('token', token);
+			setMessage(response.data.message);
+		} catch (error) {
+			if (error.response) {
+				setMessage(error.response.data.message || "Registration failed");
+			} else {
+				setMessage("An unexpected error occurred. Please try again.");
+			}
+		}//ends here
 	};
-
+	
 	function login() {
 		navigate("/login");
 	  }
@@ -96,6 +116,7 @@ export const Register = (props) => {
 				{" "}
 				Already have an account? Login Here
 			</button>
+			{message && <div id="success-message">{message}</div>}  {/* Display the sucess message */}
 		</div>
 	);
 };

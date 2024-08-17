@@ -16,10 +16,28 @@ const findUserByEmail = async (email) => {
         })
     })
 }
+
 //insert a new user
 
-const createNewUser = async (first_name,surname,email,password) => {
-    conn.query(' INSERT INTO Users (first_name, surname,email, password) VALUES (?,?, ?, ?) ', [first_name, surname, email, password])
-}
+
+const createNewUser = async (first_name, surname, email, password) => {
+    console.log("Inserting user into database");
+    return new Promise((resolve, reject) => {
+        conn.query(
+            'INSERT INTO Users (first_name, surname, email, password) VALUES (?, ?, ?, ?)',
+            [first_name, surname, email, password],
+            (err, results) => {
+                if (err) {
+                    console.error("Error inserting user:", err.message);
+                    return reject(err);  // Reject the promise with the error
+                }
+                console.log("User insertion successful:", results);
+                resolve(results);  // Resolve the promise with the results
+            }
+        );
+    });
+};
+
+
 
 export { findUserByEmail, createNewUser }
