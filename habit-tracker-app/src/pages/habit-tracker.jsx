@@ -10,6 +10,7 @@ import PetsApp from "../pets/petsApp.jsx";
 import PlantsApp from "../plants/plantsApp.jsx";
 import SocialisingApp from "../socialising/socialisingApp.jsx";
 import SocialmediaApp from "../socialmedia/socialmediaApp.jsx";
+import CalendarviewsApp from "../calendarviews/calendarviewsApp.jsx"
 
 function HabitTracker() {
   return (
@@ -26,6 +27,7 @@ function HabitTracker() {
       <PlantsApp />
       <SocialisingApp />
       <SocialmediaApp />
+      <CalendarviewsApp />
     </div>
   );
 }
