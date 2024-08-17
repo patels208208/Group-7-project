@@ -4,13 +4,9 @@
 	text-align: center;
 }
 
-.hydration-app:hover {
-  color: #F7F9FF;
-}
-
 .water-drop { 
 	border: 1px solid rgb(11, 151, 245); 
-	background-color: white; 
+	background-color: white;
 	color: #037f8c;
 	box-shadow: rgb(55, 78, 102) 0px 15px 25px -10px; 
 	width: 400px; 
@@ -21,7 +17,8 @@
 
   .water-drop-2 {
 	border: 1px solid rgb(11, 151, 245);
-	color: #037f8c;
+	background-color: #037F8C;
+	color: #F7F9FF;
 	box-shadow: rgb(55, 78, 102) 0px 15px 25px -10px; 
 	width: 400px; 
 	height: 120px; 
@@ -30,11 +27,6 @@
 	}
 
 	.water-drop:hover {
-		background-color: #037F8C;
-		color: #F7F9FF;
-	}
-
-	.water-drop-2:hover {
 		background-color: #037F8C;
 		color: #F7F9FF;
 	}
