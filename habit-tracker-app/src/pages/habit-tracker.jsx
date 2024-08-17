@@ -11,7 +11,7 @@ import PlantsApp from "../plants/plantsApp.jsx";
 import SocialisingApp from "../socialising/socialisingApp.jsx";
 import SocialmediaApp from "../socialmedia/socialmediaApp.jsx";
 import CalendarviewsApp from "../calendarviews/calendarviewsApp.jsx";
-import SocialMediaSharing from "../socialmediasharing/socialmediasharing.jsx";
+import SocialMediaSharing from "../socialmediasharingAPI/socialmediasharingAPI.jsx";
 
 function HabitTracker() {
   return (
