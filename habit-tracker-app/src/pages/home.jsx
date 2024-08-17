@@ -1,5 +1,6 @@
 import React from "react";
 import Avatar from "../components/Avatar";
+import Grid from "../components/Grid";
 
 
 function Home() {
@@ -19,6 +20,7 @@ function Home() {
           </div>
         </div>
       </div>
+      <Grid />
     </div>
   );
 }
