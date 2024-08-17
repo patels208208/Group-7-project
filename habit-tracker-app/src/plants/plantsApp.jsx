@@ -26,9 +26,8 @@ function PlantsApp() {
   return (
     <div className="plants-app">
         <h2>Plants</h2>
-        <button onClick={handleClick} class="plants-button">
-        Tap here when daily goal is complete
-        </button>
+        <button onClick={handleClick} className="plants-button">
+          {icon[9]}<br></br>Plants<br></br>Tap here when daily goal is complete</button>
     </div>
   )
 };

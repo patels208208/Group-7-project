@@ -26,9 +26,8 @@ function PetsApp() {
   return (
     <div className="pets-app">
         <h2>Pets</h2>
-        <button onClick={handleClick} class="pets-button">
-        Tap here when daily goal is complete
-        </button>
+        <button onClick={handleClick} className="pets-button">
+          {icon[8]}<br></br>Pets<br></br>Tap here when daily goal is complete</button>
     </div>
   )
 };

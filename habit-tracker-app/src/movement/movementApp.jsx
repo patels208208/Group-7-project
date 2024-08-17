@@ -26,9 +26,8 @@ function MovementApp() {
   return (
     <div className="movement-app">
         <h2>Movement</h2>
-        <button onClick={handleClick} class="movement-button">
-        <HabitSquare icon={icon[2]} habitName="Movement" className="movement-app"/>
-        Tap here when daily goal is complete</button>
+        <button onClick={handleClick} className="movement-button">
+          {icon[2]}<br></br>Movement<br></br>Tap here when daily goal is complete</button>
     </div>
   )
 };

@@ -18,7 +18,7 @@ const handleClick = async (event) => { //User clicks button to mark daily habit 
   }); //API stores data in SQL database in accordance with habit ID for hydration
   const data = await response.json();
   console.log("Functioning as expected"); //Test to confirm that API has stored the data
-  event.target.classList.add("water-drop-2"); //Button changes in appearance after completes goal
+  event.target.classList.add("hydration-button-2"); //Button changes in appearance after completes goal
   return data;
 };
 
@@ -27,7 +27,7 @@ function HydrationApp() {
   return (
     <div className="hydration-app">
         <h2>Hydration</h2>
-        <button onClick={handleClick} className="water-drop">
+        <button onClick={handleClick} className="hydration-button">
           {icon[0]}<br></br>Hydration<br></br>Tap here when daily goal is complete</button>
     </div>
   )

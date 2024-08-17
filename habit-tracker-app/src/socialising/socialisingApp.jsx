@@ -26,9 +26,8 @@ function SocialisingApp() {
   return (
     <div className="socialising-app">
         <h2>Socialising</h2>
-        <button onClick={handleClick} class="socialising-button">
-        Tap here when daily goal is complete
-        </button>
+        <button onClick={handleClick} className="socialising-button">
+          {icon[10]}<br></br>Socialising<br></br>Tap here when daily goal is complete</button>
     </div>
   )
 };

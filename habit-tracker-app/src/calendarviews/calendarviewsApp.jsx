@@ -25,7 +25,7 @@ const fetchViews = () => {
 
   return (
       <div className='calendarviews-app'>
-        <h1>Calendar Views</h1>
+        <h2>Calendar Views</h2>
         <div>
         {views.map((views) => (
               <div className='calendar' key={views.id}>

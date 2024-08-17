@@ -54,7 +54,7 @@ import {
 function SocialMediaSharing() {
   return (
     <div className="socialmediasharing-app">
-      <h1>Share on social media</h1>
+      <h2>Share on social media</h2>
       <br></br>
     <FacebookShareButton url={"http://localhost:3000/"}>
       <FacebookIcon size={40} round={true} />
