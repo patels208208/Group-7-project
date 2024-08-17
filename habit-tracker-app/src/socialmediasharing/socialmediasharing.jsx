@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { BrowserRouter } from 'react-router-dom';
-import './socialmediasharingAPI.css';
+import './socialmediasharing.css';
 import {
   EmailShareButton,
   FacebookMessengerShareButton,
@@ -53,7 +53,7 @@ import {
 
 function SocialMediaSharing() {
   return (
-    <div className="socialmediaAPI-app">
+    <div className="socialmediasharing-app">
       <h1>Share on social media</h1>
       <br></br>
     <FacebookShareButton url={"http://localhost:3000/"}>
