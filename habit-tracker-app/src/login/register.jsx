@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./login.css";
 import fullLogo from "../assets/images/logos/fullLogo.png";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
@@ -41,75 +40,95 @@ export const Register = (props) => {
 	}
 
 	return (
-		<div className="form-container">
-			<img className="fullLogo" src={fullLogo} alt="Habit Tracker Logo" />
-			<h2>Register</h2>
-			<form className="registerForm" onSubmit={handleSubmit}>
-				<label htmlFor="firstName">First Name</label>
-				<input
-					value={firstName}
-					onChange={(e) => setFirstName(e.target.value)}
-					type="text"
-					placeholder="Your First Name"
-					id="firstName"
-					name="firstName"
-				/>
+		<div className="flex justify-center items-center my-24">
+			<div className="bg-white rounded-lg border-none w-10/12 md:w-6/12 px-6 py-4 shadow-lg">
+				<img className="mx-auto pb-2" src={fullLogo} alt="Habit Tracker Logo" />
+				<h2 className="text-center pb-7 text-briny-500">Register for an account</h2>
+				<form className="flex flex-col text-left pb-1" onSubmit={handleSubmit}>
+					<label htmlFor="firstName">First Name</label>
+					<input
+						value={firstName}
+						onChange={(e) => setFirstName(e.target.value)}
+						type="text"
+						placeholder="Your First Name"
+						id="firstName"
+						name="firstName"
+						className="my-2 p-2 text-sm rounded-md border-none shadow-sm ring-1 ring-inset ring-silverMedal-600"
+					/>
 
-				<label htmlFor="surname">Surname</label>
-				<input
-					value={surname}
-					onChange={(e) => setSurname(e.target.value)}
-					type="text"
-					placeholder="Your Surname"
-					id="surname"
-					name="surname"
-				/>
+					<label htmlFor="surname">Surname</label>
+					<input
+						value={surname}
+						onChange={(e) => setSurname(e.target.value)}
+						type="text"
+						placeholder="Your Surname"
+						id="surname"
+						name="surname"
+						className="my-2 p-2 text-sm rounded-md border-none shadow-sm ring-1 ring-inset ring-silverMedal-600"
+					/>
 
-				<label htmlFor="email">Email</label>
-				<input
-					value={email}
-					onChange={(e) => setEmail(e.target.value)}
-					type="email"
-					placeholder="youremail@email.com"
-					id="email"
-					name="email"
-					required
-				/>
+					<label htmlFor="email">Email</label>
+					<input
+						value={email}
+						onChange={(e) => setEmail(e.target.value)}
+						type="email"
+						placeholder="youremail@email.com"
+						id="email"
+						name="email"
+						required
+						className="my-2 p-2 text-sm rounded-md border-none shadow-sm ring-1 ring-inset ring-silverMedal-600"
+					/>
 
-				<label htmlFor="password">Create Password</label>
-				<input
-					value={password}
-					onChange={(e) => setPassword(e.target.value)}
-					type="password"
-					placeholder="*********"
-					id="password"
-					name="password"
-					required
-				/>
+					<label htmlFor="password">Create Password</label>
+					<input
+						value={password}
+						onChange={(e) => setPassword(e.target.value)}
+						type="password"
+						placeholder="*********"
+						id="password"
+						name="password"
+						required
+						className="my-2 p-2 text-sm rounded-md border-none shadow-sm ring-1 ring-inset ring-silverMedal-600"
+					/>
 
-				<label htmlFor="confirmPassword">Confirm Password</label>
-				<input
-					value={cPassword}
-					onChange={(e) => confirmPassword(e.target.value)}
-					type="password"
-					placeholder="*********"
-					id="confirmPassword"
-					name="confirmPassword"
-					required
-				/>
-				<div className="flex-container">
-					<label htmlFor="terms">I agree to the terms and conditions</label>
-					<input type="checkbox" id="terms" name="terms" required />
-				</div>
+					<label htmlFor="confirmPassword">Confirm Password</label>
+					<input
+						value={cPassword}
+						onChange={(e) => confirmPassword(e.target.value)}
+						type="password"
+						placeholder="*********"
+						id="confirmPassword"
+						name="confirmPassword"
+						required
+						className="my-2 p-2 text-sm rounded-md border-none shadow-sm ring-1 ring-inset ring-silverMedal-600"
+					/>
 
-				<button type="submit">Sign Up</button>
-			</form>
-			<button className="switchButton" onClick={login}>
-				{" "}
-				Already have an account? Login Here
-			</button>
-			{message && <div id="success-message">{message}</div>}{" "}
-			{/* Display the sucess message */}
+					<div className="flex items-center mt-4 mb-4 mx-auto">
+						<input 
+							type="checkbox" 
+							id="terms" 
+							name="terms" 
+							required 
+							className="mr-2"
+						/>
+						<label htmlFor="terms" className="text-sm">I agree to the terms and conditions</label>
+					</div>
+
+					<button 
+						type="submit" 
+						className="bg-briny-500 hover:bg-briny-300 text-white mt-2 mx-2 p-2 rounded-full cursor-pointer"
+					>
+						Sign Up
+					</button>
+				</form>
+				{message && <div id="success-message">{message}</div>} {/* Display the success message */}
+				<button 
+					className="bg-none underline text-briny-500 hover:text-briny-300 mt-2 mx-2 p-2 rounded-full cursor-pointer"
+					onClick={login}
+				>
+					Already have an account? Login Here
+				</button>
+			</div>
 		</div>
 	);
 };
