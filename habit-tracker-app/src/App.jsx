@@ -31,6 +31,7 @@ function App() {
           <Route path="/grid" element={<Grid />} />
           <Route path="/habit-tracker" element={<HabitTracker />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/goal-setting" element={<GoalSetting />} />
           <Route path="/register" element={<Register />} />
           <Route path="/home" element={<Home />} />
           <Route path="about-us" element={<AboutUs />} />
