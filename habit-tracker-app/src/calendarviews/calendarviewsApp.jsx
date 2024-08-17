@@ -13,7 +13,7 @@ useEffect(() => {
 }, []);
 const fetchViews = () => {
   axios
-    .get('http://localhost:3001/completion')
+    .get('http://localhost:3001/completion') //Data pulls from habit tracker API using app.get function
     .then((res) => {
       console.log(res);
       setViews(res.data);
@@ -25,12 +25,12 @@ const fetchViews = () => {
 
   return (
       <div className='calendarviews-app'>
-        <h1>Calendar Views</h1>
+        <h2>Calendar Views</h2>
         <div>
         {views.map((views) => (
               <div className='calendar' key={views.id}>
                 <p>Habit ID: {views.habit_id}</p>
-                <p>Date and time of completion: {format(Date(views.updated_dt), 'dd/MM/yyyy kk:mm:ss')}</p>
+                <p>Date and time of completion: {format(Date(views.updated_dt), 'dd/MM/yyyy kk:mm:ss')}</p> {/*Converts date into specific format using date-fns*/}
               </div>
             ))}
             </div>

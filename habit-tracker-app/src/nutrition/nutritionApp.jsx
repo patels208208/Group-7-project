@@ -26,9 +26,8 @@ function NutritionApp() {
   return (
     <div className="nutrition-app">
         <h2>Nutrition</h2>
-        <button onClick={handleClick} class="nutrition-button">
-        <HabitSquare icon={icon[1]} habitName="Nutrition" className="nutrition-app"/>
-        Tap here when daily goal is complete</button>
+        <button onClick={handleClick} className="nutrition-button">
+        {icon[1]}<br></br>Nutrition<br></br>Tap here when daily goal is complete</button>
     </div>
   )
 };

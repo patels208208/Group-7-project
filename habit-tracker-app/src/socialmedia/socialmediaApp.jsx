@@ -24,11 +24,10 @@ const handleClick = async (event) => {
 
 function SocialmediaApp() {
   return (
-    <div className="socialising-app">
+    <div className="socialmedia-app">
         <h2>Social Media</h2>
-        <button onClick={handleClick} class="socialmedia-button">
-        Tap here when daily goal is complete
-        </button>
+        <button onClick={handleClick} className="socialmedia-button">
+        {icon[11]}<br></br>Social media<br></br>Tap here when daily goal is complete</button>
     </div>
   )
 };
