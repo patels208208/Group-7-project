@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./login.css";
-import fullLogo from '../assets/images/logos/fullLogo.png'
-import yellowLogo from '../assets/images/logos/logoYellow.png'
+import fullLogo from "../assets/images/logos/fullLogo.png";
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 export const Register = (props) => {
 	const navigate = useNavigate();
@@ -11,23 +11,38 @@ export const Register = (props) => {
 	const [cPassword, confirmPassword] = useState("");
 	const [firstName, setFirstName] = useState("");
 	const [surname, setSurname] = useState("");
+	const [message, setMessage] = useState("");  // State to store messages from server
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 		console.log(`${firstName} ${surname}`);
+		//sending request to server by meg
+		try {
+			const response = await axios.post("http://localhost:3000/api/register", {
+				first_name: firstName, // Adjust these keys as per your backend/name
+				surname,
+				email,
+				password,
+			});
+			const token = response.data;
+			localStorage.setItem("token", token);
+			setMessage(response.data.message);
+		} catch (error) {
+			if (error.response) {
+				setMessage(error.response.data.message || "Registration failed");
+			} else {
+				setMessage("An unexpected error occurred. Please try again.");
+			}
+		} //ends here
 	};
 
 	function login() {
 		navigate("/login");
-	  }
-	
+	}
 
 	return (
 		<div className="form-container">
-              <img className="fullLogo"
-                src={fullLogo}
-                alt="Habit Tracker Logo"
-              />
+			<img className="fullLogo" src={fullLogo} alt="Habit Tracker Logo" />
 			<h2>Register</h2>
 			<form className="registerForm" onSubmit={handleSubmit}>
 				<label htmlFor="firstName">First Name</label>
@@ -83,19 +98,18 @@ export const Register = (props) => {
 					required
 				/>
 				<div className="flex-container">
-				<label htmlFor="terms">I agree to the terms and conditions</label>
-				<input type="checkbox" id="terms" name="terms" required />
+					<label htmlFor="terms">I agree to the terms and conditions</label>
+					<input type="checkbox" id="terms" name="terms" required />
 				</div>
 
 				<button type="submit">Sign Up</button>
 			</form>
-			<button
-				className="switchButton"
-				onClick={login}
-			>
+			<button className="switchButton" onClick={login}>
 				{" "}
 				Already have an account? Login Here
 			</button>
+			{message && <div id="success-message">{message}</div>}{" "}
+			{/* Display the sucess message */}
 		</div>
 	);
 };
