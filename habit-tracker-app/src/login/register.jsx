@@ -26,6 +26,7 @@ export const Register = (props) => {
 			const token = response.data;
 			localStorage.setItem("token", token);
 			setMessage(response.data.message);
+			navigate('/profile');
 		} catch (error) {
 			if (error.response) {
 				setMessage(error.response.data.message || "Registration failed");
