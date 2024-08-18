@@ -10,6 +10,7 @@ import PetsApp from "../pets/petsApp.jsx";
 import PlantsApp from "../plants/plantsApp.jsx";
 import SocialisingApp from "../socialising/socialisingApp.jsx";
 import SocialmediaApp from "../socialmedia/socialmediaApp.jsx";
+import Grid from "../components/Grid";
 import CalendarviewsApp from "../calendarviews/calendarviewsApp.jsx";
 import SocialMediaSharing from "../socialmediasharing/socialmediasharing.jsx";
 import HydrationApp2 from "../components/HydrationApp2.jsx";
@@ -18,6 +19,7 @@ function HabitTracker() {
   return (
     <div>
     <div className="habit-tracker">
+      <Grid />
       <HydrationApp />
       <NutritionApp />
       <MovementApp />
