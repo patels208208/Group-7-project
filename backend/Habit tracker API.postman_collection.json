@@ -124,7 +124,7 @@
 			"response": []
 		},
 		{
-			"name": "Daily calendar view",
+			"name": "Calendar view data",
 			"request": {
 				"method": "GET",
 				"header": [],

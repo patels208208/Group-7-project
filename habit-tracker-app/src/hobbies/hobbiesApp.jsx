@@ -26,10 +26,8 @@ function HobbiesApp() {
   return (
     <div className="hobbies-app">
         <h2>Hobbies</h2>
-        <button onClick={handleClick} class="hobbies-button">
-        <HabitSquare icon={icon[6]} habitName="Hobbies" className="hobbies-app" />
-        Tap here when daily goal is complete
-        </button>
+        <button onClick={handleClick} className="hobbies-button">
+          {icon[6]}<br></br>Hobbies<br></br>Tap here when daily goal is complete</button>
     </div>
   )
 };

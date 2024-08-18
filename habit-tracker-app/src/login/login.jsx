@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./login.css";
 import fullLogo from "../assets/images/logos/fullLogo.png";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
@@ -17,7 +16,7 @@ export const Login = (props) => {
     try {
       const response = await axios.post('http://localhost:3000/api/login', {
           email,
-          password,//add email instaeds of name if needs to check email
+          password,
       });
 
       // Display the success message
@@ -45,40 +44,50 @@ export const Login = (props) => {
   }
 
   return (
-    <div className="form-container">
-      <img className="fullLogo" src={fullLogo} alt="Habit Tracker Logo" />
-      <h2>Login</h2>
-      <form className="loginForm" onSubmit={clickSubmit}>
-        <label htmlFor="email">Email</label>
-        <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          type="email"
-          placeholder="youremail@email.com"
-          id="email"
-          name="email"
-        />
+    <div className="flex justify-center items-center my-44">
+      <div className="bg-white rounded-lg border-none w-10/12 md:w-6/12 px-6 py-4 shadow-lg">
+        <img className="pl-4 pb-2 mx-auto w-44" src={fullLogo} alt="Habit Tracker Logo" />
+        <h2 className="text-center pb-7 mt-4 text-briny-600 font-heading font-medium text-xl">Log in to your account</h2>
+        <form className="flex flex-col text-left pb-1" onSubmit={clickSubmit}>
+          <label htmlFor="email">Email</label>
+          <input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            placeholder="youremail@email.com"
+            id="email"
+            name="email"
+            className="my-2 p-2 text-sm rounded-md border-none shadow-sm ring-1 ring-inset ring-silverMedal-600"
+          />
 
-        <label htmlFor="password">Password</label>
-        <input
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          type="password"
-          placeholder="*********"
-          id="password"
-          name="password"
-        />
+          <label htmlFor="password">Password</label>
+          <input
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+            placeholder="*********"
+            id="password"
+            name="password"
+            className="my-2 p-2 text-sm rounded-md border-none shadow-sm ring-1 ring-inset ring-silverMedal-600"
+          />
 
-        <button type="submit">Log In</button>
-      </form>
-      {message && <div id="success-message">{message}</div>}  {/* Display the sucess message */}
-      <button
-        className="switchButton"
-        onClick={register}
-      >
-        {" "}
-        Don't have an account? Sign Up Here!
-      </button>
+          <button 
+            type="submit" 
+            className="bg-briny-500 hover:bg-briny-300 text-white m-2 p-2 rounded-full cursor-pointer"
+          >
+            Log In
+          </button>
+        </form>
+        {message && <div id="success-message">{message}</div>}  {/* Display the success message */}
+        <div className="flex justify-center align-middle mt-4 text-base">
+        <p className="mr-1 text-dynamicBlack-400">Don't have an account?</p><span 
+					className="font-bold text-briny-500 hover:text-briny-300 cursor-pointer"
+					onClick={register}
+        >
+          Sign up here
+        </span>
+        </div>
+      </div>
     </div>
   );
 };

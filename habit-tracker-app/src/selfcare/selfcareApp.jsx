@@ -26,9 +26,8 @@ function SelfcareApp() {
   return (
     <div className="selfcare-app">
         <h2>Self Care</h2>
-        <button onClick={handleClick} class="selfcare-button">
-        Tap here when daily goal is complete
-        </button>
+        <button onClick={handleClick} className="selfcare-button">
+          {icon[7]}<br></br>Self care<br></br>Tap here when daily goal is complete</button>
     </div>
   )
 };

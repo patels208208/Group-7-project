@@ -1,13 +1,16 @@
+//Setting up JavaScript, Express.js, MySQL and localhost connection
 const express = require('express');
 const cors = require('cors');
 const mysql = require('mysql2');
 const app = express();
 app.use(cors());
 
+//app.listen - to confirm that server is running on the correct port
 app.listen(3001, () => {
     console.log('Listening on port 3001');
 });
 
+//Creating a MySQL connection pool
 const pool = mysql.createPool({
     host: 'localhost',
     user: 'root',
@@ -18,6 +21,7 @@ const pool = mysql.createPool({
     queueLimit: 0,
 });
 
+//Setting up Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use((err, req, res, next) => {
@@ -26,10 +30,12 @@ app.use((err, req, res, next) => {
 }
 );
 
+//app.get - to introduce user to API
 app.get('/', (req, res) => {
     res.send('Habit tracker API');
 });
 
+//app.post - to store completion data for individual habits in SQL database
 app.post('/hydration', (req, res) => {
     const { habit_id } = req.body;
 
@@ -198,6 +204,7 @@ pool.query(sql, [habit_id], (err, result) => {
 });
 });
 
+//app.get - to fetch habit tracking data from database
 app.get('/completion', (req, res) => {
     const sql = 'SELECT * from user_habit';
 
