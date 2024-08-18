@@ -1,6 +1,6 @@
 import express, { json } from 'express'
 import dotenv from 'dotenv'
-dotenv.config()
+dotenv.config({path:"./.env"})
 import auth from './routes/auth.js'
 import cors from'cors'
 
