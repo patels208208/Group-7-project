@@ -4,7 +4,7 @@ import conn from '../config/db.js'
 
 const findUserByEmail = async (email) => {
     return new Promise((resolve, reject) => {
-        conn.query('SELECT * FROM users WHERE email_address = ?', [email_address], (err, results) => {
+        conn.query('SELECT * FROM users WHERE email_address = ?', [email], (err, results) => {
             if (err) {
                 return reject(err);  
             }

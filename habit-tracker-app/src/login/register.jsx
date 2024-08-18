@@ -20,12 +20,13 @@ export const Register = (props) => {
 			const response = await axios.post("http://localhost:3002/api/register", {
 				first_name: firstName, // Adjust these keys as per your backend/name
 				surname: surname,
-				email: email,
-				user: password,
+				email_address: email,
+				user_password: password,
 			});
 			const token = response.data;
 			localStorage.setItem("token", token);
 			setMessage(response.data.message);
+			navigate('/profile');
 		} catch (error) {
 			if (error.response) {
 				setMessage(error.response.data.message || "Registration failed");
