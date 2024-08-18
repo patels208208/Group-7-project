@@ -1,10 +1,9 @@
 
 
-const GoalConfirmation = ({ selectedHabitSquare, selectedFrequency, selectedGoal }) => {
+const GoalConfirmation = ({ setSelectedHabitSquare, setSelectedFrequency, setSelectedGoal }) => {
   return (
     <div>
-      console.log(selectedHabitSquare);
-      <p>Goal:{selectedGoal} time(s) {selectedFrequency}</p>
+      <p>Goal:{setSelectedGoal} time(s) {setSelectedFrequency}</p>
     </div>
   );
 };
