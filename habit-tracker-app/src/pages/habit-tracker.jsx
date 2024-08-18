@@ -10,10 +10,12 @@ import PetsApp from "../pets/petsApp.jsx";
 import PlantsApp from "../plants/plantsApp.jsx";
 import SocialisingApp from "../socialising/socialisingApp.jsx";
 import SocialmediaApp from "../socialmedia/socialmediaApp.jsx";
+import Grid from "../components/Grid";
 
 function HabitTracker() {
   return (
     <div className="habit-tracker">
+      <Grid />
       <HydrationApp />
       <NutritionApp />
       <MovementApp />
