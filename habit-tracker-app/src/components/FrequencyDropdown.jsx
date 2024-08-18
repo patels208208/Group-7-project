@@ -11,7 +11,7 @@ export default function FrequencyDropdown() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space--4">
+    <div className="flex flex- md:flex-row items-center justify-center space-y-4 md:space--4">
     <h3 className="text-silverMedal-900">Choose the frequency of your goal:</h3>
     <Menu as="div" className="relative inline-block text-left">
       <div>
