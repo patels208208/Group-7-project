@@ -11,8 +11,8 @@ app.use(express.json());
 const registerValidation = [
     body('first_name').notEmpty().withMessage('Name is required'),
     body('surname').notEmpty().withMessage('Surname is required'),
-    body('email').isEmail().withMessage('Invalid email address').normalizeEmail(),
-    body('password').isLength({ min: 12 }).withMessage('Password must be at least 12 characters long')
+    body('email_address').isEmail().withMessage('Invalid email address').normalizeEmail(),
+    body('user_password').isLength({ min: 12 }).withMessage('Password must be at least 12 characters long')
 ]
 
 
@@ -30,11 +30,11 @@ const validate = (req, res, next) => {
 }
 
 const loginCheck = async (req, res, next) => {
-  const { email, password } = req.body;
+  const { email_address, user_password } = req.body;
   const jwt_token_key=process.env.JWT_TOKEN_KEY
 
   try {
-      conn.query("SELECT email, password FROM users WHERE email = ?", [email], async (err, result, fields) => {
+      conn.query("SELECT email_address, user_password FROM users WHERE email_address = ?", [email_address], async (err, result, fields) => {
           if (err) throw err;
 
           if (result.length === 0) {

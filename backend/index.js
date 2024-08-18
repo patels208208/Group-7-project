@@ -1,7 +1,13 @@
 //Setting up JavaScript, Express.js, MySQL and localhost connection
-const express = require('express');
-const cors = require('cors');
-const mysql = require('mysql2');
+import express, { json } from 'express'
+import dotenv from 'dotenv'
+import auth from './routes/auth.js'
+import cors from'cors'
+import mysql from 'mysql2'
+
+//const express = require('express');
+//const cors = require('cors');
+//const mysql = require('mysql2');
 const app = express();
 app.use(cors());
 

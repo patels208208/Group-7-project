@@ -4,7 +4,7 @@ import conn from '../config/db.js'
 
 const findUserByEmail = async (email) => {
     return new Promise((resolve, reject) => {
-        conn.query('SELECT * FROM users WHERE email = ?', [email], (err, results) => {
+        conn.query('SELECT * FROM users WHERE email_address = ?', [email_address], (err, results) => {
             if (err) {
                 return reject(err);  
             }
@@ -18,8 +18,8 @@ const findUserByEmail = async (email) => {
 }
 //insert a new user
 
-const createNewUser = async (first_name,surname,email,password) => {
-    conn.query(' INSERT INTO Users (first_name, surname,email, password) VALUES (?,?, ?, ?) ', [first_name, surname, email, password])
+const createNewUser = async (first_name,surname,email_address,user_password) => {
+    conn.query(' INSERT INTO users (first_name, surname,email_address, user_password) VALUES (?,?, ?, ?) ', [first_name, surname, email_address, user_password])
 }
 
 export { findUserByEmail, createNewUser }
