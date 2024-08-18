@@ -11,9 +11,11 @@ import AboutUs from "./pages/about-us.jsx";
 import Profile from "./pages/profile.jsx";
 import MainLayout from "./components/MainLayout.jsx";
 import GoalSetting from "./pages/GoalSetting.jsx";
+import HabitViews from "./pages/HabitViews.jsx";
 
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
 
 function App() {
   const [currentForm, setCurrentForm] = useState("Login");
@@ -24,7 +26,7 @@ function App() {
       <div className="top-navigation">
         <Navigation />
       </div>
-      <div className="App mt-20 mb-20">
+      <div className="App my-20">
         <Routes>
           <Route element={<MainLayout/>} />  
           <Route path="/" element={<Login />} />
@@ -35,9 +37,10 @@ function App() {
           <Route path="/goal-setting" element={<GoalSetting />} />
           <Route path="/register" element={<Register />} />
           <Route path="/home" element={<Home />} />
-          <Route path="about-us" element={<AboutUs />} />
-          <Route path="profile" element={<Profile />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="*" element={<h1>Not Found</h1>} />
+          <Route path="/habit-views" element={<HabitViews />} />
         </Routes>
         
       </div>
