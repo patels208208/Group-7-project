@@ -21,7 +21,7 @@ export const Register = (props) => {
 				first_name: firstName, // Adjust these keys as per your backend/name
 				surname: surname,
 				email_address: email,
-				user_password: password,
+				user_password: password, 
 			});
 			const token = response.data;
 			localStorage.setItem("token", token);
