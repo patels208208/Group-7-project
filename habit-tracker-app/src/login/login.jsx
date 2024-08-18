@@ -14,7 +14,7 @@ export const Login = (props) => {
     console.log(email);
     // Handling server response by Meg
     try {
-      const response = await axios.post('http://localhost:3000/api/login', {
+      const response = await axios.post('http://localhost:3002/api/login', {
           email,
           password,
       });

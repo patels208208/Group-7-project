@@ -1,13 +1,13 @@
 import express, { json } from 'express'
 import dotenv from 'dotenv'
-dotenv.config({path:"./.env"})
+dotenv.config({ path: './config/dotenv.js' })
 import auth from './routes/auth.js'
 import cors from'cors'
 
 // Load environment variables from the .env file in the backend directory
 
 const app = express()
-const port = process.env.PORT
+const port = '3002'
 
 app.use(cors());
 app.use(express.json());
@@ -17,5 +17,5 @@ app.get('/', (req, res) => {
 });
 app.use('/api', auth)
 app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
+    console.log('Server running on port 3002');
 });

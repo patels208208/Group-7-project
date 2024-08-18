@@ -1,6 +1,6 @@
 import dotenv from 'dotenv'
 import path from 'path'
-dotenv.config({ path: './.env' })
+dotenv.config({ path: './config/dotenv.js' })
 import mysql from 'mysql2'
 
 
@@ -11,10 +11,10 @@ const conn = mysql.createConnection({
    // user: process.env.DB_USER,
    // password: process.env.DB_PASSWORD,
    // database: process.env.DB_NAME 
-host: process.env.DB_HOST ||'localhost',
-user: process.env.DB_USER || 'root',
-password: process.env.DB_PASSWORD || '',
-database: process.env.DB_NAME || 'habit_tracker_app'
+host: process.env.DB_HOST,
+user: process.env.DB_USER,
+password: process.env.DB_PASSWORD,
+database: process.env.DB_NAME
 })
 
 conn.connect((err) => {

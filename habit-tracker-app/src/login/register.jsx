@@ -17,11 +17,11 @@ export const Register = (props) => {
 		console.log(`${firstName} ${surname}`);
 		//sending request to server by meg
 		try {
-			const response = await axios.post("http://localhost:3000/api/register", {
+			const response = await axios.post("http://localhost:3002/api/register", {
 				first_name: firstName, // Adjust these keys as per your backend/name
-				surname,
-				email,
-				password,
+				surname: surname,
+				email: email,
+				user: password,
 			});
 			const token = response.data;
 			localStorage.setItem("token", token);

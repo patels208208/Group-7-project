@@ -7,17 +7,17 @@ async function register(req, res) {
 
     //removing await from validate
     validate(req, res, async () => {
-        const { first_name, surname, email, password } = req.body
+        const { first_name, surname, email_address, user_password } = req.body
 
         try {
-            const existingUser = await findUserByEmail(email)
+            const existingUser = await findUserByEmail(email_address)
             //check if user already existed
             if (existingUser) {
                 return res.status(400).json({ message: 'User already exists' })
             }
             // secret password
-            const hashedPassword = await bcrypt.hash(password, 12)
-            await createNewUser(first_name, surname, email, hashedPassword)
+            const hashedPassword = await bcrypt.hash(user_password, 12)
+            await createNewUser(first_name, surname, email_address, hashedPassword)
             res.status(201).json({ message: 'New User created' })
 
             //Todo active token,refresh token
