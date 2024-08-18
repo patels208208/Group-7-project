@@ -1,6 +1,6 @@
 import dotenv from 'dotenv'
 import path from 'path'
-dotenv.config({ path: './config/dotenv.js' })
+dotenv.config({ path: './.env' })
 import mysql from 'mysql2'
 
 

@@ -16,8 +16,6 @@ const registerValidation = [
 ]
 
 
-
-
 // Middleware to handle validation results
 const validate = (req, res, next) => {
     console.log(req.body)

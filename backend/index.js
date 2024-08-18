@@ -18,9 +18,9 @@ app.listen(3001, () => {
 
 //Creating a MySQL connection pool
 const pool = mysql.createPool({
-    host: 'localhost',
+    host: '127.0.0.1',
     user: 'root',
-    password: '2088',
+    password: 'Soxies@1991',
     database: 'habit_tracker',
     waitForConnections: true,
     connectionLimit: 10,
