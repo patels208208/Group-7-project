@@ -1,5 +1,6 @@
 import React from "react";
 import Avatar from "../components/Avatar";
+import WordOfTheDay from "../components/WordOfTheDay";
 
 
 function Home() {
@@ -18,6 +19,9 @@ function Home() {
             <p>Sally Jones</p>
           </div>
         </div>
+      </div>
+      <div>
+        <WordOfTheDay />
       </div>
     </div>
   );
