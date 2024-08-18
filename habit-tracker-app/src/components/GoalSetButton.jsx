@@ -1,7 +1,7 @@
 import GoalConfirmation from './GoalConfirmation';
 import React, { useState } from 'react';
 
-const GoalSetButton = ({selectedHabitSquare, selectedFrequency, selectedGoal}) => {
+const GoalSetButton = ({setSelectedHabitSquare, setSelectedFrequency, setSelectedGoal}) => {
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleSubmit = () => {
@@ -15,14 +15,14 @@ const GoalSetButton = ({selectedHabitSquare, selectedFrequency, selectedGoal}) =
   return (
     <div>
     <button onClick={handleSubmit}
-    className="bg-melon-500 hover:bg-deepFriedSunRays-500 text-white font-bold py-2 px-4"
+    className="bg-melon-500 hover:bg-deepFriedSunRays-500 text-white font-bold py-2 px-4 rounded-md"
     >Submit Goal
     </button>
     {showConfirmation && (
       <GoalConfirmation
-        selectedHabitSquare={selectedHabitSquare}
-        selectedFrequency={selectedFrequency}
-        selectedGoal={selectedGoal}
+        setSelectedHabitSquare={setSelectedHabitSquare}
+        setSelectedFrequency={setSelectedFrequency}
+        setSelectedGoal={setSelectedGoal}
         />
     )}
     </div>

@@ -3,6 +3,7 @@ import FrequencyDropdown from '../components/FrequencyDropdown';
 import Grid from '../components/Grid';
 import GoalInput from '../components/GoalInput';
 import GoalSetButton from '../components/GoalSetButton';
+import NewGoalButton from '../components/NewGoalButton';
 
 const GoalSetting = () => {
   const [selectedHabitSquare, setSelectedHabitSquare] = useState('');
@@ -18,10 +19,14 @@ const GoalSetting = () => {
       <GoalInput selectedGoal={selectedGoal} setSelectedGoal={setSelectedGoal}/>
     </div>
     <GoalSetButton 
-    selectedHabitSquare={selectedHabitSquare}
-    selectedFrequency={selectedFrequency}
-    selectedGoal={selectedGoal}
+    setSelectedHabitSquare={setSelectedHabitSquare}
+    setSlectedFrequency={setSelectedFrequency}
+    setSelectedGoal={setSelectedGoal}
     />
+    <NewGoalButton 
+    setSelectedHabitSquare={setSelectedHabitSquare}
+    setSelectedFrequency={setSelectedFrequency}
+    setSelectedGoal={setSelectedGoal}/>
   </div>
   );
 }
