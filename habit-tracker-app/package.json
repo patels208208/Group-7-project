@@ -2,7 +2,7 @@
   "name": "habit-tracker-app",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://api.wordnik.com:80",
+  "proxy": "http://localhost:3002",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-brands-svg-icons": "^6.6.0",

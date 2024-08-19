@@ -4,7 +4,9 @@ const fetch = require('node-fetch');
 const app = express();
 require('dotenv').config({ path: './.env' });
 
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:3000'
+}));
 
 app.get('/api/wordOfTheDay', async (req, res) => {
   try {
