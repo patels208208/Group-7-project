@@ -22,10 +22,14 @@ const GoalSetting = () => {
           </div>
           <Grid selectedHabitSquare={selectedHabitSquare} setSelectedHabitSquare={setSelectedHabitSquare}/>
           <div class="flex flex-col items-center">
+            <div className="flex">
             <MeasurementInput />
             <MeasurementDropdown selectedMeasurement={selectedMeasurement} setSelectedMeasurement={setSelectedMeasurement}/>
-            <FrequencyDropdown selectedFrequency={selectedFrequency} setSelectedFrequency={setSelectedFrequency}/>
+            </div>
+            <div className="flex">
             <GoalInput selectedGoal={selectedGoal} setSelectedGoal={setSelectedGoal}/>
+            <FrequencyDropdown selectedFrequency={selectedFrequency} setSelectedFrequency={setSelectedFrequency}/>
+            </div>
           </div>
         </div>
         <div className='flex flex-col items-center space-y-2 mt-2'>
