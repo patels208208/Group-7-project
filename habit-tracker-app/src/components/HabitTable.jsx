@@ -1,10 +1,11 @@
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar, faSquareCheck, faSquareXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
 
 const HabitTable = () => {
     const habits = ['Hobbies', 'Hydration', 'Medication', 'Movement', 'Nutrition', 'Pets', 'Plants', 'Reading', 'Self Care', 'Sleep', 'Socialising', 'Social Media'];
     const daysOfWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+    const daysOfWeekAbbr = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
 
     const mockApiResponse = [
         [true, false, true, true, true, true, false], // Hobies
@@ -32,34 +33,65 @@ const HabitTable = () => {
     };
 
     return (
-    <div className="flex flex-col items-center">
-    <table className="border-collapse bg-white">
+    <div className="flex flex-col items-center bg-deepFriedSunRays-400 shadow-lg p-1 lg:p-2">
+    <table className="border-collapse">
       <thead>
-        <tr className="p-2 border">
-          <th>Habit</th>
+        <tr>
+          <th>
+                <div className="w-24 p-1 m-1 h-8 lg:p-2 lg:m-1 lg:mr-12 lg:h-10 lg:w-32 bg-white rounded shadow-sm">Habit</div>
+            </th>
           {daysOfWeek.map((day, index) => (
-            <th key={index} className="p-2 border">{day}</th>
+            <th key={index}>
+                <div className="py-1 px-0.5 mr-0.5 lg:p-2 lg:m-1 lg:w-14 bg-white rounded shadow-sm hidden sm:block">
+                    {day}
+                </div>
+            </th>
           ))}
-          <th>Goal</th>
+          {daysOfWeekAbbr.map((day, index) => (
+            <th key={index}>
+                <div className="py-1 m-0.5 px-0.5 w-7 h-8 lg:p-2 lg:m-1 lg:w-14 bg-white rounded shadow-sm block sm:hidden">
+                    {day}
+                </div>
+            </th>
+          ))}
+          <th>
+            <div className="lg:p-2 lg:m-1 lg:w-14 bg-white rounded shadow-sm">Goal</div>
+            </th>
         </tr>
       </thead>
       <tbody>
         {habits.map((habit, habitIndex) => (
           <tr key={habitIndex}>
-            <td className="p-2 border">{habit}</td>
+            <td>
+                <div className="w-24 p-1 m-1 h-8 lg:p-2 lg:m-1 lg:mr-12 lg:h-10 lg:w-32 bg-white rounded shadow-sm font-semibold line-clamp-1">{habit}</div>
+                </td>
             {daysOfWeek.map((_, dayIndex) => (
               <td key={dayIndex}
-                  className="min-w-16 p-4 border relative">
-                    <div className={`w-4 h-4 rounded ${completionStatus[habitIndex]?.[dayIndex]
-                        ? "bg-green-500"
-                        : "bg-red-500"
-                    } absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-sm`}>
+                  className="relative">
+                    <div className="rounded lg:p-4 lg:m-2 lg:h-10 bg-white shadow-sm justify-center items-center hidden sm:block">
+                        <FontAwesomeIcon
+                            icon={completionStatus[habitIndex]?.[dayIndex] ? faSquareCheck : faSquareXmark}
+                            className={`text-xl shadow-sm absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${completionStatus[habitIndex]?.[dayIndex] ? "text-green-500" : "text-red-500"}`}
+                        />
                     </div>
               </td>
             ))}
-            <td className="min-w-16 p-4 border relative">
+            {daysOfWeek.map((_, dayIndex) => (
+              <td key={dayIndex}
+                  className="relative">
+                    <div className="py-1 m-0.5 px-0.5 w-7 h-8 lg:p-2 lg:m-1 lg:w-14 bg-white rounded shadow-sm block sm:hidden">
+                        <FontAwesomeIcon
+                            icon={completionStatus[habitIndex]?.[dayIndex] ? faSquareCheck : faSquareXmark}
+                            className={`text-xl shadow-sm absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${completionStatus[habitIndex]?.[dayIndex] ? "text-green-500" : "text-red-500"}`}
+                        />
+                    </div>
+              </td>
+            ))}
+            <td className="relative">
                 {isGoalAchieved(habitIndex) && (
-                    <FontAwesomeIcon icon={faStar} className="text-amber-400 text-xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-sm" />
+                    <div className="py-1 m-0.5 px-0.5 w-9 h-8 lg:p-2 lg:m-1 lg:w-14 bg-white rounded shadow-sm">
+                        <FontAwesomeIcon icon={faStar} className="text-amber-500 text-xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-sm" />
+                    </div>
                 )}
             </td>
           </tr>
