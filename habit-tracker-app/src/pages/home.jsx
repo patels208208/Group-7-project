@@ -21,10 +21,10 @@ function Home() {
           </div>
         </div>
       </div>
+      <Grid />
       <div>
         <WordOfTheDay />
       </div>
-      <Grid />
     </div>
   );
 }

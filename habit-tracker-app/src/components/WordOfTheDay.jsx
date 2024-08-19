@@ -7,7 +7,7 @@ const WordOfTheDay = () => {
   useEffect(() => {
     const fetchWordOfTheDay = async () => {
       try {
-        const response = await fetch("/api/wordOfTheDay");
+        const response = await fetch(`https://api.wordnik.com/v4/words.json/wordOfTheDay?api_key=${process.env.REACT_APP_WORDNIK_API_KEY}`);
         const result = await response.json();
         setData(result);
       } catch (error) {
@@ -22,8 +22,11 @@ const WordOfTheDay = () => {
     return <div>Loading...</div>;
   }
 
+  const {word, definitions} = data;
+  const definitionText = definitions && definitions.length > 0 ? definitions[0].text : 'No definition available';
   return (
     <div id="wordnik-wordofday">
+      <h1>Word of the Day</h1>
       <span className="wordnik-word">
         <a href={`https://www.wordnik.com/words/${data.word}`}>{data.word}</a>
       </span>
