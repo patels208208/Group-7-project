@@ -4,8 +4,11 @@ import Grid from '../components/Grid';
 import GoalInput from '../components/GoalInput';
 import GoalSetButton from '../components/GoalSetButton';
 import NewGoalButton from '../components/NewGoalButton';
+import MeasurementDropdown from '../components/MeasurementDropdown';
+import MeasurementInput from '../components/MeasurementInput';
 
 const GoalSetting = () => {
+  const [selectedMeasurement, setSelectedMeasurement] = useState('');
   const [selectedHabitSquare, setSelectedHabitSquare] = useState('');
   const [selectedFrequency, setSelectedFrequency] = useState('');
   const [selectedGoal, setSelectedGoal] = useState('');
@@ -19,6 +22,8 @@ const GoalSetting = () => {
           </div>
           <Grid selectedHabitSquare={selectedHabitSquare} setSelectedHabitSquare={setSelectedHabitSquare}/>
           <div class="flex flex-col items-center">
+            <MeasurementInput />
+            <MeasurementDropdown selectedMeasurement={selectedMeasurement} setSelectedMeasurement={setSelectedMeasurement}/>
             <FrequencyDropdown selectedFrequency={selectedFrequency} setSelectedFrequency={setSelectedFrequency}/>
             <GoalInput selectedGoal={selectedGoal} setSelectedGoal={setSelectedGoal}/>
           </div>
