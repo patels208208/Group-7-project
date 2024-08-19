@@ -7,7 +7,7 @@ const WordOfTheDay = () => {
   useEffect(() => {
     const fetchWordOfTheDay = async () => {
       try {
-        const response = await fetch("http://api.wordnik.com:80/v4/words.json/wordOfTheDay?api_key=YOUR_API_KEY_HERE");
+        const response = await fetch("/api/wordOfTheDay");
         const result = await response.json();
         setData(result);
       } catch (error) {
