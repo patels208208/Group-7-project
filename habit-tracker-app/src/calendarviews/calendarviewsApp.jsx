@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { BrowserRouter } from 'react-router-dom';
 import './calendarviewsApp.css';
-import { format } from 'date-fns';
+import { compareAsc, format } from 'date-fns';
 import HabitSquare from '../components/HabitSquare.jsx';
 import { icon } from '../components/HabitIcon.jsx';
 
@@ -30,7 +30,7 @@ const fetchViews = () => {
         {views.map((views) => (
               <div className='calendar' key={views.id}>
                 <p>Habit ID: {views.habit_id}</p>
-                <p>Date and time of completion: {format(Date(views.updated_dt), 'dd/MM/yyyy kk:mm:ss')}</p> {/*Converts date into specific format using date-fns*/}
+                <p>Date and time of completion: {format(new Date(views.created_dt), "dd-MM-yyyy kk:mm:ss")};</p> {/*Converts date into specific format using date-fns*/}
               </div>
             ))}
             </div>
