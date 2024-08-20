@@ -8,9 +8,9 @@ const UserDetails = ({ user }) => {
   return (
     <div className="flex flex-col items-center">
       <h2 className="text-2xl font-bold text-center text-briny-600">
-        {fname} {lname}
+        {/* {fname} {lname} */}
       </h2>
-      <p className="text-lg text-center text-briny-600">{email}</p>
+      {/* <p className="text-lg text-center text-briny-600">{email}</p> */}
       
     </div>
   );
