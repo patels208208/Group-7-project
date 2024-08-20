@@ -7,10 +7,27 @@ export const Register = (props) => {
 	const navigate = useNavigate();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const [cPassword, confirmPassword] = useState("");
+	const [cPassword, setCPassword] = useState("");
 	const [firstName, setFirstName] = useState("");
 	const [surname, setSurname] = useState("");
 	const [message, setMessage] = useState(""); // State to store messages from server
+	const [isValid, setIsValid] = useState(true);
+
+	//Validation for confirm password
+
+const handleChange = (e) => {
+	const newValue = e.target.value;
+
+    setCPassword(newValue);
+
+    if (newValue === password) {
+      setIsValid(true)
+	  setMessage("Passwords Match");
+    } else {
+      setIsValid(false);
+	  setMessage("Passwords are required to match. Please try again");
+    }
+};
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -35,6 +52,8 @@ export const Register = (props) => {
 			}
 		} //ends here
 	};
+
+
 
 	function login() {
 		navigate("/login");
@@ -98,14 +117,14 @@ export const Register = (props) => {
 						className="my-2 p-2 text-sm rounded-md border-none shadow-sm ring-1 ring-inset ring-silverMedal-600"
 					/>
 
-					<label htmlFor="confirmPassword">Confirm Password</label>
+					<label htmlFor="setCPassword">Confirm Password</label>
 					<input
 						value={cPassword}
-						onChange={(e) => confirmPassword(e.target.value)}
+						onChange={handleChange}
 						type="password"
 						placeholder="*********"
-						id="confirmPassword"
-						name="confirmPassword"
+						id="setCPassword"
+						name="setCPassword"
 						required
 						className="my-2 p-2 text-sm rounded-md border-none shadow-sm ring-1 ring-inset ring-silverMedal-600"
 					/>
@@ -145,3 +164,5 @@ export const Register = (props) => {
 		</div>
 	);
 };
+
+
