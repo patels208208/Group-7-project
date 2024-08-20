@@ -14,14 +14,36 @@ const GoalSetting = () => {
   const [selectedFrequency, setSelectedFrequency] = useState('');
   const [selectedGoal, setSelectedGoal] = useState('');
 
-  const handleSelectFrequency = (frequency) => {
+  const handleSelectFrequency = async (frequency) => {
     setSelectedFrequency(frequency);
+    const response = await fetch('http://localhost:3001/frequency', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        frequency: frequency,
+      }),
+    });
     console.log(frequency);
+    const data = await response.json();
+    return data;
   }
 
-  const handleSelectMeasurement = (measurement) => {
+  const handleSelectMeasurement = async (measurement) => {
     setSelectedMeasurement(measurement);
+    const response = await fetch('http://localhost:3001/measurement', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        measurement: measurement,
+      }),
+    });
     console.log(measurement);
+    const data = await response.json();
+    return data;  
   }
 
   return (
