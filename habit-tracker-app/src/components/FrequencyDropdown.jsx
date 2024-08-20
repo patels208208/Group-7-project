@@ -1,15 +1,8 @@
 import { Menu, MenuButton } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { useState } from 'react'
-import GoalInput from './GoalInput'
 
-export default function FrequencyDropdown() {
-  const [selectedFrequency, setSelectedFrequency] = useState(null);
-
-  const handleSelect = (frequency) => {
-    setSelectedFrequency(frequency);
-  };
-
+export default function FrequencyDropdown({selectedFrequency, handleSelectFrequency}) {
+  {
   return (
     <div className="flex flex- md:flex-row items-center justify-center space-y-4 md:space--4">
     {/* <h3 className="text-silverMedal-900">Choose the frequency of your goal:</h3> */}
@@ -30,7 +23,7 @@ export default function FrequencyDropdown() {
             <Menu.Item key={frequency}>
               <a
                 href="#"
-                onClick={() => handleSelect(frequency)}
+                onClick={() => handleSelectFrequency(frequency)}
                 className="block px-4 py-2 text-sm text-silverMedal-700 data-[focus]:bg-briny-100 data-[focus]:text-silverMedal-900"
               >
                 {frequency}
@@ -41,4 +34,4 @@ export default function FrequencyDropdown() {
       </Menu.Items>
     </Menu>
     </div>
-  )};
+  )}};
