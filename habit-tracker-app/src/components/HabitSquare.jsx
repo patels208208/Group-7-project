@@ -1,6 +1,6 @@
 import "../assets/styles/habitSquare.css";
 
-const HabitSquare = ({ className, icon, habitName, onClick = () => {} }) => {
+const HabitSquare = ({ selectedHabitSquare, className, icon, habitName, onClick = () => {} }) => {
   className = className || ""; // Add this line to ensure className is always defined
   const handleClick = () => {
     onClick(icon);
@@ -8,7 +8,7 @@ const HabitSquare = ({ className, icon, habitName, onClick = () => {} }) => {
   
   return (
       <div className={className} onClick={handleClick}>
-        {icon}
+        {typeof icon ==='string' ? <img src={icon} alt={habitName} /> : icon}
         <p>{habitName}</p>
       </div>
       );
