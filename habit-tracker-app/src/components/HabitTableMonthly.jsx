@@ -1,7 +1,7 @@
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
-import { format, startOfMonth, endOfMonth, eachDayOfInterval, startOfWeek, endOfWeek, addMonths, subMonths } from 'date-fns';
+import { format, startOfMonth, endOfMonth, eachDayOfInterval, startOfWeek, endOfWeek, addMonths, subMonths, isSameMonth } from 'date-fns';
 
 const HabitTableMonthly = () => {
     const [currentDate, setCurrentDate] = useState(new Date());
@@ -30,24 +30,24 @@ const HabitTableMonthly = () => {
                         <FontAwesomeIcon icon={faChevronLeft} className="" />
                     </button>
                     <div className="monthYear" id="monthYear">
-                        <h1>{format(currentDate, 'MMMM yyyy')}</h1>
+                        <h1 className="text-briny-600 font-light">{format(currentDate, 'MMMM yyyy')}</h1>
                     </div>
                     <button onClick={handleNextMonth} id="nextBtn" className="flex justify-center items-center rounded-full bg-white w-10 h-10 shadow-lg">
                     <FontAwesomeIcon icon={faChevronRight} className="" />
                     </button>
                 </div>
                 <div className="days grid grid-cols-7">
-                    <div className="day text-center p-1 text-silverMedal-900">Mon</div>
-                    <div className="day text-center p-1 text-silverMedal-900">Tue</div>
-                    <div className="day text-center p-1 text-silverMedal-900">Wed</div>
-                    <div className="day text-center p-1 text-silverMedal-900">Thu</div>
-                    <div className="day text-center p-1 text-silverMedal-900">Fri</div>
-                    <div className="day text-center p-1 text-silverMedal-900">Sat</div>
-                    <div className="day text-center p-1 text-silverMedal-900">Sun</div>
+                    <div className="day text-center p-1 text-briny-700 font-semibold">Mon</div>
+                    <div className="day text-center p-1 text-briny-700 font-semibold">Tue</div>
+                    <div className="day text-center p-1 text-briny-700 font-semibold">Wed</div>
+                    <div className="day text-center p-1 text-briny-700 font-semibold">Thu</div>
+                    <div className="day text-center p-1 text-briny-700 font-semibold">Fri</div>
+                    <div className="day text-center p-1 text-briny-700 font-semibold">Sat</div>
+                    <div className="day text-center p-1 text-briny-700 font-semibold">Sun</div>
                 </div>
                 <div className="dates grid grid-cols-7">
                     {days.map(day => (
-                        <div key={day} className="date text-center p-1">
+                        <div key={day} className={`date text-center p-1 ${isSameMonth(day, currentDate) ? '' : 'text-silverMedal-600'}`}>
                             {format(day, 'd')}
                         </div>
                     ))}
