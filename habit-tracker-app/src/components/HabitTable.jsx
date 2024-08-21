@@ -33,7 +33,7 @@ const HabitTable = () => {
     };
 
     return (
-    <div className="flex lg:flex-column md:flex-col sm:flex-row items-center bg-deepFriedSunRays-400 shadow-lg p-4 lg:p-6">
+    <div className="flex items-center bg-deepFriedSunRays-400 rounded shadow-lg p-4 lg:p-6">
     <table className="border-collapse w-full">
       <thead>
         <tr>
@@ -42,7 +42,7 @@ const HabitTable = () => {
             <th key={index} className="p-2 bg-silverMedal-200 hidden sm:table-cell">{day}</th>
           ))}
           {daysOfWeekAbbr.map((day, index) => (
-            <th key={index} className="p-2 bg-silverMedal-200 block sm:hidden"> {day}
+            <th key={index} className="p-2 bg-silverMedal-200 block sm:hidden sm:flex-col"> {day}
             </th>
           ))}
           <th className="p-2 bg-silverMedal-200 rounded-tr-lg">Goal</th>
@@ -60,7 +60,7 @@ const HabitTable = () => {
                         />
                     </td>
             ))}
-            <td className="p-2 bg-white relative sm:hidden">
+            <td className="p-2 bg-white relative sm:flex-col sm:hidden">
               <div className="sm:flex-row">
             {daysOfWeekAbbr.map((_, dayIndex) => (
               <div key={dayIndex} className="p-2">
