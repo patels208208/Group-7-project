@@ -4,7 +4,7 @@ const GoalDisplay = ({selectedHabitSquare, selectedQuantity, selectedMeasurement
   return (
     <div>
       <div>
-      <h2>My Goals:</h2>
+      <h2 className="text-center pb-7 mt-4 text-briny-600 font-heading font-medium text-lg">My Goals:</h2>
       </div>
       <div>
         {selectedHabitSquare && (

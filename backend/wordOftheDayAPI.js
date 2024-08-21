@@ -1,13 +1,17 @@
-const express = require('express');
-const cors = require('cors');
-const fetch = require('node-fetch');
+import express, { json } from 'express';
+import dotenv from 'dotenv';
+dotenv.config({ path: './.env' });
+import cors from 'cors';
+import fetch from 'node-fetch';
+
 const app = express();
-require('dotenv').config({ path: './.env' });
+const port = '3003';
 
 app.use(cors());
 
-app.get('/api/wordOfTheDay', async (req, res) => {
+app.get('/api/wordOftheDay', async (req, res) => {
   try {
+    console.log("hello world")
     const response = await fetch(`https://api.wordnik.com/v4/words.json/wordOfTheDay?api_key=${process.env.WORDNIK_API_KEY}`);
     
     
@@ -26,6 +30,6 @@ app.get('/api/wordOfTheDay', async (req, res) => {
   }
 });
 
-app.listen(3002, () => {
-  console.log('Server running on port 3002');
+app.listen(3003, () => {
+  console.log('Server running on port 3003');
 });

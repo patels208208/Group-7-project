@@ -93,6 +93,12 @@ const Navigation = () => {
                 >
                   Habits
                 </Link>
+                <Link
+                  to="/goal-setting"
+                  className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-briny-700 hover:text-white active:bg-briny-300 ease-in-out duration-200"
+                >
+                  Goal Setting
+                </Link>
               </div>
             </div>
           </div>

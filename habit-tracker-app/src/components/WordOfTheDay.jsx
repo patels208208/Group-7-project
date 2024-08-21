@@ -5,9 +5,11 @@ const WordOfTheDay = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    const fetchWordOfTheDay = async () => {
+    const fetchWordOftheDay = async () => {
       try {
-        const response = await fetch("/api/wordOfTheDay");
+        console.log("hello")
+        const response = await fetch("/api/wordOftheDay");
+        console.log("bum")
         const result = await response.json();
         setData(result);
       } catch (error) {
@@ -15,15 +17,21 @@ const WordOfTheDay = () => {
       }
     };
 
-    fetchWordOfTheDay();
+    fetchWordOftheDay();
   }, []);
 
   if (!data) {
-    return <div>Loading...</div>;
-  }
+    return(
+    <div>
+      <h2>Word of the Day</h2>
+      <p>Loading...</p>
+      </div>
+    )
+  };
 
   return (
     <div id="wordnik-wordofday">
+      
       <span className="wordnik-word">
         <a href={`https://www.wordnik.com/words/${data.word}`}>{data.word}</a>
       </span>
