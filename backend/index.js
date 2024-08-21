@@ -4,16 +4,19 @@ import dotenv from "dotenv";
 import auth from "./routes/auth.js";
 import cors from "cors";
 import mysql from "mysql2";
+dotenv.config({ path: "./.env" });
+import fetch from "node-fetch";
 
 //const express = require('express');
 //const cors = require('cors');
 //const mysql = require('mysql2');
 const app = express();
 app.use(cors());
+const port = 3001;
 
 //app.listen - to confirm that server is running on the correct port
-app.listen(3001, () => {
-	console.log("Listening on port 3001");
+app.listen(port, () => {
+	console.log(`Listening on port &{port}`);
 });
 
 //Creating a MySQL connection pool
@@ -34,6 +37,30 @@ app.use((err, req, res, next) => {
 	console.error("Error:", err.stack);
 	res.status(500).json({ error: "Internal Server Error" });
 });
+
+// Word of the Day API
+app.get('/api/wordOfTheDay', async (req, res) => {
+  try {
+    const response = await fetch(`https://api.wordnik.com/v4/words.json/wordOfTheDay?api_key=${process.env.WORDNIK_API_KEY}`);
+    
+    
+    //Check if the response is JSON
+    const contentType = response.headers.get('content-type');
+    if (!contentType || !contentType.includes('application/json')) {
+      throw new Error('Invalid content-type. Expected application/json but received ' + contentType);
+    }
+    
+    const result = await response.json();
+    res.json(result);
+
+  } catch (error) {
+    console.error('Error fetching the word of the day:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// use auth
+app.use('/api', auth);
 
 //app.get - to introduce user to API
 app.get("/", (req, res) => {
