@@ -16,7 +16,7 @@ const port = 3001;
 
 //app.listen - to confirm that server is running on the correct port
 app.listen(port, () => {
-	console.log(`Listening on port &{port}`);
+	console.log(`Listening on port ${port}`);
 });
 
 //Creating a MySQL connection pool
