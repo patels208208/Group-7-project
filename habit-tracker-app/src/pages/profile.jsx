@@ -8,9 +8,11 @@ function Profile({ selectedHabitSquare, selectedFrequency, selectedGoal, selecte
     return(
         <div className="profile-container">
             <p className="text-center pb-7 mt-4 text-briny-600 font-heading font-medium text-xl">Profile Page</p>
-            <div className="flex flex-row mx-32">
-                <div className="basis-1/3"><Avatar /></div>
-                <div className="basis-2/3">User Details:</div>
+            <div className="flex flex-row w-auto ml-8 lg:ml-64 xl:ml-96 items-center">
+                <div className="w-1/8 mb-4"><Avatar /></div>
+                <div className="flex flex-col w-7/8">
+                <h3 className="text-center pb-7 mt-4 text-briny-600 font-heading font-medium text-lg">User Details:</h3>
+                </div>
             </div> 
             {/* UserDetails component to be added here. */}
             <div className="flex flex-row mx-32">
