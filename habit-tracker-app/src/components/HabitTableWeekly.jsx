@@ -2,7 +2,7 @@ import { faStar, faSquareCheck, faSquareXmark } from "@fortawesome/free-solid-sv
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
 
-const HabitTable = () => {
+const HabitTableWeekly = () => {
     const habits = ['Hobbies', 'Hydration', 'Medication', 'Movement', 'Nutrition', 'Pets', 'Plants', 'Reading', 'Self Care', 'Sleep', 'Socialising', 'Social Media'];
     const daysOfWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
     const daysOfWeekAbbr = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
@@ -85,4 +85,4 @@ const HabitTable = () => {
     )
 };
 
-export default HabitTable;
+export default HabitTableWeekly;
