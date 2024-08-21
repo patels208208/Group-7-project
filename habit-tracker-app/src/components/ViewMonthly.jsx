@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import HabitTableWeekly from "./HabitTableWeekly";
+import HabitTableMonthly from "./HabitTableMonthly";
 import axios from 'axios';
 import { BrowserRouter } from 'react-router-dom';
 import { compareAsc, format } from 'date-fns';
@@ -24,6 +24,7 @@ function MonthlyView() {
     return (
         <div className="flex flex-col items-center">
             <p>Monthly View</p>
+            <HabitTableMonthly />
             {views.map((views) => (
                 <div className='calendar' key={views.id}>
                     <p>Habit ID: {views.habit_id}</p>
