@@ -209,6 +209,35 @@ app.post("/socialmedia", (req, res) => {
 	});
 });
 
+//app.post - to store user's goal setting data
+app.post("/frequency", (req, res) => {
+	const { frequency } = req.body;
+
+	const sql = "INSERT INTO user_habit (frequency) VALUES (?)";
+	pool.query(sql, [frequency], (err, result) => {
+		if (err) {
+			console.error("Error entering frequency data", err.message);
+			return res.status(500).json({ error: "Database error" });
+		}
+
+		res.status(201).json({ message: "Frequency data saved successfully" });
+	});
+});
+
+app.post("/measurement", (req, res) => {
+	const { measurement } = req.body;
+
+	const sql = "INSERT INTO user_habit (measurement) VALUES (?)";
+	pool.query(sql, [measurement], (err, result) => {
+		if (err) {
+			console.error("Error entering measurement data", err.message);
+			return res.status(500).json({ error: "Database error" });
+		}
+
+		res.status(201).json({ message: "Measurement data saved successfully" });
+	});
+});
+
 //app.get - to fetch habit tracking data from database
 app.get("/completion", (req, res) => {
 	const sql = "SELECT * from user_habit";
