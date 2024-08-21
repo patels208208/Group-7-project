@@ -7,7 +7,7 @@ const WordOfTheDay = () => {
   useEffect(() => {
     const fetchWordOfTheDay = async () => {
       try {
-        const response = await fetch("/api/wordOfTheDay");
+        const response = await fetch("/api/wordOftheDay");
         const result = await response.json();
         setData(result);
       } catch (error) {

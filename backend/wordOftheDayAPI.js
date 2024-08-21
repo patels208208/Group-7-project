@@ -6,7 +6,7 @@ require('dotenv').config({ path: './.env' });
 
 app.use(cors());
 
-app.get('/api/wordOfTheDay', async (req, res) => {
+app.get('/api/wordOftheDay', async (req, res) => {
   try {
     const response = await fetch(`https://api.wordnik.com/v4/words.json/wordOfTheDay?api_key=${process.env.WORDNIK_API_KEY}`);
     
