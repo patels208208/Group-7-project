@@ -5,6 +5,7 @@ function WeeklyView() {
     return(
         <div className="flex flex-col items-center">
             <p>Weekly View</p> {/* TODO: option to choose the date range of the week you want */}
+            {/* Testing something */}
             <HabitTableWeekly />
         </div>
     );
