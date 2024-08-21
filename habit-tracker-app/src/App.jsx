@@ -16,12 +16,12 @@ import HabitViews from "./pages/HabitViews.jsx";
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-
 function App() {
-  const [currentForm, setCurrentForm] = useState("Login");
-  const changeForm = (formName) => setCurrentForm(formName);
+	// const [currentForm, setCurrentForm] = useState("Login");
+	// const changeForm = (formName) => setCurrentForm(formName);
 
   return (
+    <div>
     <Router>
       <div className="top-navigation">
         <Navigation />
@@ -47,7 +47,9 @@ function App() {
         <BottomNavigation />
       </div>
     </Router>
+</div>
   );
-}
+};
+
 
 export default App;

@@ -7,10 +7,28 @@ export const Register = (props) => {
 	const navigate = useNavigate();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const [cPassword, confirmPassword] = useState("");
+	const [cPassword, setCPassword] = useState("");
 	const [firstName, setFirstName] = useState("");
 	const [surname, setSurname] = useState("");
-	const [message, setMessage] = useState(""); // State to store messages from server
+	const [message, setMessage] = useState("");
+	const [cPasswordMessage, setCPasswordMessage] = useState("");
+	const [isValid, setIsValid] = useState(true);
+
+	//Validation for confirm password
+
+	const handleChange = (e) => {
+		const newValue = e.target.value;
+
+		setCPassword(newValue);
+
+		if (newValue === password) {
+			setIsValid(true);
+			setCPasswordMessage("Passwords Match");
+		} else {
+			setIsValid(false);
+			setCPasswordMessage("Passwords are required to match. Please try again");
+		}
+	};
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -21,12 +39,12 @@ export const Register = (props) => {
 				first_name: firstName, // Adjust these keys as per your backend/name
 				surname: surname,
 				email_address: email,
-				user_password: password, 
+				user_password: password,
 			});
 			const token = response.data;
 			localStorage.setItem("token", token);
 			setMessage(response.data.message);
-			navigate('/profile');
+			navigate("/profile");
 		} catch (error) {
 			if (error.response) {
 				setMessage(error.response.data.message || "Registration failed");
@@ -98,17 +116,23 @@ export const Register = (props) => {
 						className="my-2 p-2 text-sm rounded-md border-none shadow-sm ring-1 ring-inset ring-silverMedal-600"
 					/>
 
-					<label htmlFor="confirmPassword">Confirm Password</label>
+					<label htmlFor="setCPassword">Confirm Password</label>
 					<input
 						value={cPassword}
-						onChange={(e) => confirmPassword(e.target.value)}
+						onChange={handleChange}
 						type="password"
 						placeholder="*********"
-						id="confirmPassword"
-						name="confirmPassword"
+						id="setCPassword"
+						name="setCPassword"
 						required
 						className="my-2 p-2 text-sm rounded-md border-none shadow-sm ring-1 ring-inset ring-silverMedal-600"
 					/>
+
+					<div className="flex justify-left align-left mt-1 text-xs text-red-600">
+						{cPasswordMessage && (
+							<div id="password-message">{cPasswordMessage}</div>
+						)}{" "}
+					</div>
 
 					<div className="flex items-center mt-4 mb-4 mx-auto">
 						<input
@@ -130,7 +154,9 @@ export const Register = (props) => {
 						Sign Up
 					</button>
 				</form>
-				{message && <div id="success-message">{message}</div>}{" "}
+				<div className="flex justify-center align-middle mt-4 text-sm">
+					{message && <div id="success-message">{message}</div>}{" "}
+				</div>
 				{/* Display the success message */}
 				<div className="flex justify-center align-middle mt-4 text-base">
 					<p className="mr-1 text-dynamicBlack-400">Already have an account?</p>

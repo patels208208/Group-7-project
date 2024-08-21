@@ -20,7 +20,11 @@ const registerValidation = [
 	body("user_password")
 		.isLength({ min: 12 })
 		.withMessage("Password must be at least 12 characters long"),
+		body("user_password")
+		.isLength({ min: 12 })
+		.withMessage("Password must be at least 12 characters long"),
 ];
+
 
 // Middleware to handle validation results
 const validate = (req, res, next) => {
