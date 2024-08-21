@@ -34,7 +34,7 @@ const HabitTable = () => {
 
     return (
     <div className="flex items-center bg-deepFriedSunRays-400 rounded shadow-lg p-4 lg:p-6">
-    <table className="border-collapse w-full">
+    <table className="w-full">
       <thead>
         <tr>
           <th className="p-2 bg-silverMedal-200 rounded-tl-lg">Habit</th>
@@ -42,7 +42,7 @@ const HabitTable = () => {
             <th key={index} className="p-2 bg-silverMedal-200 hidden sm:table-cell">{day}</th>
           ))}
           {daysOfWeekAbbr.map((day, index) => (
-            <th key={index} className="p-2 bg-silverMedal-200 block sm:hidden sm:flex-col"> {day}
+            <th key={index} className="p-2 w-[14.285714%] bg-silverMedal-200 inline-block sm:hidden"> {day}
             </th>
           ))}
           <th className="p-2 bg-silverMedal-200 rounded-tr-lg">Goal</th>
@@ -60,8 +60,8 @@ const HabitTable = () => {
                         />
                     </td>
             ))}
-            <td className="p-2 bg-white relative sm:flex-col sm:hidden">
-              <div className="sm:flex-row">
+            <td className="p-2 bg-white relative sm:hidden">
+              <div className="grid grid-cols-7 gap-1">
             {daysOfWeekAbbr.map((_, dayIndex) => (
               <div key={dayIndex} className="p-2">
                         <FontAwesomeIcon
