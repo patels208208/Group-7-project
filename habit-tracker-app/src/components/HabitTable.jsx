@@ -33,65 +33,48 @@ const HabitTable = () => {
     };
 
     return (
-    <div className="flex flex-col items-center bg-deepFriedSunRays-400 shadow-lg p-1 lg:p-2">
-    <table className="border-collapse">
+    <div className="flex lg:flex-column md:flex-col sm:flex-row items-center bg-deepFriedSunRays-400 shadow-lg p-4 lg:p-6">
+    <table className="border-collapse w-full">
       <thead>
         <tr>
-          <th>
-                <div className="w-24 p-1 m-1 h-8 lg:p-2 lg:m-1 lg:mr-12 lg:h-10 lg:w-32 bg-white rounded shadow-sm">Habit</div>
-            </th>
+          <th className="p-2 bg-silverMedal-200 rounded-tl-lg">Habit</th>
           {daysOfWeek.map((day, index) => (
-            <th key={index}>
-                <div className="py-1 px-0.5 mr-0.5 lg:p-2 lg:m-1 lg:w-14 bg-white rounded shadow-sm hidden sm:block">
-                    {day}
-                </div>
-            </th>
+            <th key={index} className="p-2 bg-silverMedal-200 hidden sm:table-cell">{day}</th>
           ))}
           {daysOfWeekAbbr.map((day, index) => (
-            <th key={index}>
-                <div className="py-1 m-0.5 px-0.5 w-7 h-8 lg:p-2 lg:m-1 lg:w-14 bg-white rounded shadow-sm block sm:hidden">
-                    {day}
-                </div>
+            <th key={index} className="p-2 bg-silverMedal-200 block sm:hidden"> {day}
             </th>
           ))}
-          <th>
-            <div className="lg:p-2 lg:m-1 lg:w-14 bg-white rounded shadow-sm">Goal</div>
-            </th>
+          <th className="p-2 bg-silverMedal-200 rounded-tr-lg">Goal</th>
         </tr>
       </thead>
       <tbody>
         {habits.map((habit, habitIndex) => (
-          <tr key={habitIndex}>
-            <td>
-                <div className="w-24 p-1 m-1 h-8 lg:p-2 lg:m-1 lg:mr-12 lg:h-10 lg:w-32 bg-white rounded shadow-sm font-semibold line-clamp-1">{habit}</div>
-                </td>
+          <tr key={habitIndex} className="hover:bg-silverMedal-100">
+            <td className="p-2 bg-silverMedal-200">{habit}</td>
             {daysOfWeek.map((_, dayIndex) => (
-              <td key={dayIndex}
-                  className="relative">
-                    <div className="rounded lg:p-4 lg:m-2 lg:h-10 bg-white shadow-sm justify-center items-center hidden sm:block">
+              <td key={dayIndex} className="p-2 bg-white relative hidden sm:table-cell">
                         <FontAwesomeIcon
                             icon={completionStatus[habitIndex]?.[dayIndex] ? faSquareCheck : faSquareXmark}
-                            className={`text-xl shadow-sm absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${completionStatus[habitIndex]?.[dayIndex] ? "text-green-500" : "text-red-500"}`}
+                            className={`text-xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${completionStatus[habitIndex]?.[dayIndex] ? "text-green-500" : "text-red-500"}`}
                         />
-                    </div>
-              </td>
+                    </td>
             ))}
-            {daysOfWeek.map((_, dayIndex) => (
-              <td key={dayIndex}
-                  className="relative">
-                    <div className="py-1 m-0.5 px-0.5 w-7 h-8 lg:p-2 lg:m-1 lg:w-14 bg-white rounded shadow-sm block sm:hidden">
+            <td className="p-2 bg-white relative sm:hidden">
+              <div className="sm:flex-row">
+            {daysOfWeekAbbr.map((_, dayIndex) => (
+              <div key={dayIndex} className="p-2">
                         <FontAwesomeIcon
                             icon={completionStatus[habitIndex]?.[dayIndex] ? faSquareCheck : faSquareXmark}
-                            className={`text-xl shadow-sm absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${completionStatus[habitIndex]?.[dayIndex] ? "text-green-500" : "text-red-500"}`}
+                            className={`text-xl ${completionStatus[habitIndex]?.[dayIndex] ? "text-green-500" : "text-red-500"}`}
                         />
-                    </div>
-              </td>
+              </div>
             ))}
-            <td className="relative">
+            </div>
+            </td>
+            <td className="p-2 bg-white relative">
                 {isGoalAchieved(habitIndex) && (
-                    <div className="py-1 m-0.5 px-0.5 w-9 h-8 lg:p-2 lg:m-1 lg:w-14 bg-white rounded shadow-sm">
-                        <FontAwesomeIcon icon={faStar} className="text-amber-500 text-xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-sm" />
-                    </div>
+                        <FontAwesomeIcon icon={faStar} className="text-amber-500 text-xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
                 )}
             </td>
           </tr>
