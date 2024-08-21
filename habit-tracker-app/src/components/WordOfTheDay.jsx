@@ -5,9 +5,11 @@ const WordOfTheDay = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    const fetchWordOfTheDay = async () => {
+    const fetchWordOftheDay = async () => {
       try {
+        console.log("hello")
         const response = await fetch("/api/wordOftheDay");
+        console.log("bum")
         const result = await response.json();
         setData(result);
       } catch (error) {
@@ -15,7 +17,7 @@ const WordOfTheDay = () => {
       }
     };
 
-    fetchWordOfTheDay();
+    fetchWordOftheDay();
   }, []);
 
   if (!data) {

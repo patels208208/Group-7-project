@@ -39,7 +39,6 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="*" element={<h1>Not Found</h1>} />
           <Route path="/habit-views" element={<HabitViews />} />
         </Routes>
         
