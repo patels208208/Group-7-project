@@ -35,7 +35,7 @@ export const Register = (props) => {
 		console.log(`${firstName} ${surname}`);
 		//sending request to server by meg
 		try {
-			const response = await axios.post("http://localhost:3002/api/register", {
+			const response = await axios.post("http://localhost:3001/api/register", {
 				first_name: firstName, // Adjust these keys as per your backend/name
 				surname: surname,
 				email_address: email,

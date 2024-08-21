@@ -4,7 +4,7 @@
 // import auth from './routes/auth.js'
 // import cors from'cors'
 // import fetch from 'node-fetch'
-// import auth 
+// import auth
 
 // // Load environment variables from the .env file in the backend directory
 

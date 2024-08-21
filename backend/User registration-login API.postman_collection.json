@@ -11,7 +11,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "http://localhost:3002/"
+				"url": "http://localhost:3001/"
 			},
 			"response": []
 		},
@@ -20,7 +20,7 @@
 			"request": {
 				"method": "POST",
 				"header": [],
-				"url": "http://localhost:3002/api/login"
+				"url": "http://localhost:3001/api/login"
 			},
 			"response": []
 		},
@@ -29,7 +29,7 @@
 			"request": {
 				"method": "POST",
 				"header": [],
-				"url": "http://localhost:3002/api/register"
+				"url": "http://localhost:3001/api/register"
 			},
 			"response": []
 		}
