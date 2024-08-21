@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import HabitTable from "./HabitTable";
+import HabitTableWeekly from "./HabitTableWeekly";
 import axios from 'axios';
 import { BrowserRouter } from 'react-router-dom';
 import { compareAsc, format } from 'date-fns';

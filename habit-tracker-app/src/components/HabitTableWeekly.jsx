@@ -2,7 +2,7 @@ import { faStar, faSquareCheck, faSquareXmark } from "@fortawesome/free-solid-sv
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
 
-const HabitTable = () => {
+const HabitTableWeekly = () => {
     const habits = ['Hobbies', 'Hydration', 'Medication', 'Movement', 'Nutrition', 'Pets', 'Plants', 'Reading', 'Self Care', 'Sleep', 'Socialising', 'Social Media'];
     const daysOfWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
     const daysOfWeekAbbr = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
@@ -51,7 +51,7 @@ const HabitTable = () => {
       <tbody>
         {habits.map((habit, habitIndex) => (
           <tr key={habitIndex} className="hover:bg-silverMedal-100">
-            <td className="p-2 bg-silverMedal-200">{habit}</td>
+            <td className="p-2 sm:pl-2 sm:pr-1 bg-silverMedal-200">{habit}</td>
             {daysOfWeek.map((_, dayIndex) => (
               <td key={dayIndex} className="p-2 bg-white relative hidden sm:table-cell">
                         <FontAwesomeIcon
@@ -63,7 +63,7 @@ const HabitTable = () => {
             <td className="p-2 bg-white relative sm:hidden">
               <div className="grid grid-cols-7 gap-1">
             {daysOfWeekAbbr.map((_, dayIndex) => (
-              <div key={dayIndex} className="p-2">
+              <div key={dayIndex} className="p-1">
                         <FontAwesomeIcon
                             icon={completionStatus[habitIndex]?.[dayIndex] ? faSquareCheck : faSquareXmark}
                             className={`text-xl ${completionStatus[habitIndex]?.[dayIndex] ? "text-green-500" : "text-red-500"}`}
@@ -85,4 +85,4 @@ const HabitTable = () => {
     )
 };
 
-export default HabitTable;
+export default HabitTableWeekly;
