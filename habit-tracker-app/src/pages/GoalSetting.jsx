@@ -51,7 +51,7 @@ const GoalSetting = () => {
       <div>
         <div>
           <div className="flex flex-col items-center">
-            <h1 className="text-silverMedal-900">Goal Setting</h1>
+            <h1 className="text-center pb-7 mt-4 text-briny-600 font-heading font-medium text-xl">Goal Setting</h1>
             <h3 className="text-silverMedal-900">Select the habit you wish to track:</h3>
           </div>
           <Grid selectedHabitSquare={selectedHabitSquare} setSelectedHabitSquare={setSelectedHabitSquare}/>

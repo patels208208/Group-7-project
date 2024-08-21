@@ -30,7 +30,3 @@
 //     res.status(500).json({ error: 'Internal server error' });
 //   }
 // });
-
-// app.listen(3002, () => {
-//   console.log('Server running on port 3002');
-// });

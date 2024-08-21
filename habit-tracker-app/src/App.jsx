@@ -20,35 +20,36 @@ function App() {
 	// const [currentForm, setCurrentForm] = useState("Login");
 	// const changeForm = (formName) => setCurrentForm(formName);
 
-	return (
+  return (
     <div>
-		<Router>
-			<div className="top-navigation">
-				<Navigation />
-			</div>
-			<div className="App my-20">
-				<Routes>
-					<Route element={<MainLayout />} />
-					<Route path="/" element={<Login />} />
-					<Route path="/hydration" element={<HydrationApp />} />
-					<Route path="/grid" element={<Grid />} />
-					<Route path="/habit-tracker" element={<HabitTracker />} />
-					<Route path="/login" element={<Login />} />
-					<Route path="/goal-setting" element={<GoalSetting />} />
-					<Route path="/register" element={<Register />} />
-					<Route path="/home" element={<Home />} />
-					<Route path="/about-us" element={<AboutUs />} />
-					<Route path="/profile" element={<Profile />} />
-					<Route path="*" element={<h1>Not Found</h1>} />
-					<Route path="/habit-views" element={<HabitViews />} />
-				</Routes>
-			</div>
-			<div className="bottom-navigation">
-				<BottomNavigation />
-			</div>
-		</Router>
-  </div>
-	);
-}
+    <Router>
+      <div className="top-navigation">
+        <Navigation />
+      </div>
+      <div className="App my-20">
+        <Routes>
+          <Route element={<MainLayout/>} />  
+          <Route path="/" element={<Login />} />
+          <Route path="/hydration" element={<HydrationApp />} />
+          <Route path="/grid" element={<Grid />} />
+          <Route path="/habit-tracker" element={<HabitTracker />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/goal-setting" element={<GoalSetting />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/habit-views" element={<HabitViews />} />
+        </Routes>
+        
+      </div>
+      <div className="bottom-navigation">
+        <BottomNavigation />
+      </div>
+    </Router>
+</div>
+  );
+};
+
 
 export default App;
