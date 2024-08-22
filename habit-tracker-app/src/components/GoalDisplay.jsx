@@ -10,7 +10,7 @@ const GoalDisplay = ({selectedHabitSquare, selectedQuantity, selectedMeasurement
         {selectedHabitSquare && (
         <HabitSquare selectedHabitSquare={selectedHabitSquare}/>
         )}
-      <p>Goal: {selectedHabitSquare} {selectedQuantity} {selectedMeasurement} {selectedGoal} time(s) {selectedFrequency}</p>
+      <p>Goal: {selectedHabitSquare} {selectedQuantity} {selectedMeasurement} {selectedGoal} {selectedGoal ===1 ?'time' : 'times'}  {selectedFrequency}</p>
       </div>
     </div>
   );
