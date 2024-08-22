@@ -1,16 +1,17 @@
-import HabitSquare from './HabitSquare';
 
-const GoalDisplay = ({selectedHabitSquare, selectedQuantity, selectedMeasurement, selectedGoal, selectedFrequency}) => {
+
+const GoalDisplay = ({userGoals}) => {
   return (
     <div>
       <div>
       <h2 className="text-center pb-7 mt-4 text-briny-600 font-heading font-medium text-lg">My Goals:</h2>
       </div>
       <div>
-        {selectedHabitSquare && (
-        <HabitSquare selectedHabitSquare={selectedHabitSquare}/>
-        )}
-      <p>Goal: {selectedHabitSquare} {selectedQuantity} {selectedMeasurement} {selectedGoal} {selectedGoal ===1 ?'time' : 'times'}  {selectedFrequency}</p>
+        {userGoals.map((goal, index) => (
+          <div key={index}>
+            <p>Goal:{goal.habit_name} {goal.goal_unit} {goal.measurement} {goal.frequency}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
