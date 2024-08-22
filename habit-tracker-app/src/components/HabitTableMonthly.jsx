@@ -1,9 +1,14 @@
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
-import { format, startOfMonth, endOfMonth, eachDayOfInterval, startOfWeek, endOfWeek, addMonths, subMonths, isSameMonth } from 'date-fns';
+import { format, startOfMonth, endOfMonth, eachDayOfInterval, startOfWeek, endOfWeek, addMonths, subMonths, isSameMonth, isSameDay } from 'date-fns';
 
 const HabitTableMonthly = () => {
+    {/* const mockApiResponse = {
+        date: {isSameDay(completionDate)}
+    } */}
+
+
     const [currentDate, setCurrentDate] = useState(new Date());
 
     const start = startOfMonth(currentDate);
@@ -21,6 +26,16 @@ const HabitTableMonthly = () => {
     const handleNextMonth = () => {
         setCurrentDate(addMonths(currentDate, 1));
       };
+
+{/*    const [completionStatus, setCompletionStatus] = useState([]);
+
+    useEffect(() => {
+        setCompletionStatus(mockApiResponse);
+    }, []);
+
+    const isGoalAchieved = (habitIndex) => {
+        return completionStatus[habitIndex] && completionStatus[habitIndex].every(Boolean);
+    }; */}
 
     return (
         <div className="flex items-center align-middle min-h-full bg-deepFriedSunRays-400 rounded shadow-lg p-4 lg:p-6">
