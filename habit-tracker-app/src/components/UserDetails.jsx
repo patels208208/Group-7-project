@@ -23,11 +23,11 @@ const UserDetails = ({ userId }) => {
   }, [userId]);
 
   return (
-    <div className="flex flex-col items-center">
-      <h2 className="text-2xl font-bold text-center text-briny-600">
+    <div className="flex flex-col items-center p-6 bg-silverMedal-100 rounded-lg shadow-md">
+      <h2 className="text-2xl font-bold text-center text-briny-600 mb-4">
         {user.firstName} {user.surname}
       </h2>
-      <p className="text-lg text-center text-briny-600">{user.email}</p>
+      <p className="text-lg text-center text-briny-600 mb-2">{user.email}</p>
       
     </div>
   );
