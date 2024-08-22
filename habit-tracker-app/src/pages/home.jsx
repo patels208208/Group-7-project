@@ -2,9 +2,13 @@ import React from "react";
 import Avatar from "../components/Avatar";
 import WordOfTheDay from "../components/WordOfTheDay";
 import Grid from "../components/Grid";
+import UserDetails from "../components/UserDetails";
+import { useUser } from "../components/UserContext"; // Import useUser hook
 
 
 function Home() {
+  const { user } = useUser(); // Get user from UserContext
+
   return (
     <div className="home-container">
       <p className="text-center pb-7 mt-4 text-briny-600 font-heading font-medium text-xl">Home Page</p>
@@ -17,7 +21,7 @@ function Home() {
             <p>Welcome</p>
           </div>
           <div className="mb-4">
-            <p>Sally Jones</p>
+            <p>{user ? `${user.firstName} ${user.surname}` : "Guest"}</p>
           </div>
         </div>
       </div>
