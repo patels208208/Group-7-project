@@ -15,6 +15,7 @@ import HabitViews from "./pages/HabitViews.jsx";
 
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Settings from "./pages/Settings.jsx";
 
 function App() {
 	// const [currentForm, setCurrentForm] = useState("Login");
@@ -40,6 +41,7 @@ function App() {
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/habit-views" element={<HabitViews />} />
+          <Route path="/settings" element={<Settings />} /> 
         </Routes>
         
       </div>

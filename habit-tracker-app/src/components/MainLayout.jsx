@@ -5,7 +5,7 @@ import BottomNavigation from './BottomNavigation';
 const MainLayout = () => {
   return (
     <div>
-      <Navigation />
+      <Navigation zIndex = 'z-20'/>
       <BottomNavigation />
       <Outlet />
     </div>
