@@ -3,6 +3,7 @@ import Avatar from "../components/Avatar";
 import GoalDisplay from "../components/GoalDisplay";
 import HabitSquare from "../components/HabitSquare";
 import UserDetails from "../components/UserDetails";
+import ChooseAvatar from "../components/ChooseAvatar";
 
 function Profile({ selectedHabitSquare, selectedFrequency, selectedGoal, selectedQuantity, selectedMeasurement}) {
     return(
