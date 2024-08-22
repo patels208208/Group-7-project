@@ -9,7 +9,6 @@ const WordOfTheDay = () => {
       try {
         console.log("hello")
         const response = await fetch("/api/wordOftheDay");
-        console.log("bum")
         const result = await response.json();
         setData(result);
       } catch (error) {

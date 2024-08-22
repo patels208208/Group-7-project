@@ -16,6 +16,24 @@
 			"response": []
 		},
 		{
+			"name": "Registration details",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3001/api/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Login details",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3001/api/login"
+			},
+			"response": []
+		},
+		{
 			"name": "Hydration app data",
 			"request": {
 				"method": "POST",
@@ -120,6 +138,42 @@
 				"method": "POST",
 				"header": [],
 				"url": "http://localhost:3001/socialmedia"
+			},
+			"response": []
+		},
+		{
+			"name": "Goal setting data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3001/frequency"
+			},
+			"response": []
+		},
+		{
+			"name": "Goal setting frequency data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3001/frequency"
+			},
+			"response": []
+		},
+		{
+			"name": "Goal setting measurement data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3001/measurement"
+			},
+			"response": []
+		},
+		{
+			"name": "Word of the day - 3rd party API connection",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3001/api/wordOfTheDay"
 			},
 			"response": []
 		},
