@@ -10,9 +10,14 @@ import MeasurementInput from '../components/MeasurementInput';
 const GoalSetting = () => {
   const [selectedQuantity, setSelectedQuantity] = useState('');
   const [selectedMeasurement, setSelectedMeasurement] = useState('');
-  const [selectedHabitSquare, setSelectedHabitSquare] = useState('');
+  const [selectedHabitSquare, setSelectedHabitSquare] = useState([]);
   const [selectedFrequency, setSelectedFrequency] = useState('');
   const [selectedGoal, setSelectedGoal] = useState('');
+  const [selectedIcon, setSelectedIcon] = useState('');
+  const [selectedHabitName, setSelectedHabitName] = useState('');
+
+
+ 
 
   const handleSelectFrequency = async (frequency) => {
     setSelectedFrequency(frequency);
@@ -54,14 +59,14 @@ const GoalSetting = () => {
             <h1 className="text-center pb-7 mt-4 text-briny-600 font-heading font-medium text-xl">Goal Setting</h1>
             <h3 className="text-silverMedal-900">Select the habit you wish to track:</h3>
           </div>
-          <Grid selectedHabitSquare={selectedHabitSquare} setSelectedHabitSquare={setSelectedHabitSquare}/>
+          <Grid selectedHabitSquare={selectedHabitSquare} setSelectedHabitSquare={setSelectedHabitSquare} setSelectedIcon={setSelectedIcon}/>
           <div className="flex flex-col items-center">
-          <h3>How would you like to track this habit?</h3>
-            <div className="flex">
+          <h3 className="text-silverMedal-900">How would you like to track this habit?</h3>
+            <div className="flex space-x-4">
             <MeasurementInput selectedQuantity={selectedQuantity} setSelectedQuantity={setSelectedQuantity}/>
             <MeasurementDropdown handleSelectMeasurement={handleSelectMeasurement} selectedMeasurement={selectedMeasurement} setSelectedMeasurement={setSelectedMeasurement}/>
             </div>
-            <div className="flex">
+            <div className="flex space-x-4 mt-4">
             <GoalInput selectedGoal={selectedGoal} setSelectedGoal={setSelectedGoal}/>
             <FrequencyDropdown handleSelectFrequency={handleSelectFrequency} selectedFrequency={selectedFrequency} setSelectedFrequency={setSelectedFrequency}/>
             </div>
@@ -74,13 +79,16 @@ const GoalSetting = () => {
           selectedMeasurement={selectedMeasurement}
           selectedFrequency={selectedFrequency}
           selectedGoal={selectedGoal}
+          selectedIcon={selectedIcon}
           />
           <NewGoalButton 
-          selectedHabitSquare={selectedHabitSquare}
-          selectedQuantity={selectedQuantity}
-          selectedMeasurement={selectedMeasurement}
-          selectedFrequency={selectedFrequency}
-          selectedGoal={selectedGoal}/>
+          setSelectedHabitSquare={setSelectedHabitSquare}
+          setSelectedQuantity={setSelectedQuantity}
+          setSelectedMeasurement={setSelectedMeasurement}
+          setSelectedFrequency={setSelectedFrequency}
+          setSelectedGoal={setSelectedGoal}
+          setSelectedIcon={setSelectedIcon}
+          onNewGoal={handleNewGoal}/>
         </div>
       </div>
   </div>

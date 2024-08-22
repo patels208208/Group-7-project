@@ -1,9 +1,12 @@
 import "../assets/styles/habitSquare.css";
 
-const HabitSquare = ({ selectedHabitSquare, className, icon, habitName, onClick = () => {} }) => {
+const HabitSquare = ({ selectedHabitSquare, className, icon, habitName, onClick = () => {}, setSelectedIcon }) => {
   className = className || ""; // Add this line to ensure className is always defined
   const handleClick = () => {
     onClick(icon);
+    if (setSelectedIcon) {
+    setSelectedIcon(icon); // Set the selected icon
+    }
   };
   
   return (

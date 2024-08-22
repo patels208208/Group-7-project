@@ -1,7 +1,7 @@
 import GoalConfirmation from './GoalConfirmation';
 import React, { useState } from 'react';
 
-const GoalSetButton = ({selectedHabitSquare, selectedQuantity, selectedMeasurement, selectedFrequency, selectedGoal}) => {
+const GoalSetButton = ({selectedHabitSquare, selectedQuantity, selectedMeasurement, selectedFrequency, selectedGoal, selectedIcon}) => {
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleSubmit = () => {
@@ -12,8 +12,12 @@ const GoalSetButton = ({selectedHabitSquare, selectedQuantity, selectedMeasureme
     setShowConfirmation(true);
   };
 
+  const handleNewGoal = () => { 
+    setShowGoalConfirmation(false);
+  };
+
   return (
-    <div>
+    <div className="flex flex-col itmes-center space-y-2">
     <button onClick={handleSubmit}
     className="bg-melon-500 hover:bg-deepFriedSunRays-500 text-white font-bold py-2 px-4 rounded-md"
     >Submit Goal
@@ -25,6 +29,7 @@ const GoalSetButton = ({selectedHabitSquare, selectedQuantity, selectedMeasureme
         selectedMeasurement={selectedMeasurement}
         selectedFrequency={selectedFrequency}
         selectedGoal={selectedGoal}
+        selectedIcon={selectedIcon}
         />
     )}
     </div>
