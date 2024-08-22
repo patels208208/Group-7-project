@@ -5,7 +5,7 @@ import HabitSquare from "../components/HabitSquare";
 import UserDetails from "../components/UserDetails";
 import ChooseAvatar from "../components/ChooseAvatar";
 import axios from "axios";
-import { useUser } from "../UserContext";
+import { useUser } from "../components/UserContext";
 
 function Profile({ selectedHabitSquare, selectedFrequency, selectedGoal, selectedQuantity, selectedMeasurement}) {
     const[userGoals, setUserGoals] = useState([]);

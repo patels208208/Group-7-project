@@ -12,6 +12,7 @@ import Profile from "./pages/profile.jsx";
 import MainLayout from "./components/MainLayout.jsx";
 import GoalSetting from "./pages/GoalSetting.jsx";
 import HabitViews from "./pages/HabitViews.jsx";
+import { UserProvider } from "./components/UserContext.jsx";
 
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
