@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 
-const NewGoalButton = () => {
-    const [selectedFrequency, setSelectedFrequency] = useState(''); // Reset the frequency dropdown
-    const [selectedGoal, setSelectedGoal] = useState(1); // Return goal input to one
-    const [selectedHabitSquare, setSelectedHabitSquare] = useState([]); // Deselect the habit squares in the grid
-  
-  const handleNewGoal = () => {
-    setSelectedFrequency('');
-    setSelectedGoal(1);
-    setSelectedHabitSquare([]);
-  };
+const NewGoalButton = ({setSelectedFrequency, setSelectedGoal, setSelectedHabitSquare, setSelectedMeasurement, setSelectedQuantity, onNewGoal}) => {
+    const handleNewGoal= () => {
+      setSelectedFrequency('');
+      setSelectedGoal('');
+      setSelectedHabitSquare([]);
+      setSelectedMeasurement('');
+      setSelectedQuantity('');  
+      onNewGoal(); //Call the function to hid the GoalConfirmation component
+    };
 
   return (
-    <div>
+    <div className="flex flex-col items-center">
     <button onClick={handleNewGoal}
     className="bg-melon-500 hover:bg-deepFriedSunRays-500 text-white font-bold py-2 px-4 rounded-md"
     >Set New Goal
