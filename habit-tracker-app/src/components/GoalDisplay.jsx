@@ -1,5 +1,4 @@
 
-
 const GoalDisplay = ({userGoals}) => {
   return (
     <div className="p-6 bg-silverMedal-100 rounded-lg shadow-md">

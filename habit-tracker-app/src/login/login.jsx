@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import fullLogo from "../assets/images/logos/fullLogo.png";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useUser } from "../components/UserContext.jsx";
 
 export const Login = (props) => {
 	const navigate = useNavigate();
+	const { updateUser } = useUser();
 	const [email, setEmail] = useState("");
 	const [hashedPassword, setPassword] = useState("");
 	const [message, setMessage] = useState(""); // State to store messages from server
@@ -27,6 +29,9 @@ export const Login = (props) => {
 			if (response.data.token) {
 				localStorage.setItem("token", response.data.token);
 			}
+			
+			// Update the user context
+			updateUser(response.data.user);
 		} catch (error) {
 			console.error("Login error:", error);
 
