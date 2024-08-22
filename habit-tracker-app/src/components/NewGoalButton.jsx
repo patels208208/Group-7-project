@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const NewGoalButton = ({setSelectedFrequency, setSelectedGoal, setSelectedHabitSquare, setSelectedMeasurement, setSelectedQuantity, onNewGoal}) => {
     const handleNewGoal= () => {
       setSelectedFrequency('');
-      setSelectedGoal(1);
+      setSelectedGoal('');
       setSelectedHabitSquare([]);
       setSelectedMeasurement('');
       setSelectedQuantity('');  
