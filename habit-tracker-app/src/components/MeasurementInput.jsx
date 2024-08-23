@@ -1,6 +1,11 @@
-const MeasurementInput = ({setSelectedQuantity}) => {
+import { quantityChanged } from "../redux/reducers";
+import { useDispatch } from "react-redux";
+
+const MeasurementInput = () => {
+  const dispatch = useDispatch(); // Access dispatch
+  
   const handleChange = (event) => {
-    setSelectedQuantity(event.target.value);
+    dispatch(quantityChanged(Number(event.target.value)))
   };
 
   return (

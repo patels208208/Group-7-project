@@ -21,6 +21,7 @@ const GoalSetting = () => {
     setShowGoalConfirmation(false);
   };
 
+  // TODO: Reconnec to backend
   const handleSelectFrequency = async (frequency) => {
     setSelectedFrequency(frequency);
     const response = await fetch("http://localhost:3001/frequency", {
@@ -37,6 +38,7 @@ const GoalSetting = () => {
     return data;
   };
 
+  // TODO: Reconnec to backend
   const handleSelectMeasurement = async (measurement) => {
     setSelectedMeasurement(measurement);
     const response = await fetch("http://localhost:3001/measurement", {
@@ -65,35 +67,21 @@ const GoalSetting = () => {
               Select the habit you wish to track:
             </h3>
           </div>
-          <Grid
-            selectedHabitSquare={selectedHabitSquare}
-            setSelectedHabitSquare={setSelectedHabitSquare}
-            setSelectedIcon={setSelectedIcon}
-          />
+          <Grid />
           <div className="flex flex-col items-center">
             <h3 className="text-silverMedal-900 text-lg font-semibold">
               How would you like to track this habit?
             </h3>
             <div className="flex flex-wrap justify-center space-x-4">
-              <MeasurementInput
-                selectedQuantity={selectedQuantity}
-                setSelectedQuantity={setSelectedQuantity}
-              />
-              <MeasurementDropdown
-                handleSelectMeasurement={handleSelectMeasurement}
-                selectedMeasurement={selectedMeasurement}
-                setSelectedMeasurement={setSelectedMeasurement}
-              />
+              <MeasurementInput />
+              <MeasurementDropdown />
             </div>
             <div className="flex flex-col items-center">
               <h3 className="text-silverMedal-900 text-lg font-semibold mb-4 mt-4">
                 How often would you like to achieve this?
               </h3>
               <div className="flex flex-wrap justify-center space-x-4 mt-4">
-                <GoalInput
-                  selectedGoal={selectedGoal}
-                  setSelectedGoal={setSelectedGoal}
-                />
+                <GoalInput />
                 <FrequencyDropdown
                   handleSelectFrequency={handleSelectFrequency}
                   selectedFrequency={selectedFrequency}
@@ -104,6 +92,7 @@ const GoalSetting = () => {
           </div>
         </div>
         <div className="flex flex-col items-center space-y-2 mt-4">
+          {/* // TODO: Update GoalSetButton */}
           <GoalSetButton
             selectedHabitSquare={selectedHabitSquare}
             selectedQuantity={selectedQuantity}

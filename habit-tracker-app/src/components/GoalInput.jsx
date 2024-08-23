@@ -1,6 +1,11 @@
-const GoalInput = ({setSelectedGoal}) => {
+import { goalChanged } from "../redux/reducers";
+import { useDispatch } from "react-redux";
+
+const GoalInput = () => {
+  const dispatch = useDispatch(); // Access dispatch
+
   const handleChange = (event) => {
-    setSelectedGoal(event.target.value);
+    dispatch(goalChanged(Number(event.target.value)))
   };
 
   return (
