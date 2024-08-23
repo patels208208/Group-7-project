@@ -104,7 +104,7 @@ export const Register = (props) => {
 						required
 						className="my-2 p-2 text-sm rounded-md border-none shadow-sm ring-1 ring-inset ring-silverMedal-600"
 					/>
-					<div>
+					
 						<label htmlFor="password">Create Password</label>
 						<input
 							value={password}
@@ -138,7 +138,6 @@ export const Register = (props) => {
 									{cPasswordMessage}
 								</div>
 							)}
-						</div>
 					</div>
 
 					<div className="flex items-center mt-4 mb-4 mx-auto">
