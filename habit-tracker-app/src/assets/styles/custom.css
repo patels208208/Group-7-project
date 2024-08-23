@@ -1,0 +1,48 @@
+/* custom.css */
+.bg-balls {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  z-index: -1;
+}
+.bg-balls:before,
+.bg-balls:after {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.bg-balls:before {
+  background-color: #fc7a57;
+  right: -75px;
+  bottom: 25px;
+}
+
+@media screen and (min-width: 476px) {
+  .bg-balls:before {
+    width: 220px;
+    height: 220px;
+    right: -100px;
+    bottom: 50px;
+  }
+}
+
+.bg-balls:after {
+  background-color: #f2c75c;
+  top: 75px;
+  left: -75px;
+}
+
+@media screen and (min-width: 476px) {
+  .bg-balls:after {
+    width: 220px;
+    height: 220px;
+    top: -10px;
+    left: -110px;
+  }
+}

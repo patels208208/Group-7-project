@@ -1,4 +1,5 @@
 import "./App.css";
+import "./assets/styles/custom.css";
 import Navigation from "./components/Navigation.jsx";
 import Grid from "./components/Grid.jsx";
 import BottomNavigation from "./components/BottomNavigation.jsx";
@@ -46,6 +47,7 @@ function App() {
               <Route path="/settings" element={<Settings />} />
             </Routes>
           </div>
+          <div className="bg-balls fixed inset-0 min-w-full z--1"> </div>
           <div className="bottom-navigation">
             <BottomNavigation />
           </div>

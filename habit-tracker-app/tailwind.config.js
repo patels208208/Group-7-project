@@ -9,6 +9,9 @@ module.exports = {
 				"body": ["Raleway", "sans-serif"],
 				"heading": ["Poppins", "sans-serif"],
 			},
+			zIndex: {
+				'-1': '-1',
+			},
 			colors: {
 				theme: {
 					light: "#f7f9ff",
@@ -89,5 +92,6 @@ module.exports = {
 			},
 		},
 	},
+	variants: {},
   plugins: [],
-}
+};
