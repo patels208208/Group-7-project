@@ -127,11 +127,15 @@ export const Register = (props) => {
 						required
 						className="my-2 p-2 text-sm rounded-md border-none shadow-sm ring-1 ring-inset ring-silverMedal-600"
 					/>
-
-					<div className="flex justify-left align-left mt-1 text-xs text-red-600">
+					<div className="flex justify-left align-left mt-1 text-xs">
 						{cPasswordMessage && (
-							<div id="password-message">{cPasswordMessage}</div>
-						)}{" "}
+							<div
+								id="password-message"
+								className={isValid ? "text-briny-500" : "text-red-600"}
+							>
+								{cPasswordMessage}
+							</div>
+						)}
 					</div>
 
 					<div className="flex items-center mt-4 mb-4 mx-auto">
