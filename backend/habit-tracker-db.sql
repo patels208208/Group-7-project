@@ -20,8 +20,9 @@ create table user_habit (
 user_habit_id int primary key auto_increment,
 user_id int,
 habit_id int,
-goal_unit int, /*eg. 1 unit */
+measurement_unit int, /*eg. 1 unit */
 measurement varchar(50), /*eg. ml/glass/bottle etc */
+frequency_unit int, /*eg. x times */
 frequency varchar (50) , /*eg. daily */
 created_dt timestamp default current_timestamp,
 updated_dt timestamp default current_timestamp on update current_timestamp,
