@@ -20,7 +20,7 @@ const habitSlice = createSlice({
         state.quantity = 1
         state.unitOfMeasurement = habitUnitsOfMeasurement[action.payload][0]
         state.goal = 1
-        state.unitOfFrequency = habitUnitsOfMeasurement[action.payload][0]
+        state.unitOfFrequency = habitUnitsOfFrequency[0]
     },
     quantityChanged: (state, action) => {
         state.quantity = action.payload
