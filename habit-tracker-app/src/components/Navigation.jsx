@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import '../assets/styles/navigation.css';
-import logo from '../assets/images/logos/logoOrange.png'
+import React, { useState } from "react";
+import "../assets/styles/navigation.css";
+import logo from "../assets/images/logos/logoOrange.png";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 const Navigation = () => {
-
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -32,7 +31,9 @@ const Navigation = () => {
               <span className="sr-only">Open main menu</span>
               {/* Icon when menu is closed */}
               <svg
-                className={`block h-6 w-6 ${isMobileMenuOpen ? 'hidden' : 'block'}`}
+                className={`block h-6 w-6 ${
+                  isMobileMenuOpen ? "hidden" : "block"
+                }`}
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
@@ -47,7 +48,7 @@ const Navigation = () => {
               </svg>
               {/* Icon when menu is open */}
               <svg
-                className={`h-6 w-6 ${isMobileMenuOpen ? 'block' : 'hidden'}`}
+                className={`h-6 w-6 ${isMobileMenuOpen ? "block" : "hidden"}`}
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
@@ -65,11 +66,7 @@ const Navigation = () => {
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex flex-shrink-0 items-center">
               <Link to="/">
-              <img
-                className="h-8 w-auto"
-                src={logo}
-                alt="Habit Tracker"
-              />
+                <img className="h-8 w-auto" src={logo} alt="Habit Tracker" />
               </Link>
             </div>
             <div className="hidden sm:ml-6 sm:block">
@@ -99,15 +96,23 @@ const Navigation = () => {
                 >
                   Goal Setting
                 </Link>
+                <Link
+                  to="/settings"
+                  className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-briny-700 hover:text-white active:bg-briny-300 ease-in-out duration-200"
+                >
+                  Settings
+                </Link>
               </div>
             </div>
           </div>
-
         </div>
       </div>
 
       {/* Mobile menu */}
-      <div className={`sm:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`} id="mobile-menu">
+      <div
+        className={`sm:hidden ${isMobileMenuOpen ? "block" : "hidden"}`}
+        id="mobile-menu"
+      >
         <div className="space-y-1 px-2 pb-3 pt-2">
           <Link
             to="/home"
