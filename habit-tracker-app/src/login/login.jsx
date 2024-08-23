@@ -23,7 +23,7 @@ export const Login = (props) => {
 
 			// Display the success message
 			setMessage(response.data.message);
-			navigate("/profile");
+			navigate("/home");
 
 			// Optionally store the token
 			if (response.data.token) {
