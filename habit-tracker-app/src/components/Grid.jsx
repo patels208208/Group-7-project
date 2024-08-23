@@ -16,10 +16,10 @@ const Grid = () => {
   };
 
   return (
-    <div className="flex-wrap grid grid-cols-3 md:grid-cols-6 gap-2 justify-items-center items-center mx-6 md:mx-28 lg:mx-36 my-5 border-2   border-briny-500 rounded-lg">
+    <div className="flex-wrap grid grid-cols-3 md:grid-cols-6 gap-2 justify-items-center items-center mx-6 md:mx-28 lg:mx-36 my-5 border-2 bg-white shadow-sm border-briny-500 rounded-lg">
       {habits.map((habit, i) => (
         <HabitSquare
-          className={`flex justify-center items-center h-16 p-2 m-2 border-2 w-20 rounded-lg border-briny-500 text-briny-500 ${
+          className={`flex justify-center items-center h-16 p-2 m-2 border-2 w-20 rounded-lg shadow-sm border-briny-500 text-briny-500 ${
             selectedHabit === habit
               ? "bg-melon-500 text-ghostWhite-500"
               : "hover:bg-briny-500 hover:text-ghostWhite-500"

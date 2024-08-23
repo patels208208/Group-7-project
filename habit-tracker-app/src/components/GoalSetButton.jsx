@@ -16,8 +16,8 @@ const GoalSetButton = () => {
 
   const handleSubmit = () => {
     const habitType = habit;  
-    const measurementUnitId = habitUnitsOfMeasurement[habitType].indexOf(unitOfMeasurement);
-    const frequencyUnitId = habitUnitsOfFrequency.indexOf(unitOfFrequency);
+    const measurementUnitId = habitUnitsOfMeasurement[habitType].indexOf(unitOfMeasurement) + 1;
+    const frequencyUnitId = habitUnitsOfFrequency.indexOf(unitOfFrequency) + 1;
 
     const payload = {
       user_id: 1,     // Example value, replace with actual data
