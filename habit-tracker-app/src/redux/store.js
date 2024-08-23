@@ -1,11 +1,9 @@
-import { configureStore, applyMiddleware } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers'; // Your combined reducers
 
-const store = configureStore(
+const store = createStore(
   rootReducer,
-  composeWithDevTools(), // Enables Redux DevTools
-  applyMiddleware(thunk) // Add middleware for async logic
 );
 
+window.store = store;
 export default store;

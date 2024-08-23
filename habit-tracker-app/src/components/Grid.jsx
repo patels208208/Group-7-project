@@ -1,30 +1,32 @@
 import React, { useState } from "react";
 import HabitSquare from "./HabitSquare";
-import { icon as habitIcons } from "./HabitIcon";
+import { habits } from "../redux/constants";
+import { useDispatch, useSelector } from "react-redux";
+import { habitSelector } from "../redux/selectors";
+import { habitIcons } from "./HabitIcon";
+import { habitChanged } from "../redux/reducers";
+
 
 const Grid = () => {
-  const [selectedHabitSquare, setSelectedHabitSquare] = useState([]);
+  const dispatch = useDispatch(); // Access dispatch
+  const selectedHabit = useSelector(habitSelector)
 
-  const handleSquareClick = (index) => {
-    setSelectedHabitSquare((prevSelected) =>
-      prevSelected.includes(index)
-        ? prevSelected.filter((i) => i !== index)
-        : [...prevSelected, index]
-    );
+  const changeHabit = (newHabit) => {
+    dispatch(habitChanged(newHabit)); // Dispatch action with payload
   };
 
   return (
     <div className="flex-wrap grid grid-cols-3 md:grid-cols-6 gap-2 justify-items-center items-center mx-6 md:mx-28 lg:mx-36 my-5 border-2   border-briny-500 rounded-lg">
-      {habitIcons.map((icon, i) => (
+      {habits.map((habit, i) => (
         <HabitSquare
           className={`flex justify-center items-center h-16 p-2 m-2 border-2 w-20 rounded-lg border-briny-500 text-briny-500 ${
-            selectedHabitSquare.includes(i)
+            selectedHabit === habit
               ? "bg-melon-500 text-ghostWhite-500"
               : "hover:bg-briny-500 hover:text-ghostWhite-500"
           }`}
-          key={i}
-          icon={icon}
-          onClick={() => handleSquareClick(i)}
+          key={habit}
+          icon={habitIcons[habit]}
+          onClick={() => changeHabit(habit)}
         />
       ))}
     </div>

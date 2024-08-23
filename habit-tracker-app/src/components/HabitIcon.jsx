@@ -30,6 +30,22 @@ const icon = [
   communicationIcon,
 ];
 
+// TODO: Merge the habit icons and the habitUnitsOfMeasurement into a single object
+export const habitIcons = {
+  Hydration: hydrationIcon,
+  Nutrition: foodIcon,
+  Movement: movementIcon,
+  Reading: readingIcon,
+  Sleep: sleepIcon,
+  Medication: medicationIcon,
+  Hobbies: hobbiesIcon,
+  "Self-care": hygieneIcon,
+  Pets: petCareIcon,
+  Plants: plantCareIcon,
+  Socialising: socialIcon,
+  "Social Media": communicationIcon,
+};
+
 function HabitIcon({ habitIcon, habitName }) {
   return (
   <div className="habit-icon">

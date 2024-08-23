@@ -65,11 +65,7 @@ const GoalSetting = () => {
               Select the habit you wish to track:
             </h3>
           </div>
-          <Grid
-            selectedHabitSquare={selectedHabitSquare}
-            setSelectedHabitSquare={setSelectedHabitSquare}
-            setSelectedIcon={setSelectedIcon}
-          />
+          <Grid />
           <div className="flex flex-col items-center">
             <h3 className="text-silverMedal-900 text-lg font-semibold">
               How would you like to track this habit?
@@ -79,11 +75,7 @@ const GoalSetting = () => {
                 selectedQuantity={selectedQuantity}
                 setSelectedQuantity={setSelectedQuantity}
               />
-              <MeasurementDropdown
-                handleSelectMeasurement={handleSelectMeasurement}
-                selectedMeasurement={selectedMeasurement}
-                setSelectedMeasurement={setSelectedMeasurement}
-              />
+              <MeasurementDropdown />
             </div>
             <div className="flex flex-col items-center">
               <h3 className="text-silverMedal-900 text-lg font-semibold mb-4 mt-4">
