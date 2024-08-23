@@ -1,15 +1,33 @@
 import GoalConfirmation from './GoalConfirmation';
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { postData } from '../redux/action.js';
+import { habitChanged, habitSlice } from '../redux/reducers.js';
+import { habits } from '../redux/constants.js'
 
-const GoalSetButton = ({setSelectedHabitSquare, selectedHabitSquare, setSelectedQuantity, selectedQuantity, setSelectedMeasurement, selectedMeasurement, setSelectedFrequency, selectedFrequency, setSelectedGoal, selectedGoal, SetSelectedIcon, selectedIcon}) => {
+const GoalSetButton = () => {
+  const dispatch = useDispatch();
+  const habit = useSelector(state => state.habit);
+  const quantity = useSelector(state => state.quantity);
+  const unitOfMeasurement = useSelector(state => state.unitOfMeasurement);
+  const goal = useSelector(state => state.goal);
+  const unitOfFrequency = useSelector(state => state.unitOfFrequency);
   const [showGoalConfirmation, setShowGoalConfirmation] = useState(false);
 
-  const handleSubmit = async () => {
-    // Submit the habit square, frequency, and goal to the database
-    // You can use an API call or any other method to send the data to the server
-
-    // After submitting, show the Goal Confirmation component
+  const handleSubmit = () => {
+    const payload = {
+      user_id: 1,     // Example value, replace with actual data
+      habit_id: habits.findIndex(x => x === habit),  // Data from Redux store
+      measurement_unit: quantity,
+      measurement: unitOfMeasurement,
+      frequency_unit: 3,
+      frequency: unitOfFrequency
+    };
     setShowGoalConfirmation(true);
+    console.log(payload); // Checks that it is inputting what is expected
+
+    // Dispatch the postData action with the payload
+    dispatch(postData(payload));
   };
 
   return (
@@ -18,14 +36,14 @@ const GoalSetButton = ({setSelectedHabitSquare, selectedHabitSquare, setSelected
     className="bg-melon-500 hover:bg-deepFriedSunRays-500 text-white font-bold py-2 px-4 rounded-md"
     >Submit Goal
     </button>
-    {showGoalConfirmation && <GoalConfirmation 
+    {/* {showGoalConfirmation && <GoalConfirmation 
     selectedFrequency={selectedFrequency}
     selectedGoal={selectedGoal}
     selectedHabitSquare={selectedHabitSquare}
     selectedMeasurement={selectedMeasurement}
     selectedQuantity={selectedQuantity}
     selectedIcon={selectedIcon}
-    />}
+    />} */}
     </div>
   );
 };
