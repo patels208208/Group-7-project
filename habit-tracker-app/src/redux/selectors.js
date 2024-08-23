@@ -1,5 +1,5 @@
 import { createSelector } from "@reduxjs/toolkit";
-import { habitUnitsOfMeasurement } from "./constants";
+import { habitUnitsOfMeasurement, habitUnitsOfFrequency } from "./constants";
 
 // Simple selector to get the current selected habit
 export const habitSelector = (state) => state.habit;
@@ -20,3 +20,9 @@ export const allowedUnitsOfMeasurementSelector = createSelector(
   habitSelector, // Input selector to get the current habit
   (currentHabit) => habitUnitsOfMeasurement[currentHabit] || [] // Output function
 );
+
+// Selector to get allowed units of frequency for the current habit
+export const allowedUnitsOfFrequencySelector = createSelector(
+    habitSelector, // Input selector to get the current habit
+    (currentHabit) => habitUnitsOfFrequency // Output function returns the constant array
+  );

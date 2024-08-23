@@ -13,6 +13,7 @@ export const habits = [
   "Social Media",
 ];
 
+// TODO: Update units to be uniform and relevant
 export const habitUnitsOfMeasurement = {
   Hydration: ["liters", "cups", "bottles", "glasses", "ml"],
   Nutrition: ["calories", "grams", "meals", "servings", "macros"],
