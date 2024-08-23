@@ -35,7 +35,7 @@ const GoalSetButton = () => {
   };
 
   return (
-    <div className="flex flex-col itmes-center space-y-2">
+    <div className="flex flex-col items-center space-y-2">
     <button onClick={handleSubmit}
     className="bg-melon-500 hover:bg-deepFriedSunRays-500 text-white font-bold py-2 px-4 rounded-md"
     >Submit Goal
