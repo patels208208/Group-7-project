@@ -45,7 +45,7 @@ export const Register = (props) => {
 			const token = response.data;
 			localStorage.setItem("token", token);
 			setMessage(response.data.message);
-			navigate("/profile");
+			navigate("/home");
 		} catch (error) {
 			if (error.response) {
 				setMessage(error.response.data.message || "Registration failed");
@@ -104,40 +104,40 @@ export const Register = (props) => {
 						required
 						className="my-2 p-2 text-sm rounded-md border-none shadow-sm ring-1 ring-inset ring-silverMedal-600"
 					/>
-					
-						<label htmlFor="password">Create Password</label>
-						<input
-							value={password}
-							onChange={(e) => setPassword(e.target.value)}
-							type="password"
-							placeholder="*********"
-							id="password"
-							name="password"
-							required
-							title="Password must be at least 12 characters long"
-							className="my-2 p-2 text-sm rounded-md border-none shadow-sm ring-1 ring-inset ring-silverMedal-600"
-						/>
 
-						<label htmlFor="setCPassword">Confirm Password</label>
-						<input
-							value={cPassword}
-							onChange={handleChange}
-							type="password"
-							placeholder="*********"
-							id="setCPassword"
-							name="setCPassword"
-							required
-							className="my-2 p-2 text-sm rounded-md border-none shadow-sm ring-1 ring-inset ring-silverMedal-600"
-						/>
-						<div className="flex justify-left align-left mt-1 text-xs">
-							{cPasswordMessage && (
-								<div
-									id="password-message"
-									className={isValid ? "text-briny-500" : "text-red-600"}
-								>
-									{cPasswordMessage}
-								</div>
-							)}
+					<label htmlFor="password">Create Password</label>
+					<input
+						value={password}
+						onChange={(e) => setPassword(e.target.value)}
+						type="password"
+						placeholder="*********"
+						id="password"
+						name="password"
+						required
+						title="Password must be at least 12 characters long"
+						className="my-2 p-2 text-sm rounded-md border-none shadow-sm ring-1 ring-inset ring-silverMedal-600"
+					/>
+
+					<label htmlFor="setCPassword">Confirm Password</label>
+					<input
+						value={cPassword}
+						onChange={handleChange}
+						type="password"
+						placeholder="*********"
+						id="setCPassword"
+						name="setCPassword"
+						required
+						className="my-2 p-2 text-sm rounded-md border-none shadow-sm ring-1 ring-inset ring-silverMedal-600"
+					/>
+					<div className="flex justify-left align-left mt-1 text-xs">
+						{cPasswordMessage && (
+							<div
+								id="password-message"
+								className={isValid ? "text-briny-500" : "text-red-600"}
+							>
+								{cPasswordMessage}
+							</div>
+						)}
 					</div>
 
 					<div className="flex items-center mt-4 mb-4 mx-auto">
