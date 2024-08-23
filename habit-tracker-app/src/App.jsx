@@ -18,6 +18,7 @@ import { UserProvider } from "./components/UserContext.jsx";
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Settings from "./pages/Settings.jsx";
+// import { AuthProvider } from "./controllers/userAuth.js";
 
 function App() {
   // const [currentForm, setCurrentForm] = useState("Login");
