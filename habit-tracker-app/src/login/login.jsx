@@ -42,7 +42,7 @@ export const Login = (props) => {
 				setMessage("An unexpected error occurred. Please try again.");
 			}
 		}
-		//ends here
+
 	};
 
 	function register() {

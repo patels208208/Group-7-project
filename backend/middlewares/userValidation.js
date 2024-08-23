@@ -6,7 +6,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
-//Validation process using express-validator
+// //Validation process using express-validator
 // Middleware to parse JSON bodies
 app.use(express.json());
 
@@ -20,11 +20,7 @@ const registerValidation = [
 	body("user_password")
 		.isLength({ min: 12 })
 		.withMessage("Password must be at least 12 characters long"),
-		body("user_password")
-		.isLength({ min: 12 })
-		.withMessage("Password must be at least 12 characters long"),
 ];
-
 
 // Middleware to handle validation results
 const validate = (req, res, next) => {
@@ -60,8 +56,10 @@ const loginCheck = async (req, res, next) => {
 							.status(200)
 							.json({ message: "Login successful", token: jwt_token_key });
 					} else {
-						console.log("Password Incorrect");
-						return res.status(401).json({ message: "Password incorrect" });
+						console.log("Password Incorrect.");
+						return res
+							.status(401)
+							.json({ message: "Password incorrect." });
 					}
 				}
 			}
