@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { habitSelector } from "../redux/selectors.js";
-import { habitChanged } from "../redux/reducers.js";
+import { habitChanged } from "../redux/habitReducer.js";
 import Grid from "../components/Grid";
 import SocialMediaSharing from "../socialmediasharing/socialmediasharing.jsx";
 import HabitComponent from "../components/HabitComponents.jsx";

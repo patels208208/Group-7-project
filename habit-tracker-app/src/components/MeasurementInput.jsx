@@ -1,4 +1,4 @@
-import { quantityChanged } from "../redux/reducers";
+import { quantityChanged } from "../redux/habitReducer";
 import { useDispatch } from "react-redux";
 
 const MeasurementInput = () => {

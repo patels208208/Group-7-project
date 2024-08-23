@@ -2,7 +2,7 @@ import { Menu, MenuButton } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { useDispatch, useSelector } from 'react-redux';
 import { unitOfFrequencySelector, allowedUnitsOfFrequencySelector } from '../redux/selectors';
-import { unitOfFrequencyChanged } from '../redux/reducers';
+import { unitOfFrequencyChanged } from '../redux/habitReducer';
 
 export default function FrequencyDropdown() {
   const dispatch = useDispatch(); // Acces dispatch

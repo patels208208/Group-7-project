@@ -2,7 +2,7 @@ import { Menu } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { useState } from "react";
 import OtherInput from "./OtherInput";
-import { unitOfMeasurementChanged } from "../redux/reducers";
+import { unitOfMeasurementChanged } from "../redux/habitReducer";
 import { useDispatch, useSelector } from "react-redux";
 import { unitOfMeasurementSelector, allowedUnitsOfMeasurementSelector } from "../redux/selectors";
 
