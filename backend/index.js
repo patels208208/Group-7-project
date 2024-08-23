@@ -278,3 +278,38 @@ app.get("/completion", (req, res) => {
 		res.status(200).json(results);
 	});
 });
+
+//app.post to post the habit to the database
+app.post("/completion", (req, res) => {
+	const {
+		user_id,
+		habit_id,
+		measurement_unit,
+		measurement,
+		frequency_unit,
+		frequency,
+		created_dt,
+		updated_dt
+	  } = req.body;
+
+	  const values = [
+		user_id,
+		habit_id,
+		measurement_unit,
+		measurement,
+		frequency_unit,
+		frequency,
+		created_dt,
+		updated_dt
+	  ];
+
+	const sql = "INSERT INTO user_habit (user_id, habit_id, measurement_unit, measurement, frequency_unit, frequency, created_dt, updated_dt) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+	pool.query(sql, values, (err, result) => {
+		if (err) {
+			console.error("Error entering completion data", err.message);
+			return res.status(500).json({ error: "Database error" });
+		}
+
+		res.status(201).json({ message: "Completion data saved successfully" });
+	});
+});
