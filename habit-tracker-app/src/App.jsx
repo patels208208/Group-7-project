@@ -16,46 +16,56 @@ import HabitViews from "./pages/HabitViews.jsx";
 import { UserProvider } from "./components/UserContext.jsx";
 
 import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import {
+	BrowserRouter as Router,
+	Routes,
+	Route,
+	Link,
+	useLocation,
+} from "react-router-dom";
 import Settings from "./pages/Settings.jsx";
-// import { AuthProvider } from "./controllers/userAuth.js";
+// import { AuthProvider } from "./login/userAuth.js"
+
+// const authLogin = () => (
+//   <AuthProvider>
+//       <Login />
+//       {/* Other components */}
+//   </AuthProvider>
+// );
 
 function App() {
-  // const [currentForm, setCurrentForm] = useState("Login");
-  // const changeForm = (formName) => setCurrentForm(formName);
-
-  return (
-    <div>
-      <UserProvider>
-        <Router>
-          <div className="top-navigation">
-            <Navigation />
-          </div>
-          <div className="App my-20">
-            <Routes>
-              <Route element={<MainLayout />} />
-              <Route path="/" element={<Login />} />
-              <Route path="/hydration" element={<HydrationApp />} />
-              <Route path="/grid" element={<Grid />} />
-              <Route path="/habit-tracker" element={<HabitTracker />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/goal-setting" element={<GoalSetting />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/home" element={<Home />} />
-              <Route path="/about-us" element={<AboutUs />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/habit-views" element={<HabitViews />} />
-              <Route path="/settings" element={<Settings />} />
-            </Routes>
-          </div>
-          <div className="bg-balls fixed inset-0 min-w-full z--1"> </div>
-          <div className="bottom-navigation">
-            <BottomNavigation />
-          </div>
-        </Router>
-      </UserProvider>
-    </div>
-  );
+	return (
+		<div>
+			<UserProvider>
+				<Router>
+					<div className="top-navigation">
+						<Navigation />
+					</div>
+					<div className="App my-20">
+						<Routes>
+							<Route element={<MainLayout />} />
+							<Route path="/" element={<Login />} />
+							<Route path="/hydration" element={<HydrationApp />} />
+							<Route path="/grid" element={<Grid />} />
+							<Route path="/habit-tracker" element={<HabitTracker />} />
+							<Route path="/login" element={<Login />} />
+							<Route path="/goal-setting" element={<GoalSetting />} />
+							<Route path="/register" element={<Register />} />
+							<Route path="/home" element={<Home />} />
+							<Route path="/about-us" element={<AboutUs />} />
+							<Route path="/profile" element={<Profile />} />
+							<Route path="/habit-views" element={<HabitViews />} />
+							<Route path="/settings" element={<Settings />} />
+						</Routes>
+					</div>
+					<div className="bg-balls fixed inset-0 min-w-full z--1"> </div>
+					<div className="bottom-navigation">
+						<BottomNavigation />
+					</div>
+				</Router>
+			</UserProvider>
+		</div>
+	);
 }
 
 export default App;
