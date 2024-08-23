@@ -22,10 +22,10 @@ const GoalSetButton = () => {
     const payload = {
       user_id: 1,     // Example value, replace with actual data
       habit_id: habits.findIndex(x => x === habit) + 1,  // Data from Redux store
-      measurement_unit: quantity,
-      measurement: measurementUnitId,
-      frequency_unit: 3,
-      frequency: frequencyUnitId
+      measurement_unit: measurementUnitId,
+      measurement: quantity,
+      frequency_unit: frequencyUnitId,
+      frequency: goal
     };
     setShowGoalConfirmation(true);
     console.log(payload); // Checks that it is inputting what is expected
