@@ -19,6 +19,7 @@ const habitSlice = createSlice({
         state.habit = action.payload
         state.quantity = 1
         state.unitOfMeasurement = habitUnitsOfMeasurement[action.payload][0]
+        state.goal = 1
         state.unitOfFrequency = 0
     },
     quantityChanged: (state, action) => {
@@ -26,6 +27,9 @@ const habitSlice = createSlice({
     },
     unitOfMeasurementChanged: (state, action) => {
         state.unitOfMeasurement = action.payload
+    },
+    goalChanged: (state, action) => {
+        state.goal = action.payload
     },
     unitOfFrequencyChanged: (state, action) => {
         state.unitOfFrequency = action.payload
@@ -38,7 +42,7 @@ const habitSlice = createSlice({
 });
 
 // Export the generated actions
-export const { habitChanged, quantityChanged, unitOfMeasurementChanged, unitOfFrequencyChanged } = habitSlice.actions;
+export const { habitChanged, quantityChanged, unitOfMeasurementChanged, goalChanged, unitOfFrequencyChanged } = habitSlice.actions;
 
 // Export the reducer to include it in the store
 export default habitSlice.reducer;

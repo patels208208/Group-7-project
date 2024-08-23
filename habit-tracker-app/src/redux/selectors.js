@@ -11,6 +11,8 @@ export const unitOfMeasurementSelector = (state) =>
 // Simple selector to get the current quantity
 export const quantitySelector = (state) => state.quantity;
 
+export const goalSelector = (state) => state.goal;
+
 // Simple selector to get the selected frequency
 export const unitOfFrequencySelector = (state) => state.unitOfFrequency;
 
