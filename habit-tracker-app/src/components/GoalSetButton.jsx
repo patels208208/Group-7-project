@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { postData } from '../redux/action.js';
 import { habitChanged, habitSlice } from '../redux/reducers.js';
-import { habits } from '../redux/constants.js'
+import { habits, habitUnitsOfMeasurement, habitUnitsOfFrequency } from '../redux/constants.js'
 
 const GoalSetButton = () => {
   const dispatch = useDispatch();
@@ -15,13 +15,17 @@ const GoalSetButton = () => {
   const [showGoalConfirmation, setShowGoalConfirmation] = useState(false);
 
   const handleSubmit = () => {
+    const habitType = habit;  
+    const measurementUnitId = habitUnitsOfMeasurement[habitType].indexOf(unitOfMeasurement);
+    const frequencyUnitId = habitUnitsOfFrequency.indexOf(unitOfFrequency);
+
     const payload = {
       user_id: 1,     // Example value, replace with actual data
-      habit_id: habits.findIndex(x => x === habit),  // Data from Redux store
+      habit_id: habits.findIndex(x => x === habit) + 1,  // Data from Redux store
       measurement_unit: quantity,
-      measurement: unitOfMeasurement,
+      measurement: measurementUnitId,
       frequency_unit: 3,
-      frequency: unitOfFrequency
+      frequency: frequencyUnitId
     };
     setShowGoalConfirmation(true);
     console.log(payload); // Checks that it is inputting what is expected
