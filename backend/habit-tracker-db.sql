@@ -6,12 +6,14 @@ user_id int primary key auto_increment,
 first_name varchar (100),
 surname varchar (100),
 email_address varchar(100) not null unique,
-user_password varchar (100) not null
+user_password varchar (100) not null,
+avatar_name varchar(100)
 );
 
 create table habit_type (
 habit_id int primary key auto_increment,
 habit_name varchar (100) not null,
+habit_icon varchar (100),
 created_dt timestamp default current_timestamp,
 updated_dt timestamp default current_timestamp on update current_timestamp
 );

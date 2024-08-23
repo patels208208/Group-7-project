@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import "../assets/styles/navigation.css";
 import logo from "../assets/images/logos/logoOrange.png";
@@ -19,6 +20,7 @@ const Navigation = () => {
 	useEffect(() => {
 		setIsLoginPage(location.pathname === "/" ||  location.pathname === "/register" || location.pathname === "/about-us");
 	}, [location.pathname]);
+
 
 	const toggleMobileMenu = () => {
 		setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -198,12 +200,16 @@ const Navigation = () => {
 								>
 									Habits
 								</Link>
-								<Link
-									to="/goal-setting"
-									className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-briny-700 hover:text-white active:bg-briny-300 ease-in-out duration-200"
-								>
-									Goal Setting
-								</Link>
+							      <Link
+                  to="/goal-setting"
+                  className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-briny-700 hover:text-white active:bg-briny-300 ease-in-out duration-200"
+                >
+                  Goal Setting
+                </Link>
+                <Link
+                  to="/settings"
+                  className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-briny-700 hover:text-white active:bg-briny-300 ease-in-out duration-200"
+                >
 							</div>
 						</div>
 					</div>
@@ -230,10 +236,23 @@ const Navigation = () => {
 					>
 						Habits
 					</Link>
+                <Link
+            to="/goal-setting"
+            className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-briny-700 hover:text-white"
+          >
+            Goal Setting
+          </Link>
+          <Link
+            to="/settings"
+            className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-briny-700 hover:text-white"
+          >
+            Settings
+          </Link>
 				</div>
 			</div>
 		</nav>
 	);
-};
+
+
 
 export default Navigation;

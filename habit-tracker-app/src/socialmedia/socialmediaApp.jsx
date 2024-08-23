@@ -24,11 +24,18 @@ const handleClick = async (event) => {
 
 function SocialmediaApp() {
   return (
-    <div className="socialmedia-app">
-        <h2>Social Media</h2>
-        <button onClick={handleClick} className="socialmedia-button">
-        {icon[11]}<br></br>Social media<br></br>Tap here when daily goal is complete</button>
+    <div className="socialmedia-app p-6 bg-gray-100 min-h-screen flex flex-col items-center">
+      <h2 className="text-2xl font-bold mb-4">Social Media</h2>
+      <button 
+        onClick={handleClick} 
+        className="socialmedia-button bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-600 transition duration-300 ease-in-out flex flex-col items-center"
+      >
+        {icon[11]}
+        <span className="mt-2">Social media</span>
+        <span className="text-sm mt-1">Tap here when daily goal is complete</span>
+      </button>
     </div>
   )
 };
+
 export default SocialmediaApp;
