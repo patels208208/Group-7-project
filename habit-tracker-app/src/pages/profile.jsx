@@ -30,7 +30,7 @@ function Profile({ selectedHabitSquare, selectedFrequency, selectedGoal, selecte
         }
 
     return(
-        <div className="profile-container p-8 bg-silverMedal-50 mid-h-screen">
+        <div className="profile-container p-8 mid-h-screen">
             <p className="text-center pb-7 mt-4 text-briny-600 font-heading font-medium text-xl">Profile Page</p>
             <div className="flex flex-row w-auto ml-8 lg:ml-64 xl:ml-96 items-center">
                 <div className="w-24 h-24 mb-4 lg:mb-0"><Avatar /></div>
