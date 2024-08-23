@@ -1,0 +1,17 @@
+{
+  "name": "group-7-project",
+  "version": "1.0.0",
+  "description": "Habit tracker app",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
+    "start:frontend": "cd backend && npm install && npm start",
+    "start:backend": "cd habit-tracker-app && npm install && npm start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
