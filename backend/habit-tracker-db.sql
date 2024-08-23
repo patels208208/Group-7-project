@@ -6,8 +6,8 @@ user_id int primary key auto_increment,
 first_name varchar (100),
 surname varchar (100),
 email_address varchar(100) not null unique,
-user_password varchar (100) not null
-avatar_name varchar(100),
+user_password varchar (100) not null,
+avatar_name varchar(100)
 );
 
 create table habit_type (
