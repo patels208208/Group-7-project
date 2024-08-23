@@ -14,15 +14,16 @@ The concept is a habit tracker app that can be used to track a range of habits. 
 
 1. Hydration
 2. Nutrition
-3. Reading
-4. Sleep
-5. Medication
-6. Hobbies
-7. Self-care
-8. Pets
-9. Plants
-10. Socialising
-11. Social media
+3. Movement
+4. Reading
+5. Sleep
+6. Medication
+7. Hobbies
+8. Self-care
+9. Pets
+10. Plants
+11. Socialising
+12. Social Media
 
 This README.md file will explain the specifications, design, implementation and execution of the habit tracker app. This report also includes the outcomes of our user testing processes and areas where the app can be further developed in the future.
 
@@ -38,11 +39,13 @@ We have designed this app with neurodivergent users in mind. For example, we hav
 
 ## Specifications and design
 - React.js: used to build the app for deployment on a web browser. React.js allows for better functionality and smoother running on web and mobile browsers.
-- Tailwind/CSS: for app design and branding.
+- Tailwind/CSS: for app design and branding. A new challenge for all members of the team.
 - Node.js with Express and Middleware: this allows the app to interact with APIs to capture/display data and a MySQL database to store the data. Within this app, we have built two APIs - one for managing user login details and one for habit tracking.
 - MySQL: for database infrastructure and management.
 - Git and Github: for version control and collaboration.
 - Deployment: app will be used on a web browser which allows users to use this app on desktops, laptops and mobile devices.
+- We used a range of tools (including Google Fonts and Adobe Contrast Checker) to find fonts and colours that were accessible but also matching the uplifting and positive feel we wanted to create for the app. 
+- FontAwesome to find easily recognisable icons which will display across a range of browsers and devices.
 
 ## Implementation and execution
 We used ‘Sprint’ methodology to ensure that project tasks were being completed in a timely manner. As per our SWOT analysis, we identified that some of our team members have availability during the week, whereas others do not (due to working hours, family commitments, etc.). Therefore we allocated tasks in accordance with availability, individual strengths and areas of knowledge/experience. We used our SWOT analysis to identify which team members would be best placed to complete particular tasks. For example, those who have identified front-end/creativity as strengths are working on the app’s design.
@@ -56,12 +59,17 @@ We used the following tools to develop this project and work as a team:
 
 ## Testing and evaluation
 Feedback from user testing: TBC
+Throughout the design process we used our experience of using similar apps to develop someting we feel we would want to use. We also showed elemets to friends and family to ensure our use of design was accessible and appealed to a range of audiences.
 
 Strengths of the app: TBC
+As our project has been design led, we feel we have created strong branding and that the look and feel is very professional and will appeal to users with it's simplicity of design and bold use of colour.
+The navigation is very simple to follow and the user experience is uncluttered and straightforward making it accessible to a wide range of users including those who are neurodivergent and easily distracted.
 
 Weaknesses of the app: TBC
+Due to time and 'woman-power' limitations we have not been able to add all the features from our wishlist but we knew that we were being ambitious from the start. We have had to simplify the view options and the links between the app and database to ensure that we were able to achieve the MVP. 
 
 Opportunities for the app: TBC
+If this were to be an ongoing project, there are futher features we would love to add as further releases including linking up with calendar apps and wearable devices to issue reminders; a productivity timer feature to allow users to time how long they spend on their habits and to auto-update their records; more personalisatin options including adding your own habit, choosing colours and icons etc.
 
 Threats to the app: TBC
 
