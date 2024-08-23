@@ -13,7 +13,7 @@ export const habits = [
   "Social Media",
 ];
 
-// TODO: Update units to be uniform and relevant
+// TODO: Update units to be uniform and relevant, WLTH: changing based off singular or plural
 export const habitUnitsOfMeasurement = {
   Hydration: ["liters", "cups", "bottles", "glasses", "ml"],
   Nutrition: ["calories", "grams", "meals", "servings", "macros"],
