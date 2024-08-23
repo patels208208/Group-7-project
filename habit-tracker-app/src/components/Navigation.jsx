@@ -17,7 +17,7 @@ const Navigation = () => {
 	const location = useLocation();
 
 	useEffect(() => {
-		setIsLoginPage(location.pathname === "/" ||"/about-us");
+		setIsLoginPage(location.pathname === "/" || location.pathname === "/about-us");
 	}, [location.pathname]);
 
 	const toggleMobileMenu = () => {

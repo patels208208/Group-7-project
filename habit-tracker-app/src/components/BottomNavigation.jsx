@@ -12,7 +12,7 @@ import {
 const BottomNavigation = () => {
 	const location = useLocation();
 
-	if (location.pathname === "/" ||"/about-us") {
+	if (location.pathname === "/" || location.pathname === "/about-us") {
 		return null;
 	}
 
