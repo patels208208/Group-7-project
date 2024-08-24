@@ -39,21 +39,7 @@ const GoalSetting = () => {
   };
 
   // TODO: Reconnec to backend
-  const handleSelectMeasurement = async (measurement) => {
-    setSelectedMeasurement(measurement);
-    const response = await fetch("http://localhost:3001/measurement", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({
-        measurement: measurement,
-      }),
-    });
-    console.log(measurement);
-    const data = await response.json();
-    return data;
-  };
+
 
   return (
     <div className="flex justify-center width-auto">
