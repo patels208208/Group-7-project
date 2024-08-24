@@ -7,13 +7,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
 import { startOfWeek, endOfWeek, format } from "date-fns";
 
-const getCurrentWeekRange = () => {
-	const now = new Date();
-	const start = startOfWeek(now, { weekStartsOn: 1 });
-	const end = endOfWeek(now, { weekStartsOn: 1 });
-	return `${format(start, "MMM dd")} - ${format(end, "MMM dd")}`
-};
-
 const HabitTableWeekly = () => {
 	const habits = [
 		"Hobbies",
@@ -31,8 +24,6 @@ const HabitTableWeekly = () => {
 	];
 	const daysOfWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 	const daysOfWeekAbbr = ["M", "T", "W", "T", "F", "S", "S"];
-
-	const currentWeekRange = getCurrentWeekRange();
 
 	const mockApiResponse = [
 		[true, false, true, true, true, true, false], // Hobies
@@ -64,11 +55,6 @@ const HabitTableWeekly = () => {
 
 	return (
 		<div className="flex items-center bg-deepFriedSunRays-400 rounded shadow-lg p-4 lg:p-6">
-    <div>
-      <div className="text-center text-lg font-bold mb-4">
-        Week: {currentWeekRange}
-        </div>
-    </div>
 			<table className="w-full">
 				<thead>
 					<tr>
