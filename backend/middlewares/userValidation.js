@@ -37,7 +37,7 @@ const validate = (req, res, next) => {
 
 const loginCheck = async (req, res, next) => {
 	const { email_address, user_password } = req.body;
-	const jwtSecretKey = process.env.JWT_SECRET_KEY;
+	const jwtSecret = process.env.JWT_SECRET;
 
 
 
@@ -59,7 +59,7 @@ const loginCheck = async (req, res, next) => {
 
 					if (await bcrypt.compare(user_password, hashedPassword)) {
 						console.log("Login Successful");
-						const token = jwt.sign({ first_name: result[0].first_name, surname: result[0].surname, email_address: result[0].email_address }, jwtSecretKey, { expiresIn: '1h' });
+						const token = jwt.sign({ first_name: result[0].first_name, surname: result[0].surname, email_address: result[0].email_address }, jwtSecret, { expiresIn: '1h' });
 						return res
 							.status(200)
 							.json({ message: "Login successful", token: token });
