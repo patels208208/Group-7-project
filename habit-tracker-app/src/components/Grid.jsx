@@ -4,7 +4,7 @@ import { habits } from "../redux/constants";
 import { useDispatch, useSelector } from "react-redux";
 import { habitSelector } from "../redux/selectors";
 import { habitIcons } from "./HabitIcon";
-import { habitChanged } from "../redux/reducers";
+import { habitChanged } from "../redux/habitReducer";
 
 
 const Grid = () => {

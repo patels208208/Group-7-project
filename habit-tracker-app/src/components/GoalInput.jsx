@@ -1,4 +1,4 @@
-import { goalChanged } from "../redux/reducers";
+import { goalChanged } from "../redux/habitReducer";
 import { useDispatch } from "react-redux";
 
 const GoalInput = () => {

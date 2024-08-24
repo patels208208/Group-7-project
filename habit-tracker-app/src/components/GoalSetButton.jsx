@@ -2,7 +2,7 @@ import GoalConfirmation from './GoalConfirmation';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { postData } from '../redux/action.js';
-import { habitChanged, habitSlice } from '../redux/reducers.js';
+import { habitChanged, habitSlice } from '../redux/habitReducer.js';
 import { habits, habitUnitsOfMeasurement, habitUnitsOfFrequency } from '../redux/constants.js'
 
 const GoalSetButton = () => {
