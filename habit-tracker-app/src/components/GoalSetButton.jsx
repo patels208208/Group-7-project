@@ -30,6 +30,7 @@ const GoalSetButton = () => {
       frequency_unit: goal,
       frequency: unitOfFrequency
     };
+    console.log(payload)
 
     dispatch(setGoal(payload));
   };
