@@ -69,7 +69,7 @@ app.get("/", (req, res) => {
 });
 
 //app.post - to store completion data for individual habits in SQL database
-app.post("/hydration", authenticateJWT, (req, res) => {
+app.post("/hydration", (req, res) => {
 	const { habit_id } = req.body;
 
 	const sql = "INSERT INTO user_habit (habit_id) VALUES (?)";
@@ -83,7 +83,7 @@ app.post("/hydration", authenticateJWT, (req, res) => {
 	});
 });
 
-app.post("/nutrition", authenticateJWT, (req, res) => {
+app.post("/nutrition", (req, res) => {
 	const { habit_id } = req.body;
 
 	const sql = "INSERT INTO user_habit (habit_id) VALUES (?)";
@@ -97,7 +97,7 @@ app.post("/nutrition", authenticateJWT, (req, res) => {
 	});
 });
 
-app.post("/movement", authenticateJWT, (req, res) => {
+app.post("/movement", (req, res) => {
 	const { habit_id } = req.body;
 
 	const sql = "INSERT INTO user_habit (habit_id) VALUES (?)";
@@ -111,7 +111,7 @@ app.post("/movement", authenticateJWT, (req, res) => {
 	});
 });
 
-app.post("/reading", authenticateJWT, (req, res) => {
+app.post("/reading", (req, res) => {
 	const { habit_id } = req.body;
 
 	const sql = "INSERT INTO user_habit (habit_id) VALUES (?)";
@@ -125,7 +125,7 @@ app.post("/reading", authenticateJWT, (req, res) => {
 	});
 });
 
-app.post("/sleep", authenticateJWT, (req, res) => {
+app.post("/sleep", (req, res) => {
 	const { habit_id } = req.body;
 
 	const sql = "INSERT INTO user_habit (habit_id) VALUES (?)";
@@ -139,7 +139,7 @@ app.post("/sleep", authenticateJWT, (req, res) => {
 	});
 });
 
-app.post("/medication", authenticateJWT, (req, res) => {
+app.post("/medication", (req, res) => {
 	const { habit_id } = req.body;
 
 	const sql = "INSERT INTO user_habit (habit_id) VALUES (?)";
@@ -153,7 +153,7 @@ app.post("/medication", authenticateJWT, (req, res) => {
 	});
 });
 
-app.post("/hobbies", authenticateJWT, (req, res) => {
+app.post("/hobbies", (req, res) => {
 	const { habit_id } = req.body;
 
 	const sql = "INSERT INTO user_habit (habit_id) VALUES (?)";
@@ -167,7 +167,7 @@ app.post("/hobbies", authenticateJWT, (req, res) => {
 	});
 });
 
-app.post("/selfcare", authenticateJWT, (req, res) => {
+app.post("/selfcare", (req, res) => {
 	const { habit_id } = req.body;
 
 	const sql = "INSERT INTO user_habit (habit_id) VALUES (?)";
@@ -181,7 +181,7 @@ app.post("/selfcare", authenticateJWT, (req, res) => {
 	});
 });
 
-app.post("/pets", authenticateJWT, (req, res) => {
+app.post("/pets", (req, res) => {
 	const { habit_id } = req.body;
 
 	const sql = "INSERT INTO user_habit (habit_id) VALUES (?)";
@@ -195,7 +195,7 @@ app.post("/pets", authenticateJWT, (req, res) => {
 	});
 });
 
-app.post("/plants", authenticateJWT, (req, res) => {
+app.post("/plants", (req, res) => {
 	const { habit_id } = req.body;
 
 	const sql = "INSERT INTO user_habit (habit_id) VALUES (?)";
@@ -209,7 +209,7 @@ app.post("/plants", authenticateJWT, (req, res) => {
 	});
 });
 
-app.post("/socialising", authenticateJWT, (req, res) => {
+app.post("/socialising", (req, res) => {
 	const { habit_id } = req.body;
 
 	const sql = "INSERT INTO user_habit (habit_id) VALUES (?)";
@@ -223,7 +223,7 @@ app.post("/socialising", authenticateJWT, (req, res) => {
 	});
 });
 
-app.post("/socialmedia", authenticateJWT, (req, res) => {
+app.post("/socialmedia", (req, res) => {
 	const { habit_id } = req.body;
 
 	const sql = "INSERT INTO user_habit (habit_id) VALUES (?)";
@@ -238,7 +238,7 @@ app.post("/socialmedia", authenticateJWT, (req, res) => {
 });
 
 //app.post - to store user's goal setting data
-app.post("/frequency", authenticateJWT, (req, res) => {
+app.post("/frequency", (req, res) => {
 	const { frequency } = req.body;
 
 	const sql = "INSERT INTO user_habit (frequency) VALUES (?)";
@@ -252,7 +252,7 @@ app.post("/frequency", authenticateJWT, (req, res) => {
 	});
 });
 
-app.post("/measurement", authenticateJWT, (req, res) => {
+app.post("/measurement", (req, res) => {
 	const { measurement } = req.body;
 
 	const sql = "INSERT INTO user_habit (measurement) VALUES (?)";
@@ -267,7 +267,7 @@ app.post("/measurement", authenticateJWT, (req, res) => {
 });
 
 //app.get - to fetch habit tracking data from database
-app.get("/completion", authenticateJWT, (req, res) => {
+app.get("/completion", (req, res) => {
 	const sql = "SELECT * from user_habit";
 
 	pool.query(sql, (err, results) => {
@@ -281,7 +281,7 @@ app.get("/completion", authenticateJWT, (req, res) => {
 });
 
 //app.post to post the habit to the database
-app.post("/goal-setting", authenticateJWT, (req, res) => {
+app.post("/goal-setting", (req, res) => {
 	const {
 		user_id,
 		habit_id,
