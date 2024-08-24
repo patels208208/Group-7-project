@@ -25,9 +25,9 @@ const GoalSetButton = () => {
     const payload = {
       user_id: 1,     // TODO: Example value, replace with actual data
       habit_id: habits.findIndex(x => x === habit) + 1,  // Data from Redux store
-      measurement_unit: goal,
+      measurement_unit: quantity,
       measurement: unitOfMeasurement,
-      frequency_unit: quantity,
+      frequency_unit: goal,
       frequency: unitOfFrequency
     };
     console.log(payload)
