@@ -20,10 +20,9 @@ async function register(req, res) {
             await createNewUser(first_name, surname, email_address, hashedPassword)
             res.status(201).json({ message: 'New User created' })
 
-            //Todo active token,refresh token
-            // const token = sign({ email }, process.env.JWT_SECRET, { expiresIn: '1h' })
-
-            // res.status(201).json({ token })
+            //Active token
+            const token = sign({ email }, process.env.JWT_SECRET, { expiresIn: '1h' })
+            res.status(201).json({ token })
         } catch (error) {
             res.status(500).json({ message: error.message })
         }
