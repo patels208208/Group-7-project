@@ -3,6 +3,8 @@ import { body, validationResult } from "express-validator";
 import conn from "../config/db.js";
 import bcrypt from "bcryptjs";
 import dotenv from "dotenv";
+import jwt from 'jsonwebtoken';
+
 dotenv.config();
 
 const app = express();
@@ -35,13 +37,18 @@ const validate = (req, res, next) => {
 
 const loginCheck = async (req, res, next) => {
 	const { email_address, user_password } = req.body;
-	const jwt_token_key = process.env.JWT_TOKEN_KEY;
+	const jwtSecretKey = process.env.JWT_SECRET_KEY;
+
+
+
+    console.log(process.env);
 
 	try {
 		conn.query(
-			"SELECT email_address, user_password FROM users WHERE email_address = ?",
+			"SELECT first_name, surname, email_address, user_password FROM users WHERE email_address = ?",
 			[email_address],
 			async (err, result, fields) => {
+				console.log(result);
 				if (err) throw err;
 
 				if (result.length === 0) {
@@ -52,9 +59,10 @@ const loginCheck = async (req, res, next) => {
 
 					if (await bcrypt.compare(user_password, hashedPassword)) {
 						console.log("Login Successful");
+						const token = jwt.sign({ first_name: result[0].first_name, surname: result[0].surname, email_address: result[0].email_address }, jwtSecretKey, { expiresIn: '1h' });
 						return res
 							.status(200)
-							.json({ message: "Login successful", token: jwt_token_key });
+							.json({ message: "Login successful", token: token });
 					} else {
 						console.log("Password Incorrect.");
 						return res
@@ -70,4 +78,10 @@ const loginCheck = async (req, res, next) => {
 	}
 };
 
-export { registerValidation, validate, loginCheck };
+const userInfo = async (req, res, next) => {
+	console.log(req)
+	console.log(res)
+	console.log(next)
+}
+
+export { registerValidation, validate, loginCheck, userInfo };
