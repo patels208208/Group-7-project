@@ -9,6 +9,7 @@ DB_USER="root" //keep as is
 DB_PASSWORD="password" //your own db password
 DB_NAME="habit_tracker" //keep as is
 API_KEY= //NOT INCLUDED FOR SECURITY PURPOSES
+JWT_SECRET= //NOT INCLUDED FOR SECURITY PURPOSES
 ```
 3. Run the following commands in the terminal:
 ```

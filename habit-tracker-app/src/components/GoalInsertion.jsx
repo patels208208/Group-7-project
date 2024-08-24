@@ -1,4 +1,4 @@
-function GoalInsertion({ user_id, habit_id, measurement_unit, measurement, frequency_unit, frequency_unit, }) {
+function GoalInsertion({ user_id, habit_id, measurement_unit, measurement, frequency_unit, frequency, }) {
     return (
       <div className="flex flex-col w-72 h-32 bg-white text-melon-500 shadow-xl hover:text-briny-500 active:text-briny-300 align-middle justify-center">
         <button

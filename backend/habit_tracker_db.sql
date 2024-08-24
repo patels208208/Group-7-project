@@ -62,9 +62,3 @@ select * from habit_type;
 select * from user_habit;
 select * from users;
 select * from goal_completion;
-
-
-
-
-
-

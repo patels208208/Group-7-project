@@ -15,7 +15,7 @@ export const habits = [
 
 // TODO: Update units to be uniform and relevant, WLTH: changing based off singular or plural
 export const habitUnitsOfMeasurement = {
-  Hydration: ["liters", "cups", "bottles", "glasses", "ml"],
+  Hydration: ["litres", "cups", "bottles", "glasses", "ml"],
   Nutrition: ["calories", "grams", "meals", "servings", "macros"],
   Movement: ["steps", "minutes", "kilometers", "miles", "calories burned"],
   Reading: ["book", "chapter", "page", "paragraph"],
