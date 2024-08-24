@@ -16,7 +16,7 @@ const findUserByEmail = async (email) => {
         })
     })
 }
-//insert a new user
+
 
 const createNewUser = async (first_name,surname,email_address,user_password) => {
     conn.query(' INSERT INTO users (first_name, surname,email_address, user_password) VALUES (?,?, ?, ?) ', [first_name, surname, email_address, user_password])
