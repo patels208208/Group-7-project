@@ -79,6 +79,24 @@ const loginCheck = async (req, res, next) => {
 };
 
 const userInfo = async (req, res, next) => {
+	const userId = req.user.user_id;
+	const sql = "SELECT first_name, surname, email_address FROM users WHERE user_id =?";
+
+	try {
+		conn.query(sql, [userId], (err, results) => {
+			if (err) {
+				return res.status(500).json({ error: "Internal Server Error" });
+			}
+			if (results.length === 0) {
+				return res.status(404).json({ error: "User not found" });
+			}
+			res.json(results[0]);
+		});
+	} catch (error) {
+		console.log(error);
+		res.status(500).json({ message: "Internal server error" });
+	}
+
 	console.log(req)
 	console.log(res)
 	console.log(next)
