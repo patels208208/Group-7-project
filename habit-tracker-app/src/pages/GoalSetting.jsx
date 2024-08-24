@@ -39,21 +39,7 @@ const GoalSetting = () => {
   };
 
   // TODO: Reconnec to backend
-  const handleSelectMeasurement = async (measurement) => {
-    setSelectedMeasurement(measurement);
-    const response = await fetch("http://localhost:3001/measurement", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({
-        measurement: measurement,
-      }),
-    });
-    console.log(measurement);
-    const data = await response.json();
-    return data;
-  };
+
 
   return (
     <div className="flex justify-center width-auto">
@@ -72,15 +58,15 @@ const GoalSetting = () => {
             <h3 className="text-silverMedal-900 text-lg font-semibold">
               How would you like to track this habit?
             </h3>
-            <div className="flex flex-wrap justify-center space-x-4">
+            <div className="flex flex-wrap justify-center space-x-4 mt-2">
               <MeasurementInput />
               <MeasurementDropdown />
             </div>
             <div className="flex flex-col items-center">
-              <h3 className="text-silverMedal-900 text-lg font-semibold mb-4 mt-4">
+              <h3 className="text-silverMedal-900 text-lg font-semibold mt-4">
                 How often would you like to achieve this?
               </h3>
-              <div className="flex flex-wrap justify-center space-x-4 mt-4">
+              <div className="flex flex-wrap justify-center space-x-4 mt-2">
                 <GoalInput />
                 <FrequencyDropdown
                   handleSelectFrequency={handleSelectFrequency}

@@ -5,8 +5,7 @@ import { habitUnitsOfMeasurement, habitUnitsOfFrequency } from "./constants";
 export const habitSelector = (state) => state.habit;
 
 // Simple selector to get the selected units of measurement for the current habit
-export const unitOfMeasurementSelector = (state) =>
-  state.unitOfMeasurement;
+export const unitOfMeasurementSelector = (state) => state.unitOfMeasurement;
 
 // Simple selector to get the current quantity
 export const quantitySelector = (state) => state.quantity;
@@ -23,6 +22,10 @@ export const allowedUnitsOfMeasurementSelector = createSelector(
 
 // Selector to get allowed units of frequency for the current habit
 export const allowedUnitsOfFrequencySelector = createSelector(
-    habitSelector, // Input selector to get the current habit
-    (currentHabit) => habitUnitsOfFrequency // Output function returns the constant array
-  );
+  habitSelector, // Input selector to get the current habit
+  (currentHabit) => habitUnitsOfFrequency // Output function returns the constant array
+);
+
+export const statusSelector = (state) => state.status;
+
+export const statusMessageSelector = (state) => state.statusMessage;

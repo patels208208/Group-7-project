@@ -29,7 +29,8 @@ export const Login = (props) => {
 			if (response.data.token) {
 				localStorage.setItem("token", response.data.token);
 			}
-			
+			console.log(response);
+
 			// Update the user context
 			updateUser(response.data.user);
 		} catch (error) {

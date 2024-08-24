@@ -1,13 +1,16 @@
 // Import createSlice from Redux Toolkit
 import { createSlice } from "@reduxjs/toolkit";
 import { habits, habitUnitsOfMeasurement, habitUnitsOfFrequency } from "./constants";
+import { setGoal } from "./thunks";
   
 
 const initialState = () => ({
   habit: habits[0],
   quantity: 1,
   unitOfMeasurement: habitUnitsOfMeasurement[habits[0]][0],
-  unitOfFrequency: habitUnitsOfFrequency[0]
+  unitOfFrequency: habitUnitsOfFrequency[0],
+  status: "idle",
+  statusMessage: null,
 });
 
 // Create a slice for the counter
@@ -38,6 +41,21 @@ const habitSlice = createSlice({
     // increment: (state) => state + 1,
     // decrement: (state) => state - 1,
     // incrementByAmount: (state, action) => state + action.payload,
+  },
+  extraReducers: (builder) => {
+    // Add reducers for additional action types here, and handle loading state as needed
+    builder.addCase(setGoal.fulfilled, (state) => {
+      state.status = "idle"
+      state.statusMessage = "Goal set successfully"
+    })
+    builder.addCase(setGoal.rejected, (state) => {
+      state.status = "rejected"
+      state.statusMessage = "Failed to set goal"
+    })
+    builder.addCase(setGoal.pending, (state) => {
+      state.status = "loading"
+      state.statusMessage = null
+    })
   },
 });
 

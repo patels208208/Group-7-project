@@ -281,7 +281,7 @@ app.get("/completion", authenticateJWT, (req, res) => {
 });
 
 //app.post to post the habit to the database
-app.post("/completion", authenticateJWT, (req, res) => {
+app.post("/goal-setting", authenticateJWT, (req, res) => {
 	const {
 		user_id,
 		habit_id,
