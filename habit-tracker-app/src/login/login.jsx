@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import fullLogo from "../assets/images/logos/fullLogo.png";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useUser } from "../components/UserContext.jsx";
+import { useUser } from "../UserContext.jsx";
 
 export const Login = (props) => {
 	const navigate = useNavigate();
@@ -29,7 +29,7 @@ export const Login = (props) => {
 			if (response.data.token) {
 				localStorage.setItem("token", response.data.token);
 			}
-			
+
 			// Update the user context
 			updateUser(response.data.user);
 		} catch (error) {
@@ -42,7 +42,6 @@ export const Login = (props) => {
 				setMessage("An unexpected error occurred. Please try again.");
 			}
 		}
-
 	};
 
 	function register() {

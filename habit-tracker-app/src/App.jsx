@@ -13,7 +13,9 @@ import Profile from "./pages/profile.jsx";
 import MainLayout from "./components/MainLayout.jsx";
 import GoalSetting from "./pages/GoalSetting.jsx";
 import HabitViews from "./pages/HabitViews.jsx";
-import { UserProvider } from "./components/UserContext.jsx";
+import { UserProvider } from "./UserContext.jsx";
+import { useUser } from "./UserContext.jsx";
+
 
 import { useState } from "react";
 import {
@@ -24,14 +26,7 @@ import {
 	useLocation,
 } from "react-router-dom";
 import Settings from "./pages/Settings.jsx";
-// import { AuthProvider } from "./login/userAuth.js"
 
-// const authLogin = () => (
-//   <AuthProvider>
-//       <Login />
-//       {/* Other components */}
-//   </AuthProvider>
-// );
 
 function App() {
 	return (
