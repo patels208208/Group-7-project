@@ -21,17 +21,16 @@ const GoalSetButton = () => {
 
   const handleSubmit = async () => {
     if(isButtonDisabled) return;
-    const measurementUnitId = habitUnitsOfMeasurement[habit].indexOf(unitOfMeasurement) + 1;
-    const frequencyUnitId = habitUnitsOfFrequency.indexOf(unitOfFrequency) + 1;
 
     const payload = {
       user_id: 1,     // TODO: Example value, replace with actual data
       habit_id: habits.findIndex(x => x === habit) + 1,  // Data from Redux store
-      measurement_unit: measurementUnitId,
-      measurement: quantity,
-      frequency_unit: frequencyUnitId,
-      frequency: goal
+      measurement_unit: goal,
+      measurement: unitOfMeasurement,
+      frequency_unit: quantity,
+      frequency: unitOfFrequency
     };
+    console.log(payload)
 
     dispatch(setGoal(payload));
   };

@@ -39,6 +39,11 @@ app.use((err, req, res, next) => {
 	res.status(500).json({ error: "Internal Server Error" });
 });
 
+//app.get - to introduce user to API
+app.get("/", (req, res) => {
+	res.send("Habit tracker API");
+});
+
 // Word of the Day API
 app.get('/api/wordOfTheDay', async (req, res) => {
   try {
@@ -63,17 +68,12 @@ app.get('/api/wordOfTheDay', async (req, res) => {
 // use auth
 app.use('/api', auth);
 
-//app.get - to introduce user to API
-app.get("/", (req, res) => {
-	res.send("Habit tracker API");
-});
-
 //app.post - to store completion data for individual habits in SQL database
 app.post("/hydration", (req, res) => {
-	const { habit_id } = req.body;
+	const { user_id, completed } = req.body;
 
-	const sql = "INSERT INTO user_habit (habit_id) VALUES (?)";
-	pool.query(sql, [habit_id], (err, result) => {
+	const sql = "INSERT INTO goal_completion (user_id, completed) VALUES (?, ?)";
+	pool.query(sql, [user_id, completed], (err, result) => {
 		if (err) {
 			console.error("Error entering hydration data", err.message);
 			return res.status(500).json({ error: "Database error" });
@@ -84,191 +84,162 @@ app.post("/hydration", (req, res) => {
 });
 
 app.post("/nutrition", (req, res) => {
-	const { habit_id } = req.body;
+	const { user_id, completed } = req.body;
 
-	const sql = "INSERT INTO user_habit (habit_id) VALUES (?)";
-	pool.query(sql, [habit_id], (err, result) => {
+	const sql = "INSERT INTO goal_completion (user_id, completed) VALUES (?, ?)";
+	pool.query(sql, [user_id, completed], (err, result) => {
 		if (err) {
-			console.error("Error entering nutrition data", err.message);
+			console.error("Error entering hydration data", err.message);
 			return res.status(500).json({ error: "Database error" });
 		}
 
-		res.status(201).json({ message: "Nutrition data saved successfully" });
+		res.status(201).json({ message: "Hydration data saved successfully" });
 	});
 });
 
 app.post("/movement", (req, res) => {
-	const { habit_id } = req.body;
+	const { user_id, completed } = req.body;
 
-	const sql = "INSERT INTO user_habit (habit_id) VALUES (?)";
-	pool.query(sql, [habit_id], (err, result) => {
+	const sql = "INSERT INTO goal_completion (user_id, completed) VALUES (?, ?)";
+	pool.query(sql, [user_id, completed], (err, result) => {
 		if (err) {
-			console.error("Error entering movement data", err.message);
+			console.error("Error entering hydration data", err.message);
 			return res.status(500).json({ error: "Database error" });
 		}
 
-		res.status(201).json({ message: "Movement data saved successfully" });
+		res.status(201).json({ message: "Hydration data saved successfully" });
 	});
 });
 
 app.post("/reading", (req, res) => {
-	const { habit_id } = req.body;
+	const { user_id, completed } = req.body;
 
-	const sql = "INSERT INTO user_habit (habit_id) VALUES (?)";
-	pool.query(sql, [habit_id], (err, result) => {
+	const sql = "INSERT INTO goal_completion (user_id, completed) VALUES (?, ?)";
+	pool.query(sql, [user_id, completed], (err, result) => {
 		if (err) {
-			console.error("Error entering reading data", err.message);
+			console.error("Error entering hydration data", err.message);
 			return res.status(500).json({ error: "Database error" });
 		}
 
-		res.status(201).json({ message: "Reading data saved successfully" });
+		res.status(201).json({ message: "Hydration data saved successfully" });
 	});
 });
 
 app.post("/sleep", (req, res) => {
-	const { habit_id } = req.body;
+	const { user_id, completed } = req.body;
 
-	const sql = "INSERT INTO user_habit (habit_id) VALUES (?)";
-	pool.query(sql, [habit_id], (err, result) => {
+	const sql = "INSERT INTO goal_completion (user_id, completed) VALUES (?, ?)";
+	pool.query(sql, [user_id, completed], (err, result) => {
 		if (err) {
-			console.error("Error entering sleep data", err.message);
+			console.error("Error entering hydration data", err.message);
 			return res.status(500).json({ error: "Database error" });
 		}
 
-		res.status(201).json({ message: "Sleep data saved successfully" });
+		res.status(201).json({ message: "Hydration data saved successfully" });
 	});
 });
 
 app.post("/medication", (req, res) => {
-	const { habit_id } = req.body;
+	const { user_id, completed } = req.body;
 
-	const sql = "INSERT INTO user_habit (habit_id) VALUES (?)";
-	pool.query(sql, [habit_id], (err, result) => {
+	const sql = "INSERT INTO goal_completion (user_id, completed) VALUES (?, ?)";
+	pool.query(sql, [user_id, completed], (err, result) => {
 		if (err) {
-			console.error("Error entering medication data", err.message);
+			console.error("Error entering hydration data", err.message);
 			return res.status(500).json({ error: "Database error" });
 		}
 
-		res.status(201).json({ message: "Medication data saved successfully" });
+		res.status(201).json({ message: "Hydration data saved successfully" });
 	});
 });
 
 app.post("/hobbies", (req, res) => {
-	const { habit_id } = req.body;
+	const { user_id, completed } = req.body;
 
-	const sql = "INSERT INTO user_habit (habit_id) VALUES (?)";
-	pool.query(sql, [habit_id], (err, result) => {
+	const sql = "INSERT INTO goal_completion (user_id, completed) VALUES (?, ?)";
+	pool.query(sql, [user_id, completed], (err, result) => {
 		if (err) {
-			console.error("Error entering hobbies data", err.message);
+			console.error("Error entering hydration data", err.message);
 			return res.status(500).json({ error: "Database error" });
 		}
 
-		res.status(201).json({ message: "Hobbies data saved successfully" });
+		res.status(201).json({ message: "Hydration data saved successfully" });
 	});
 });
 
 app.post("/selfcare", (req, res) => {
-	const { habit_id } = req.body;
+	const { user_id, completed } = req.body;
 
-	const sql = "INSERT INTO user_habit (habit_id) VALUES (?)";
-	pool.query(sql, [habit_id], (err, result) => {
+	const sql = "INSERT INTO goal_completion (user_id, completed) VALUES (?, ?)";
+	pool.query(sql, [user_id, completed], (err, result) => {
 		if (err) {
-			console.error("Error entering self care data", err.message);
+			console.error("Error entering hydration data", err.message);
 			return res.status(500).json({ error: "Database error" });
 		}
 
-		res.status(201).json({ message: "Self-care data saved successfully" });
+		res.status(201).json({ message: "Hydration data saved successfully" });
 	});
 });
 
 app.post("/pets", (req, res) => {
-	const { habit_id } = req.body;
+	const { user_id, completed } = req.body;
 
-	const sql = "INSERT INTO user_habit (habit_id) VALUES (?)";
-	pool.query(sql, [habit_id], (err, result) => {
+	const sql = "INSERT INTO goal_completion (user_id, completed) VALUES (?, ?)";
+	pool.query(sql, [user_id, completed], (err, result) => {
 		if (err) {
-			console.error("Error entering pets data", err.message);
+			console.error("Error entering hydration data", err.message);
 			return res.status(500).json({ error: "Database error" });
 		}
 
-		res.status(201).json({ message: "Pets data saved successfully" });
+		res.status(201).json({ message: "Hydration data saved successfully" });
 	});
 });
 
 app.post("/plants", (req, res) => {
-	const { habit_id } = req.body;
+	const { user_id, completed } = req.body;
 
-	const sql = "INSERT INTO user_habit (habit_id) VALUES (?)";
-	pool.query(sql, [habit_id], (err, result) => {
+	const sql = "INSERT INTO goal_completion (user_id, completed) VALUES (?, ?)";
+	pool.query(sql, [user_id, completed], (err, result) => {
 		if (err) {
-			console.error("Error entering plants data", err.message);
+			console.error("Error entering hydration data", err.message);
 			return res.status(500).json({ error: "Database error" });
 		}
 
-		res.status(201).json({ message: "Plants data saved successfully" });
+		res.status(201).json({ message: "Hydration data saved successfully" });
 	});
 });
 
 app.post("/socialising", (req, res) => {
-	const { habit_id } = req.body;
+	const { user_id, completed } = req.body;
 
-	const sql = "INSERT INTO user_habit (habit_id) VALUES (?)";
-	pool.query(sql, [habit_id], (err, result) => {
+	const sql = "INSERT INTO goal_completion (user_id, completed) VALUES (?, ?)";
+	pool.query(sql, [user_id, completed], (err, result) => {
 		if (err) {
-			console.error("Error entering socialising data", err.message);
+			console.error("Error entering hydration data", err.message);
 			return res.status(500).json({ error: "Database error" });
 		}
 
-		res.status(201).json({ message: "Socialising data saved successfully" });
+		res.status(201).json({ message: "Hydration data saved successfully" });
 	});
 });
 
 app.post("/socialmedia", (req, res) => {
-	const { habit_id } = req.body;
+	const { user_id, completed } = req.body;
 
-	const sql = "INSERT INTO user_habit (habit_id) VALUES (?)";
-	pool.query(sql, [habit_id], (err, result) => {
+	const sql = "INSERT INTO goal_completion (user_id, completed) VALUES (?, ?)";
+	pool.query(sql, [user_id, completed], (err, result) => {
 		if (err) {
-			console.error("Error entering social media data", err.message);
+			console.error("Error entering hydration data", err.message);
 			return res.status(500).json({ error: "Database error" });
 		}
 
-		res.status(201).json({ message: "Social media data saved successfully" });
-	});
-});
-
-//app.post - to store user's goal setting data
-app.post("/frequency", (req, res) => {
-	const { frequency } = req.body;
-
-	const sql = "INSERT INTO user_habit (frequency) VALUES (?)";
-	pool.query(sql, [frequency], (err, result) => {
-		if (err) {
-			console.error("Error entering frequency data", err.message);
-			return res.status(500).json({ error: "Database error" });
-		}
-
-		res.status(201).json({ message: "Frequency data saved successfully" });
-	});
-});
-
-app.post("/measurement", (req, res) => {
-	const { measurement } = req.body;
-
-	const sql = "INSERT INTO user_habit (measurement) VALUES (?)";
-	pool.query(sql, [measurement], (err, result) => {
-		if (err) {
-			console.error("Error entering measurement data", err.message);
-			return res.status(500).json({ error: "Database error" });
-		}
-
-		res.status(201).json({ message: "Measurement data saved successfully" });
+		res.status(201).json({ message: "Hydration data saved successfully" });
 	});
 });
 
 //app.get - to fetch habit tracking data from database
 app.get("/completion", (req, res) => {
-	const sql = "SELECT * from user_habit";
+	const sql = "SELECT * from goal_completion";
 
 	pool.query(sql, (err, results) => {
 		if (err) {
@@ -289,8 +260,6 @@ app.post("/goal-setting", (req, res) => {
 		measurement,
 		frequency_unit,
 		frequency,
-		created_dt,
-		updated_dt
 	  } = req.body;
 
 	  const values = [
@@ -300,11 +269,9 @@ app.post("/goal-setting", (req, res) => {
 		measurement,
 		frequency_unit,
 		frequency,
-		created_dt,
-		updated_dt
 	  ];
 
-	const sql = "INSERT INTO user_habit (user_id, habit_id, measurement_unit, measurement, frequency_unit, frequency, created_dt, updated_dt) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+	const sql = "INSERT INTO user_habit (user_id, habit_id, measurement_unit, measurement, frequency_unit, frequency) VALUES (?, ?, ?, ?, ?, ?)";
 	pool.query(sql, values, (err, result) => {
 		if (err) {
 			console.error("Error entering completion data", err.message);
@@ -312,5 +279,19 @@ app.post("/goal-setting", (req, res) => {
 		}
 
 		res.status(201).json({ message: "Completion data saved successfully" });
+	});
+});
+
+//app.get - to fetch user's preset habits from database
+app.get("/user-habits", (req, res) => {
+	const sql = "SELECT * from user_habit";
+
+	pool.query(sql, (err, results) => {
+		if (err) {
+			console.error("Error fetching data:", err.message);
+			return res.status(500).json({ error: "Database error" });
+		}
+
+		res.status(200).json(results);
 	});
 });
