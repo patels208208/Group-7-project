@@ -1,32 +1,32 @@
 .medication-app {
-	color: #f2c75c;
-  border-style: solid;
-  text-align: center;
+color: #f2c75c;
+border-style: solid;
+text-align: center;
 }
 
 .medication-button {
-  border: 1px solid #f2c75c; 
-  background-color: white; 
-  color: #f2c75c;
-  box-shadow: rgb(55, 78, 102) 0px 15px 25px -10px; 
-  width: 400px; 
-  height: 120px; 
-  margin-bottom: 20px; 
-  font-family: "Raleway", sans-serif;
+border: 1px solid #f2c75c; 
+background-color: white; 
+color: #f2c75c;
+box-shadow: rgb(55, 78, 102) 0px 15px 25px -10px; 
+width: 400px; 
+height: 120px; 
+margin-bottom: 20px; 
+font-family: "Raleway", sans-serif;
 }
 
 .medication-button-2 {
-  border: 1px solid #f2c75c;
-  background-color: #f2c75c; 
-  color: #F7F9FF;
-  box-shadow: rgb(55, 78, 102) 0px 15px 25px -10px; 
-  width: 400px; 
-  height: 120px; 
-  margin-bottom: 20px; 
-  font-family: "Raleway", sans-serif;
-  }
+border: 1px solid #f2c75c;
+background-color: #f2c75c; 
+color: #F7F9FF;
+box-shadow: rgb(55, 78, 102) 0px 15px 25px -10px; 
+width: 400px; 
+height: 120px; 
+margin-bottom: 20px; 
+font-family: "Raleway", sans-serif;
+}
 
 .medication-button:hover {
-  background-color: #f2c75c;
-  color: #F7F9FF;
+background-color: #f2c75c;
+color: #F7F9FF;
 }

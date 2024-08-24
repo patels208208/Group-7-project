@@ -13,7 +13,8 @@ const handleClick = async (event) => { //User clicks button to mark daily habit 
       'Content-type': 'application/json'
     },
     body: JSON.stringify({
-      habit_id:"1",
+      user_id:"1",
+      completed:"1"
     }),
   }); //API stores data in SQL database in accordance with habit ID for hydration
   const data = await response.json();
