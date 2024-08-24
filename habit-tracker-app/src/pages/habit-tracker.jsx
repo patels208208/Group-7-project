@@ -1,3 +1,4 @@
+import React from 'react';
 import HydrationApp from "../hydration/hydrationApp";
 import NutritionApp from "../nutrition/nutritionApp";
 import MovementApp from "../movement/movementApp";
@@ -13,8 +14,9 @@ import SocialmediaApp from "../socialmedia/socialmediaApp.jsx";
 import SocialMediaSharing from "../socialmediasharing/socialmediasharing.jsx";
 
 function HabitTracker() {
-  return (
-    <div><div className="habit-tracker">
+    return (
+    <div>
+      <h1 className="text-center pb-7 mt-4 text-briny-600 font-heading font-medium text-xl">Habits</h1>
       <HydrationApp />
       <NutritionApp />
       <MovementApp />
@@ -27,15 +29,13 @@ function HabitTracker() {
       <PlantsApp />
       <SocialisingApp />
       <SocialmediaApp />
-    </div>
+      <SocialMediaSharing />
           <div className="flex justify-center w-full mt-4">
           <a href="/goal-setting" className="mt-4 px-4 py-2 bg-melon-500 text-white rounded-lg shadow hover:bg-melon-600 transition-colors duration-200">
             Goal Setting
           </a>
-        </div>
-        <div className="socialmedia mt-8">
-          <SocialMediaSharing />
         </div></div>
   );
-}
+};
+
 export default HabitTracker;
