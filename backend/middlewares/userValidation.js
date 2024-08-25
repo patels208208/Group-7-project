@@ -55,10 +55,11 @@ const loginCheck = async (req, res, next) => {
 
 					if (await bcrypt.compare(user_password, hashedPassword)) {
 						console.log("Login Successful");
-						const token = jwt.sign({ user_id: result[0].user_id, first_name: result[0].first_name, surname: result[0].surname, email_address: result[0].email_address }, jwtSecret, { expiresIn: '1h' });
+						const loggedInUser = { user_id: result[0].user_id, first_name: result[0].first_name, surname: result[0].surname, email_address: result[0].email_address };
+						const token = jwt.sign(loggedInUser, jwtSecret, { expiresIn: '1h' });
 						return res
 							.status(200)
-							.json({ message: "Login successful", token: token });
+							.json({ message: "Login successful", token: token, user: loggedInUser });
 					} else {
 						console.log("Password Incorrect.");
 						return res
