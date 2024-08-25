@@ -1,3 +1,4 @@
+// The beginnings of an attempt to refactor each habit component into a single component. See also: HabitComponents.jsx and HydrationApp2.jsx
 import React from "react";
 import HabitSquare from "../components/HabitSquare.jsx";
 
