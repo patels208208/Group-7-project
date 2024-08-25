@@ -1,3 +1,4 @@
+// The beginnings of an attempt to refactor each habit component into a single component. See also: HabitApp.jsx and HabitComponents.jsx
 import React from 'react';
 import HabitApp from './HabitApp';
 import {icon} from '../components/HabitIcon.jsx';

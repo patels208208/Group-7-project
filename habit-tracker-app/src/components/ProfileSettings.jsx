@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import ChooseAvatar from './ChooseAvatar';
-import Avatar from './Avatar';
+import React, { useState } from "react";
+import ChooseAvatar from "./ChooseAvatar";
+import Avatar from "./Avatar";
 
 const ProfileSettings = () => {
   const [selectedAvatar, setSelectedAvatar] = useState(null);
@@ -12,6 +12,6 @@ const ProfileSettings = () => {
       {selectedAvatar && <Avatar AvatarSrc={selectedAvatar} />}
     </div>
   );
-}
+};
 
 export default ProfileSettings;

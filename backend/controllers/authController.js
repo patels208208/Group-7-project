@@ -2,8 +2,11 @@ import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 import { findUserByEmail, createNewUser } from '../models/Users.js'
 import { registerValidation, validate } from '../middlewares/userValidation.js'
+
+
 console.log("Inside register authController.js")
-async function register(req, res) {
+
+async function register(req, res) { // Register function to create a new user
 
     //removing await from validate
     validate(req, res, async () => {

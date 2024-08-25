@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "../assets/styles/navigation.css";
 import logo from "../assets/images/logos/logoOrange.png";
 import {
 	BrowserRouter as Router,
