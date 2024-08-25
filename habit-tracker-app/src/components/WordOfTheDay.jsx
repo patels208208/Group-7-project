@@ -8,7 +8,7 @@ const WordOfTheDay = () => {
     const fetchWordOftheDay = async () => {
       try {
         console.log("hello")
-        const response = await fetch("/api/wordOftheDay");
+        const response = await fetch("http://localhost:3001/api/wordOftheDay");
         const result = await response.json();
         setData(result);
       } catch (error) {
