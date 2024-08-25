@@ -8,7 +8,7 @@ const UserDetails = ({ userId }) => {
   useEffect(() => {
     const fetchUserDetails = async () => {
       try {
-        const response = await axios.get(`/api/users/1`); // TODO: WLTH: Ability to fetch user by user ID
+        const response = await axios.get(`/api/users/1`); // TODO: WLTH: Ability to fetch user by user ID TODO: Tie in with new api/users/current endpoint
         const userData = response.data;
         setUser({
           firstName: userData.first_name,
