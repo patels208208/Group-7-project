@@ -80,6 +80,10 @@ const HabitTableWeekly = () => {
 		}
 	}, [completedDate]);
 
+  
+  // if (completedDate === currentWeekDates) {
+  //   setIsValid(true);
+
 	if (setIsCompleted) {
 		return (
 			<div className="flex items-center bg-deepFriedSunRays-400 rounded shadow-lg p-4 lg:p-6">
@@ -117,12 +121,12 @@ const HabitTableWeekly = () => {
 									>
 										<FontAwesomeIcon
 											icon={
-												completionStatus[habitIndex]?.[dayIndex]
+												isGoalAchieved[habitIndex]?.[dayIndex]
 													? faSquareCheck
 													: faSquareXmark
 											}
 											className={`text-xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${
-												completionStatus[habitIndex]?.[dayIndex]
+												isGoalAchieved[habitIndex]?.[dayIndex]
 													? "text-green-500"
 													: "text-red-500"
 											}`}
@@ -135,12 +139,13 @@ const HabitTableWeekly = () => {
 											<div key={dayIndex} className="p-2">
 												<FontAwesomeIcon
 													icon={
-														completionStatus[habitIndex]?.[dayIndex]
+														isGoalAchieved [habitIndex]?.[dayIndex]
 															? faSquareCheck
 															: faSquareXmark
 													}
 													className={`text-xl ${
-														completionStatus[habitIndex]?.[dayIndex]
+														setCompletionStatus[habitIndex]?.[dayIndex]
+															.completionId
 															? "text-green-500"
 															: "text-red-500"
 													}`}
@@ -165,5 +170,4 @@ const HabitTableWeekly = () => {
 		);
 	}
 };
-
 export default HabitTableWeekly;
