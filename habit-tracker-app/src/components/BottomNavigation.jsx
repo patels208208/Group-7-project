@@ -12,7 +12,11 @@ import {
 const BottomNavigation = () => {
 	const location = useLocation();
 
-	if (location.pathname === "/" || location.pathname === "/register" || location.pathname === "/about-us" ) {
+	if (
+		location.pathname === "/" ||
+		location.pathname === "/register" ||
+		location.pathname === "/about-us"
+	) {
 		return null;
 	}
 
@@ -34,11 +38,11 @@ const BottomNavigation = () => {
 					<span className="text-xs mt-0.5">Habits</span>
 				</Link>
 				<Link
-					to="/profile"
+					to="/habit-views"
 					className="flex flex-col items-center rounded-md px-5 py-1 text-white font-medium hover:bg-briny-700 active:bg-briny-300 ease-in-out duration-200"
 				>
-					<i className="fa-solid fa-user" id="nav-icon" />
-					<span className="text-xs mt-0.5">Profile</span>
+					<i className="fa-solid fa-calendar-days" id="nav-icon" />
+					<span className="text-xs mt-0.5">Calender</span>
 				</Link>
 			</div>
 		</div>
