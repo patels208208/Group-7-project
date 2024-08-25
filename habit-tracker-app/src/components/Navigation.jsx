@@ -245,7 +245,7 @@ const Navigation = () => {
 						Home
 					</Link>
 					<Link
-						to="/habit-tracker"
+						to="/settings"
 						className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-briny-700 hover:text-white"
 					>
 						Settings
