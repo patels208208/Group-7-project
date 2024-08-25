@@ -225,7 +225,7 @@ const HabitTableWeekly = () => {
 				const response = await axios.get("http://localhost:3001/completion", {
 					params: {
 						user_id: userId,
-						user_habit_id: habitId,
+						habit_id: habitId,
 						habit_name: habitName,
 						completion_id: completionId,
 						completed: completed,
@@ -264,95 +264,108 @@ const HabitTableWeekly = () => {
 	}, []);
 
 	const isGoalAchieved = (habitIndex) => {
-		return (
-			completionStatus[habitIndex] &&
-			completionStatus[habitIndex].every(Boolean)
-		);
+		const goalstatus = completionStatus[habitIndex]?.completion_id;
+		return goalstatus === 1; // Change this to the user id you want to check
 	};
 
-	return (
-		<div className="flex items-center bg-deepFriedSunRays-400 rounded shadow-lg p-4 lg:p-6">
-			<table className="w-full">
-				<thead>
-					<tr>
-						<th className="p-2 bg-silverMedal-200 rounded-tl-lg">Habit</th>
-						{daysOfWeek.map((day, index) => (
-							<th
-								key={index}
-								className="p-2 bg-silverMedal-200 hidden sm:table-cell"
-							>
-								{day}
-							</th>
-						))}
-						{daysOfWeekAbbr.map((day, index) => (
-							<th
-								key={index}
-								className="p-2 w-[14.285714%] bg-silverMedal-200 inline-block sm:hidden"
-							>
-								{" "}
-								{day}
-							</th>
-						))}
-						<th className="p-2 bg-silverMedal-200 rounded-tr-lg">Goal</th>
-					</tr>
-				</thead>
-				<tbody>
-					{habits.map((habit, habitIndex) => (
-						<tr key={habitIndex} className="hover:bg-silverMedal-100">
-							<td className="p-2 bg-silverMedal-200">{habit}</td>
-							{daysOfWeek.map((_, dayIndex) => (
-								<td
-									key={dayIndex}
-									className="p-2 bg-white relative hidden sm:table-cell"
+	useEffect(() => {
+		if (completedDate) {
+			const formattedDate = format(
+				new Date(completedDate),
+				"yyyy-MM-dd kk:mm:ss"
+			);
+			setIsCompleted(currentWeekDates(formattedDate));
+		}
+	}, [completedDate]);
+
+	// if (completedDate === currentWeekDates) {
+	//   setIsValid(true);
+
+	if (setIsCompleted) {
+		return (
+			<div className="flex items-center bg-deepFriedSunRays-400 rounded shadow-lg p-4 lg:p-6">
+				<table className="w-full">
+					<thead>
+						<tr>
+							<th className="p-2 bg-silverMedal-200 rounded-tl-lg">Habit</th>
+							{daysOfWeek.map((index, day) => (
+								<th
+									key={index}
+									className="p-2 bg-silverMedal-200 hidden sm:table-cell"
 								>
-									<FontAwesomeIcon
-										icon={
-											completionStatus[habitIndex]?.[dayIndex]
-												? faSquareCheck
-												: faSquareXmark
-										}
-										className={`text-xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${
-											completionStatus[habitIndex]?.[dayIndex]
-												? "text-green-500"
-												: "text-red-500"
-										}`}
-									/>
-								</td>
+									{day}
+								</th>
 							))}
-							<td className="p-2 bg-white relative sm:hidden">
-								<div className="grid grid-cols-7 gap-1">
-									{daysOfWeekAbbr.map((_, dayIndex) => (
-										<div key={dayIndex} className="p-2">
-											<FontAwesomeIcon
-												icon={
-													completionStatus[habitIndex]?.[dayIndex]
-														? faSquareCheck
-														: faSquareXmark
-												}
-												className={`text-xl ${
-													completionStatus[habitIndex]?.[dayIndex]
-														? "text-green-500"
-														: "text-red-500"
-												}`}
-											/>
-										</div>
-									))}
-								</div>
-							</td>
-							<td className="p-2 bg-white relative">
-								{isGoalAchieved(habitIndex) && (
-									<FontAwesomeIcon
-										icon={faStar}
-										className="text-amber-500 text-xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-									/>
-								)}
-							</td>
+							{daysOfWeekAbbr.map((day, index) => (
+								<th
+									key={index}
+									className="p-2 w-[14.285714%] bg-silverMedal-200 inline-block sm:hidden"
+								>
+									{day}
+								</th>
+							))}
+							<th className="p-2 bg-silverMedal-200 rounded-tr-lg">Goal</th>
 						</tr>
-					))}
-				</tbody>
-			</table>
-		</div>
-	);
+					</thead>
+					<tbody>
+						{habits.map((habit, habitIndex) => (
+							<tr key={habitIndex} className="hover:bg-silverMedal-100">
+								<td className="p-2 bg-silverMedal-200">{habit}</td>
+								{daysOfWeek.map((_, dayIndex) => (
+									<td
+										key={dayIndex}
+										className="p-2 bg-white relative hidden sm:table-cell"
+									>
+										<FontAwesomeIcon
+											icon={
+												isGoalAchieved[habitIndex]?.[dayIndex]
+													? faSquareCheck
+													: faSquareXmark
+											}
+											className={`text-xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${
+												isGoalAchieved[habitIndex]?.[dayIndex]
+													? "text-green-500"
+													: "text-red-500"
+											}`}
+										/>
+									</td>
+								))}
+								<td className="p-2 bg-white relative sm:hidden">
+									<div className="grid grid-cols-7 gap-1">
+										{daysOfWeekAbbr.map((_, dayIndex) => (
+											<div key={dayIndex} className="p-2">
+												<FontAwesomeIcon
+													icon={
+														isGoalAchieved[habitIndex]?.[dayIndex]
+															? faSquareCheck
+															: faSquareXmark
+													}
+													className={`text-xl ${
+														setCompletionStatus[habitIndex]?.[dayIndex]
+															.completionId
+															? "text-green-500"
+															: "text-red-500"
+													}`}
+												/>
+											</div>
+										))}
+									</div>
+								</td>
+								<td className="p-2 bg-white relative">
+									{isGoalAchieved(habitIndex) && (
+										<FontAwesomeIcon
+											icon={faStar}
+											className="text-amber-500 text-xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+										/>
+									)}
+								</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+		);
+	}
 };
 
 export default HabitTableWeekly;
