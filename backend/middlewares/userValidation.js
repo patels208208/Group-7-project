@@ -39,13 +39,9 @@ const loginCheck = async (req, res, next) => {
 	const { email_address, user_password } = req.body;
 	const jwtSecret = process.env.JWT_SECRET;
 
-
-
-    console.log(process.env);
-
 	try {
 		conn.query(
-			"SELECT first_name, surname, email_address, user_password FROM users WHERE email_address = ?",
+			"SELECT user_id, first_name, surname, email_address, user_password FROM users WHERE email_address = ?",
 			[email_address],
 			async (err, result, fields) => {
 				console.log(result);
@@ -59,7 +55,7 @@ const loginCheck = async (req, res, next) => {
 
 					if (await bcrypt.compare(user_password, hashedPassword)) {
 						console.log("Login Successful");
-						const token = jwt.sign({ first_name: result[0].first_name, surname: result[0].surname, email_address: result[0].email_address }, jwtSecret, { expiresIn: '1h' });
+						const token = jwt.sign({ user_id: result[0].user_id, first_name: result[0].first_name, surname: result[0].surname, email_address: result[0].email_address }, jwtSecret, { expiresIn: '1h' });
 						return res
 							.status(200)
 							.json({ message: "Login successful", token: token });
@@ -79,8 +75,9 @@ const loginCheck = async (req, res, next) => {
 };
 
 const userInfo = async (req, res, next) => {
+	console.log("Current user:", req.user);
 	const userId = req.user.user_id;
-	const sql = "SELECT first_name, surname, email_address FROM users WHERE user_id =?";
+	const sql = "SELECT user_id, first_name, surname, email_address FROM users WHERE user_id =?";
 
 	try {
 		conn.query(sql, [userId], (err, results) => {
@@ -96,10 +93,6 @@ const userInfo = async (req, res, next) => {
 		console.log(error);
 		res.status(500).json({ message: "Internal server error" });
 	}
-
-	console.log(req)
-	console.log(res)
-	console.log(next)
 }
 
 export { registerValidation, validate, loginCheck, userInfo };

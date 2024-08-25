@@ -298,8 +298,10 @@ app.get("/user-habits", (req, res) => {
 
 // app.get - to fetch current user data - for use displaying user's name etc in the app
 app.get("/user/current-user", authenticateJWT, (req, res) => {
-	const userId = req.user.user_id; // req.user_id set in Middleware to authenticateJWT
-	const sql = "SELECT * FROM users WHERE user_id = ?";
+	console.error("Current user:");
+	debugger;
+	const userId = req.user.first_name; // req.user_id set in Middleware to authenticateJWT
+	const sql = "SELECT * FROM users WHERE first_name = ?";
 
 	pool.query(sql, [userId], (err, results) => {
 		if (err) {
