@@ -1,7 +1,7 @@
 import React from "react";
 import Avatar from "../components/Avatar";
 import WordOfTheDay from "../components/WordOfTheDay";
-import Grid from "../components/Grid";
+import HomePageGrid from "../components/HomePageGrid";
 import UserDetails from "../components/UserDetails";
 import { useUser } from "../components/UserContext"; // Import useUser hook
 
@@ -29,7 +29,7 @@ function Home() {
         </div>
         <div className="flex flex-col">
           <div className="flex justify-center">
-            <Grid />
+            <HomePageGrid />
           </div>
           <div className="flex flex-co justify-center">
             <div className="flex justify-center mt-4 p-2 lg:w-[68%] mx-14 rounded-lg shadow-lg bg-white">
