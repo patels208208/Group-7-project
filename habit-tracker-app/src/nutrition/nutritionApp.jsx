@@ -13,8 +13,10 @@ const handleClick = async (event) => {
       'Content-type': 'application/json'
     },
     body: JSON.stringify({
-      user_id:"1",
-      completed:"1"
+      user_id: "1",
+			habit_id: "2",
+			habit_name: "Nutrition",
+			completed: "1",
     }),
   });
   const data = await response.json();

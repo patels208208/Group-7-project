@@ -12,7 +12,7 @@ avatar_name varchar(100)
 
 create table habit_type (
 habit_id int primary key auto_increment,
-habit_name varchar (100) not null unique,
+habit_name varchar (100) unique,
 habit_icon varchar (100),
 created_dt timestamp default current_timestamp,
 updated_dt timestamp default current_timestamp on update current_timestamp
@@ -22,7 +22,7 @@ create table user_habit (
 user_habit_id int primary key auto_increment,
 user_id int,
 habit_id int,
-habit_name varchar (100) not null,
+habit_name varchar (100),
 measurement_unit int, /*eg. 1 unit */
 measurement varchar(50), /*eg. ml/glass/bottle etc */
 frequency_unit int, /*eg. x times */
@@ -41,15 +41,14 @@ create table goal_completion (
 completion_id int primary key auto_increment,
 user_id int, 
 user_habit_id int,
-habit_name varchar (100) not null,
+habit_name varchar (100),
 completed bool,
-created_dt timestamp default current_timestamp,
 completed_dt timestamp default current_timestamp,
 foreign key (user_id) references users(user_id),
 foreign key (user_habit_id) references user_habit(user_habit_id),
-foreign key (habit_name) references habit_type(habit_name),
-foreign key (created_dt) references user_habit(created_dt)
+foreign key (habit_name) references habit_type(habit_name)
 );
+
 
 insert into habit_type (habit_name, created_dt, updated_dt)
 values ("Hydration", current_timestamp(), current_timestamp() ),

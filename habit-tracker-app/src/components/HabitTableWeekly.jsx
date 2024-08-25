@@ -46,6 +46,8 @@ const HabitTableWeekly = () => {
 	const [completionId, setCompletionId] = useState(1);
 	const [completed, setIsCompleted] = useState();
 	const [completedDate, setCompletedDate] = useState();
+	const [habitId, setHabitId] = useState();
+	const [habitName, setHabitName] = useState();
 	const [userId, setUserId] = useState(1);
 	const [isValid, setIsValid] = useState(true);
 
@@ -56,6 +58,8 @@ const HabitTableWeekly = () => {
 				const response = await axios.get("http://localhost:3001/completion", {
 					params: {
 						user_id: userId,
+						user_habit_id: habitId,
+						habit_name: habitName,
 						completion_id: completionId,
 						completed: completed,
 						completed_dt: completedDate,

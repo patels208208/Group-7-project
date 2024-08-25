@@ -49,7 +49,7 @@ const BottomNavigation = () => {
 					className="flex flex-col items-center rounded-md px-5 py-1 text-white font-medium hover:bg-briny-700 active:bg-briny-300 ease-in-out duration-200"
 				>
 					<i className="fa-solid fa-calendar-days" id="nav-icon" />
-					<span className="text-xs mt-0.5">Calender</span>
+					<span className="text-xs mt-0.5">Calendar</span>
 				</Link>
 			</div>
 		</nav>
