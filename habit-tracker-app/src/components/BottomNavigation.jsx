@@ -38,6 +38,13 @@ const BottomNavigation = () => {
 					<span className="text-xs mt-0.5">Habits</span>
 				</Link>
 				<Link
+					to="/goal-setting"
+					className="flex flex-col items-center rounded-md px-5 py-1 text-white font-medium hover:bg-briny-700 active:bg-briny-300 ease-in-out duration-200"
+				>
+					<i className="fa-solid fa-bullseye" id="nav-icon" />
+					<span className="text-xs mt-0.5">Set Goals</span>
+				</Link>
+				<Link
 					to="/habit-views"
 					className="flex flex-col items-center rounded-md px-5 py-1 text-white font-medium hover:bg-briny-700 active:bg-briny-300 ease-in-out duration-200"
 				>
