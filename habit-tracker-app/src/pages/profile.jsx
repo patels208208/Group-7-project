@@ -2,14 +2,14 @@ import {useEffect, useState } from "react";
 import Avatar from "../components/Avatar";
 import GoalDisplay from "../components/GoalDisplay";
 import HabitSquare from "../components/HabitSquare";
-import UserDetails from "../components/UserDetails";
 import ChooseAvatar from "../components/ChooseAvatar";
 import axios from "axios";
-import { useUser } from "../components/UserContext";
+import UserDetails from "../components/UserDetails";
+import { useUser } from "../components/UserContext"; // Import useUser hook
 
 function Profile({ selectedHabitSquare, selectedFrequency, selectedGoal, selectedQuantity, selectedMeasurement}) {
+    const { user } = useUser(); // Get user from UserContext
     const[userGoals, setUserGoals] = useState([]);
-    const user = useUser();
 
     useEffect(() => {
         const fetchUserGoals = async () => {
@@ -36,7 +36,10 @@ function Profile({ selectedHabitSquare, selectedFrequency, selectedGoal, selecte
                 <div className="w-24 h-24 mb-4 lg:mb-0"><Avatar /></div>
                 <div className="flex flex-col w-full lg:w-3/4">
                 <h3 className="text-center pb-7 mt-4 text-briny-600 font-heading font-medium text-xl">User Details:</h3>
-                <userDetails userId={user.id} /> {/* Replace 1 with the actual user id */}
+                <div className="text-center">
+                    <p>{user ? `${user.first_name} ${user.surname}` : "Guest"}</p>
+                    <p>{user ? `${user.email_address}` : ""}</p>
+                </div>
                 </div>
             </div> 
             <div className="flex flex-col lg:flex-row mx-8 lg:mx-32 mt-8 space-y-4 lg:space-y-0 lg:space-x-4">
