@@ -31,7 +31,6 @@ function MonthlyView() {
 			))}
 			<p>
 				Date and time of completion: {format(new Date(), "yyyy-MM-dd kk:mm:ss")}{" "}
-				//needs to be completed_dt in date
 			</p>
 		</div>
 	);

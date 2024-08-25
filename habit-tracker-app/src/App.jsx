@@ -24,14 +24,7 @@ import {
 	useLocation,
 } from "react-router-dom";
 import Settings from "./pages/Settings.jsx";
-// import { AuthProvider } from "./login/userAuth.js"
 
-// const authLogin = () => (
-//   <AuthProvider>
-//       <Login />
-//       {/* Other components */}
-//   </AuthProvider>
-// );
 
 function App() {
 	return (
