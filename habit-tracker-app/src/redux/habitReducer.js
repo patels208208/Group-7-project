@@ -1,8 +1,11 @@
 // Import createSlice from Redux Toolkit
 import { createSlice } from "@reduxjs/toolkit";
-import { habits, habitUnitsOfMeasurement, habitUnitsOfFrequency } from "./constants";
+import {
+  habits,
+  habitUnitsOfMeasurement,
+  habitUnitsOfFrequency,
+} from "./constants";
 import { setGoal } from "./thunks";
-  
 
 const initialState = () => ({
   habit: habits[0],
@@ -19,24 +22,24 @@ const habitSlice = createSlice({
   initialState: initialState(), // Initial state
   reducers: {
     habitChanged: (state, action) => {
-        state.habit = action.payload
-        state.quantity = 1
-        state.unitOfMeasurement = habitUnitsOfMeasurement[action.payload][0]
-        state.goal = 1
-        state.unitOfFrequency = habitUnitsOfFrequency[0]
+      state.habit = action.payload;
+      state.quantity = 1;
+      state.unitOfMeasurement = habitUnitsOfMeasurement[action.payload][0];
+      state.goal = 1;
+      state.unitOfFrequency = habitUnitsOfFrequency[0];
     },
     quantityChanged: (state, action) => {
-        state.quantity = action.payload
+      state.quantity = action.payload;
     },
     unitOfMeasurementChanged: (state, action) => {
-        state.unitOfMeasurement = action.payload
+      state.unitOfMeasurement = action.payload;
     },
     goalChanged: (state, action) => {
-        state.goal = action.payload
+      state.goal = action.payload;
     },
     unitOfFrequencyChanged: (state, action) => {
-        state.unitOfFrequency = action.payload
-    }
+      state.unitOfFrequency = action.payload;
+    },
     // Reducers that update the state
     // increment: (state) => state + 1,
     // decrement: (state) => state - 1,
@@ -45,22 +48,28 @@ const habitSlice = createSlice({
   extraReducers: (builder) => {
     // Add reducers for additional action types here, and handle loading state as needed
     builder.addCase(setGoal.fulfilled, (state) => {
-      state.status = "idle"
-      state.statusMessage = "Goal set successfully"
-    })
+      state.status = "idle";
+      state.statusMessage = "Goal set successfully";
+    });
     builder.addCase(setGoal.rejected, (state) => {
-      state.status = "rejected"
-      state.statusMessage = "Failed to set goal"
-    })
+      state.status = "rejected";
+      state.statusMessage = "Failed to set goal";
+    });
     builder.addCase(setGoal.pending, (state) => {
-      state.status = "loading"
-      state.statusMessage = null
-    })
+      state.status = "loading";
+      state.statusMessage = null;
+    });
   },
 });
 
 // Export the generated actions
-export const { habitChanged, quantityChanged, unitOfMeasurementChanged, goalChanged, unitOfFrequencyChanged } = habitSlice.actions;
+export const {
+  habitChanged,
+  quantityChanged,
+  unitOfMeasurementChanged,
+  goalChanged,
+  unitOfFrequencyChanged,
+} = habitSlice.actions;
 
 // Export the reducer to include it in the store
 export default habitSlice.reducer;

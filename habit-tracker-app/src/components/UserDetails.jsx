@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-
 const UserDetails = ({ userId }) => {
   const [user, setUser] = useState({ firstName: "", surname: "", email: "" });
 
@@ -14,7 +13,7 @@ const UserDetails = ({ userId }) => {
           firstName: userData.first_name,
           surname: userData.surname,
           email: userData.email_address,
-      });
+        });
       } catch (error) {
         console.error("Error fetching user details: ", error.message);
       }
@@ -28,10 +27,8 @@ const UserDetails = ({ userId }) => {
         {user.firstName} {user.surname}
       </h2>
       <p className="text-lg text-center text-briny-600 mb-2">{user.email}</p>
-      
     </div>
   );
-
 };
 
 export default UserDetails;

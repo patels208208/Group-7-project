@@ -10,4 +10,3 @@ export const createGoalSetting = async (newGoal) => {
   const data = await response.json();
   return data;
 };
-

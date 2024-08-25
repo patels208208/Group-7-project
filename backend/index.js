@@ -295,19 +295,3 @@ app.get("/user-habits", (req, res) => {
 		res.status(200).json(results);
 	});
 });
-
-// app.get - to fetch current user data - for use displaying user's name etc in the app
-app.get("/user/current-user", authenticateJWT, (req, res) => {
-	console.error("Current user:");
-	const userId = req.user.first_name; // req.user_id set in Middleware to authenticateJWT
-	const sql = "SELECT * FROM users WHERE first_name = ?";
-
-	pool.query(sql, [userId], (err, results) => {
-		if (err) {
-			console.error("Error fetching user data:", err.message);
-			return res.status(500).json({ error: "Database error"});
-		}
-
-		res.status(200).json(results);
-	});
-});
