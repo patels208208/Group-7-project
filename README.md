@@ -17,4 +17,18 @@ cd Group-7-project
 npm install
 npm start
 ```
+If you experience any issues, run the frontend and backend files on two separate terminals:
+```
+cd Group-7-project
+cd habit-tracker-app
+npm install
+npm start
+```
+AND
+```
+cd Group-7-project
+cd backend
+npm install
+npm start
+```
 4. User can now interact with the app.
