@@ -191,6 +191,20 @@ import React, { useState, useEffect } from "react";
 import { startOfWeek, endOfWeek, format } from "date-fns";
 import axios from "axios";
 
+const getCurrentWeek = () => {
+	const now = new Date();
+	const start = startOfWeek(now, { weekStartsOn: 1 });
+	const end = endOfWeek(now, { weekStartsOn: 1 });
+	return `${format(start, "yyyy-MM-dd kk:mm:ss")} - ${format(
+		end,
+		"yyyy-MM-dd kk:mm:ss"
+	)}`;
+};
+
+const currentWeekDates = getCurrentWeek();
+
+console.log(currentWeekDates);
+
 const HabitTableWeekly = () => {
 	const habits = [
 		"Hobbies",
