@@ -1,5 +1,5 @@
 import GoalConfirmation from './GoalConfirmation';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { postData } from '../redux/action.js';
 import { habitChanged, habitSlice } from '../redux/habitReducer.js';
@@ -7,8 +7,11 @@ import { habits, habitUnitsOfMeasurement, habitUnitsOfFrequency } from '../redux
 import { createGoalSetting } from '../services/api.js';
 import { goalSelector, habitSelector, quantitySelector, unitOfFrequencySelector, unitOfMeasurementSelector, statusSelector, statusMessageSelector } from '../redux/selectors.js';
 import { setGoal } from '../redux/thunks.js';
+import { UserContext } from './UserContext.jsx';
 
 const GoalSetButton = () => {
+
+  const { user } = useContext(UserContext);
   const dispatch = useDispatch();
   const habit = useSelector(habitSelector);
   const quantity = useSelector(quantitySelector);
@@ -18,16 +21,19 @@ const GoalSetButton = () => {
   const status = useSelector(statusSelector);
   const statusMessage = useSelector(statusMessageSelector);
   const isButtonDisabled = habit === "" || !quantity || !goal || unitOfFrequency === "" || status === "loading";
+  
 
   const handleSubmit = async () => {
     if(isButtonDisabled) return;
 
+    console.log(user);
+
     const payload = {
-      user_id: 1,     // TODO: Example value, replace with actual data
+      user_id: user.user_id,     // TODO: Example value, replace with actual data
       habit_id: habits.findIndex(x => x === habit) + 1,  // Data from Redux store
-      measurement_unit: goal,
+      measurement_unit: quantity,
       measurement: unitOfMeasurement,
-      frequency_unit: quantity,
+      frequency_unit: goal,
       frequency: unitOfFrequency
     };
     console.log(payload)

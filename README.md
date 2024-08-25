@@ -14,6 +14,7 @@ JWT_SECRET= //NOT INCLUDED FOR SECURITY PURPOSES
 3. Run the following commands in the terminal:
 ```
 cd Group-7-project
+npm install
 npm start
 ```
 4. User can now interact with the app.

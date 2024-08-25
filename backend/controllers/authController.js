@@ -18,11 +18,15 @@ async function register(req, res) {
             // secret password
             const hashedPassword = await bcrypt.hash(user_password, 12)
             await createNewUser(first_name, surname, email_address, hashedPassword)
-            res.status(201).json({ message: 'New User created' })
 
+            const newlyCreatedUser = await findUserByEmail(email_address)
+            console.log("Newly created user's details:", newlyCreatedUser)
+
+            const { user_id } = newlyCreatedUser
             //Active token
-            const token = sign({ email }, process.env.JWT_SECRET, { expiresIn: '1h' })
-            res.status(201).json({ token })
+            const token = jwt.sign({ email_address, user_id, first_name, surname }, process.env.JWT_SECRET, { expiresIn: '1h' })
+
+            return res.status(201).json({ message: 'New User created', token, user: newlyCreatedUser });
         } catch (error) {
             res.status(500).json({ message: error.message })
         }

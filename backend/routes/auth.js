@@ -16,7 +16,7 @@ router.post('/register', registerValidation, validate, register)
 router.post('/login',loginCheck)
 
 // Router for current user details
-router.get('/user', authenticateJWT, userInfo)
+router.get('/user/current-user', authenticateJWT, userInfo)
 
 
 export default router
