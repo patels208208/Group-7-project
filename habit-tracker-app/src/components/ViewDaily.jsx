@@ -26,7 +26,7 @@ function DailyView() {
     {views.map((views) => (
     <div className='calendar' key={views.id}>
         <p>Habit ID: {views.habit_id}</p>
-        <p>Date and time of completion: {format(new Date(views.created_dt), "dd-MM-yyyy kk:mm:ss")};</p></div>))}
+        <p>Date and time of completion: {format(new Date(views.created_dt), "yyyy-MM-dd kk:mm:ss")};</p></div>))}
         </div>
   );
 };
