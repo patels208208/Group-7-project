@@ -58,14 +58,14 @@ const HabitTableWeekly = () => {
 				const response = await axios.get("http://localhost:3001/completion", {
 					params: {
 						user_id: userId,
-						user_habit_id: habitId,
+						habit_id: habitId,
 						habit_name: habitName,
 						completion_id: completionId,
 						completed: completed,
 						completed_dt: completedDate,
 					},
 				});
-				console.log(response.data); // Logs the fetched data to the console
+				console.log(response.data);
 				setCompletionStatus(response.data); // Set the state with the fetched data
 			} catch (error) {
 				console.error("Error fetching data:", error);
@@ -75,25 +75,26 @@ const HabitTableWeekly = () => {
 		fetchData(completionId);
 	}, [completionId]);
 
-	const isGoalAchieved = (habitIndex) => {
-		const goalstatus = completionStatus[habitIndex]?.completion_id;
-		return goalstatus === 1; // Change this to the user id you want to check
+	const isGoalAchieved = () => {
+		if (completedDate === currentWeekDates) {
+			setIsValid(true);
+		} else {
+			setIsValid(false);
+		}
 	};
 
 	useEffect(() => {
-		if (completedDate) {
+		isGoalAchieved();
+		if (isValid) {
 			const formattedDate = format(
 				new Date(completedDate),
-				"yyyy-MM-dd kk:mm:ss"
+				"	yyyy-MM-dd kk:mm:ss"
 			);
-			setIsCompleted(currentWeekDates(formattedDate));
+			setIsCompleted(formattedDate);
 		}
-	}, [completedDate]);
+	}, [isGoalAchieved, isValid, completedDate]);
 
-	// if (completedDate === currentWeekDates) {
-	//   setIsValid(true);
-
-	if (setIsCompleted) {
+	if (isGoalAchieved) {
 		return (
 			<div className="flex items-center bg-deepFriedSunRays-400 rounded shadow-lg p-4 lg:p-6">
 				<table className="w-full">
@@ -179,4 +180,5 @@ const HabitTableWeekly = () => {
 		);
 	}
 };
+
 export default HabitTableWeekly;
