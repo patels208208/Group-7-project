@@ -23,7 +23,7 @@ function Home() {
               <p>Welcome</p>
             </div>
             <div className="mb-4">
-              <p>{user ? `${user.firstName} ${user.surname}` : "Guest"}</p>
+              <p>{user ? `${user.first_name} ${user.surname}` : "Guest"}</p>
             </div>
           </div>
         </div>

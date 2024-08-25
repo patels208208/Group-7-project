@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import fullLogo from "../assets/images/logos/fullLogo.png";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { UserContext } from "../components/UserContext";
 
 export const Register = (props) => {
+	const { user, updateUser } = useContext(UserContext); // Pulling in the useContext - which exposes current status of user hook, updateUser contains function that you pass data to and it updates
 	const navigate = useNavigate();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -42,8 +44,11 @@ export const Register = (props) => {
 				email_address: email,
 				user_password: password,
 			});
-			const token = response.data;
+			const token = response.data.token;
+			console.log("Register submit button:", response);
+			console.log(token);
 			localStorage.setItem("token", token);
+			updateUser(response.data.user);
 			setMessage(response.data.message);
 			navigate("/home");
 		} catch (error) {
