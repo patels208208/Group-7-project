@@ -13,7 +13,10 @@ const getCurrentWeek = () => {
 	const now = new Date();
 	const start = startOfWeek(now, { weekStartsOn: 1 });
 	const end = endOfWeek(now, { weekStartsOn: 1 });
-	return `${format(start, "yyyy-MM-dd")} - ${format(end, "yyyy-MM-dd")}`;
+	return `${format(start, "yyyy-MM-dd kk:mm:ss")} - ${format(
+		end,
+		"yyyy-MM-dd kk:mm:ss"
+	)}`;
 };
 
 const currentWeekDates = getCurrentWeek();
@@ -75,14 +78,16 @@ const HabitTableWeekly = () => {
 
 	useEffect(() => {
 		if (completedDate) {
-			const formattedDate = format(new Date(completedDate), "yyyy-MM-dd");
+			const formattedDate = format(
+				new Date(completedDate),
+				"yyyy-MM-dd kk:mm:ss"
+			);
 			setIsCompleted(currentWeekDates(formattedDate));
 		}
 	}, [completedDate]);
 
-  
-  // if (completedDate === currentWeekDates) {
-  //   setIsValid(true);
+	// if (completedDate === currentWeekDates) {
+	//   setIsValid(true);
 
 	if (setIsCompleted) {
 		return (
@@ -139,7 +144,7 @@ const HabitTableWeekly = () => {
 											<div key={dayIndex} className="p-2">
 												<FontAwesomeIcon
 													icon={
-														isGoalAchieved [habitIndex]?.[dayIndex]
+														isGoalAchieved[habitIndex]?.[dayIndex]
 															? faSquareCheck
 															: faSquareXmark
 													}
