@@ -26,7 +26,7 @@ function MonthlyView() {
 			<HabitTableMonthly />
 			{views.map((views) => (
 				<div className="calendar" key={views.id}>
-					<p>Habit ID: {views.habit_id}</p>
+					{/* <p>Habit ID: {views.habit_id}</p> */}
 				</div>
 			))}
 			<p>
