@@ -26,3 +26,4 @@ function WeeklyView() {
 }
 
 export default WeeklyView;
+export {currentWeekRange };
