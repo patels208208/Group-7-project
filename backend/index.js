@@ -73,11 +73,11 @@ app.use("/api", auth);
 
 //app.post - to store completion data for individual habits in SQL database
 app.post("/hydration", (req, res) => {
-	const { user_id, habit_name, completed } = req.body;
+	const { user_id, habit_id, habit_name, completed } = req.body;
 
 	const sql =
-		"INSERT INTO goal_completion (user_id, habit_name, completed) VALUES (?, ?, ?)";
-	pool.query(sql, [user_id, habit_name, completed], (err, result) => {
+		"INSERT INTO goal_completion (user_id, habit_id, habit_name, completed) VALUES (?, ?, ?, ?)";
+	pool.query(sql, [user_id, habit_id, habit_name, completed], (err, result) => {
 		if (err) {
 			console.error("Error entering hydration data", err.message);
 			return res.status(500).json({ error: "Database error" });
