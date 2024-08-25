@@ -34,6 +34,24 @@
 			"response": []
 		},
 		{
+			"name": "Word of the day - 3rd party API connection",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3001/api/wordOfTheDay"
+			},
+			"response": []
+		},
+		{
+			"name": "Current user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3001/user/current-user"
+			},
+			"response": []
+		},
+		{
 			"name": "Hydration app data",
 			"request": {
 				"method": "POST",
@@ -151,34 +169,16 @@
 			"response": []
 		},
 		{
-			"name": "Goal setting frequency data",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": "http://localhost:3001/frequency"
-			},
-			"response": []
-		},
-		{
-			"name": "Goal setting measurement data",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": "http://localhost:3001/measurement"
-			},
-			"response": []
-		},
-		{
-			"name": "Word of the day - 3rd party API connection",
+			"name": "User pre-set habits",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "http://localhost:3001/api/wordOfTheDay"
+				"url": "http://localhost:3001/user-habits"
 			},
 			"response": []
 		},
 		{
-			"name": "Calendar view data",
+			"name": "Habit completion data",
 			"request": {
 				"method": "GET",
 				"header": [],
