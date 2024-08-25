@@ -10,7 +10,7 @@ export const UserProvider = ({ children }) => { // A <Provider> component that c
     useEffect(() => { // useEffect hook immediately fetches the current user data when the component mounts
         const fetchUser = async () => { // Asynchronous so that we can wait for the response from the server in the background
             try {
-                const response = await axios.get("/api/user/current"); // Fetches the current user data from the server
+                const response = await axios.get("http://localhost:3001/api/user/current"); // Fetches the current user data from the server
                 setUser(response.data); // If successful, the user state is updated with the user data 
             } catch (error) {
                 console.error("Error fetching current user: ", error.message); // Obviously, an error if unsuccesful
