@@ -10,6 +10,7 @@ DB_PASSWORD="password" //your own db password
 DB_NAME="habit_tracker" //keep as is
 WORDNIK_API_KEY= //NOT INCLUDED FOR SECURITY PURPOSES
 JWT_SECRET= //NOT INCLUDED FOR SECURITY PURPOSES
+PORT = "3001" //keep as is
 ```
 3. Run the following commands in the terminal:
 ```
